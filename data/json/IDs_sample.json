@@ -1,0 +1,549 @@
+{
+    "1": {
+        "Division Name": "Managers",
+        "11": {
+            "Sub-Division Name": "Chief Executives, Senior Officials and Legislators",
+            "111": {
+                "Group Name": "Legislators and Senior Officials",
+                "1111": {
+                    "Family Name": "Legislators",
+                    "1111.0100": {
+                        "Role Name": "Elected Official, Union Government",
+                        "2004 regulation": "1111.10"
+                    },
+                    "1111.0200": {
+                        "Role Name": "Elected Official, State Government",
+                        "2004 regulation": "1112.10"
+                    },
+                    "1111.0300": {
+                        "Role Name": "Elected Official, Local Bodies",
+                        "2004 regulation": "1113.10"
+                    },
+                    "1111.9900": {
+                        "Role Name": "Legislators, Other",
+                        "2004 regulation": "1119.90"
+                    }
+                },
+                "1112": {
+                    "Family Name": "Senior Government Officials",
+                    "1112.0100": {
+                        "Role Name": "Administrative Official, Union Government",
+                        "2004 regulation": "1121.10"
+                    },
+                    "1112.0200": {
+                        "Role Name": "Diplomat",
+                        "2004 regulation": "1121.20"
+                    },
+                    "1112.0300": {
+                        "Role Name": "Executive Officials, Union Government",
+                        "2004 regulation": "1121.30"
+                    },
+                    "1112.0400": {
+                        "Role Name": "Administrative Official, State Government",
+                        "2004 regulation": "1122.10"
+                    },
+                    "1112.0500": {
+                        "Role Name": "Executive Official, State Government",
+                        "2004 regulation": "1122.20"
+                    },
+                    "1112.0600": {
+                        "Role Name": "Administrative and Executive Officials, Quasi\nGovernment (Central)",
+                        "2004 regulation": "1123.10"
+                    },
+                    "1112.0700": {
+                        "Role Name": "Administrative & Executive Officials, Quasi\nGovernment (State)",
+                        "2004 regulation": "1123.20"
+                    },
+                    "1112.0800": {
+                        "Role Name": "Administrative and Executive Officials, Local\nBodies",
+                        "2004 regulation": "1124.10"
+                    },
+                    "1112.9900": {
+                        "Role Name": "Senior Government Officials, Other",
+                        "2004 regulation": "1129.90"
+                    }
+                },
+                "1113": {
+                    "Family Name": "Traditional Chiefs and Heads of Villages"
+                },
+                "1114": {
+                    "Family Name": "Senior Officials of Special Interest Organizations",
+                    "1114.0100": {
+                        "Role Name": "Political Worker",
+                        "2004 regulation": "1141.10"
+                    },
+                    "1114.0200": {
+                        "Role Name": "Senior Officials of Employers, Workers and Other\nEconomic Interest Organizations",
+                        "2004 regulation": "1142.00"
+                    },
+                    "1114.0300": {
+                        "Role Name": "Director, Disaster Management Services",
+                        "2004 regulation": "1143.10"
+                    },
+                    "1114.9900": {
+                        "Role Name": "Senior Officials of Special Interest Organizations,\nOther",
+                        "2004 regulation": "1143.90"
+                    }
+                }
+            },
+            "112": {
+                "Group Name": "Managing Directors and Chief Executives",
+                "1120": {
+                    "Family Name": "Managing Directors and Chief Executives",
+                    "1120.0100": {
+                        "Role Name": "Working Proprietor, Electricity",
+                        "2004 regulation": "1211.10"
+                    },
+                    "1120.0200": {
+                        "Role Name": "Working Proprietor, Gas",
+                        "2004 regulation": "1211.20"
+                    },
+                    "1120.0300": {
+                        "Role Name": "Working Proprietor, Water Supply",
+                        "2004 regulation": "1211.30"
+                    },
+                    "1120.0400": {
+                        "Role Name": "Director, Electricity",
+                        "2004 regulation": "1211.40"
+                    },
+                    "1120.0500": {
+                        "Role Name": "Director, Gas",
+                        "2004 regulation": "1211.50"
+                    },
+                    "1120.0600": {
+                        "Role Name": "Director, Water Supply",
+                        "2004 regulation": "1211.60"
+                    },
+                    "1120.0700": {
+                        "Role Name": "Director, Bank",
+                        "2004 regulation": "1212.10"
+                    },
+                    "1120.0800": {
+                        "Role Name": "Director, Insurance",
+                        "2004 regulation": "1212.20"
+                    },
+                    "1120.0900": {
+                        "Role Name": "Working Proprietor, Mines/Proprietor, Mines",
+                        "2004 regulation": "1213.10"
+                    },
+                    "1120.1000": {
+                        "Role Name": "Working Proprietor, Quarry/Proprietor, Quarry",
+                        "2004 regulation": "1213.20"
+                    },
+                    "1120.1100": {
+                        "Role Name": "Working Proprietor, Well Drilling/Proprietor,\nWell Drilling",
+                        "2004 regulation": "1213.30"
+                    },
+                    "1120.1200": {
+                        "Role Name": "Working Proprietor, Construction/Proprietor,\nConstruction",
+                        "2004 regulation": "1213.40"
+                    },
+                    "1120.1300": {
+                        "Role Name": "Director, Construction",
+                        "2004 regulation": "1213.50"
+                    },
+                    "1120.1400": {
+                        "Role Name": "Director, Mines",
+                        "2004 regulation": "1213.60"
+                    },
+                    "1120.1500": {
+                        "Role Name": "Director, Quarry",
+                        "2004 regulation": "1213.70"
+                    },
+                    "1120.1600": {
+                        "Role Name": "Director, Well Drilling",
+                        "2004 regulation": "1213.80"
+                    },
+                    "1120.1700": {
+                        "Role Name": "Working Proprietor, Manufacturing/Proprietor,\nManufacturing",
+                        "2004 regulation": "1214.10"
+                    },
+                    "1120.1800": {
+                        "Role Name": "Director Manufacturing",
+                        "2004 regulation": "1214.20"
+                    },
+                    "1120.1900": {
+                        "Role Name": "Working Proprietor, Wholesale Trade/Proprietor,\nWholesale Trade",
+                        "2004 regulation": "1214.30"
+                    },
+                    "1120.2000": {
+                        "Role Name": "Working Proprietor, Retail Trade/Proprietor,\nRetail Trade",
+                        "2004 regulation": "1214.40"
+                    },
+                    "1120.2100": {
+                        "Role Name": "Director, Wholesale Trade",
+                        "2004 regulation": "1214.50"
+                    },
+                    "1120.2200": {
+                        "Role Name": "Director, Retail Trade",
+                        "2004 regulation": "1214.60"
+                    },
+                    "1120.2300": {
+                        "Role Name": "Working Proprietor, Transport",
+                        "2004 regulation": "1215.10"
+                    },
+                    "1120.2400": {
+                        "Role Name": "Director, Transport",
+                        "2004 regulation": "1215.20"
+                    },
+                    "1120.2500": {
+                        "Role Name": "Director, Communication",
+                        "2004 regulation": "1215.30"
+                    },
+                    "1120.2600": {
+                        "Role Name": "Director, Airport",
+                        "2004 regulation": "1215.40"
+                    },
+                    "1120.2700": {
+                        "Role Name": "Working Proprietor, Storage and Warehousing",
+                        "2004 regulation": "1216.10"
+                    },
+                    "1120.2800": {
+                        "Role Name": "Director, Storage and Warehousing",
+                        "2004 regulation": "1216.20"
+                    },
+                    "1120.2900": {
+                        "Role Name": "Working Proprietor, Lodging and Catering\nServices",
+                        "2004 regulation": "1217.10"
+                    },
+                    "1120.3000": {
+                        "Role Name": "Director, Lodging and Catering Services/Director\nFood and Beverage Service",
+                        "2004 regulation": "1217.20"
+                    },
+                    "1120.3100": {
+                        "Role Name": "Executive Chef",
+                        "2004 regulation": "1217.30"
+                    },
+                    "1120.3200": {
+                        "Role Name": "Working Proprietor, Recreation and\nEntertainment",
+                        "2004 regulation": "1218.10"
+                    },
+                    "1120.3300": {
+                        "Role Name": "Director, Recreation and Entertainment",
+                        "2004 regulation": "1218.20"
+                    },
+                    "1120.3400": {
+                        "Role Name": "Station Director, Radio/TV",
+                        "2004 regulation": "1218.30"
+                    },
+                    "1120.3401": {
+                        "Role Name": "Account Director ( Advertising Agency)",
+                        "2004 regulation": ""
+                    },
+                    "1120.3402": {
+                        "Role Name": "Sales Director (Media Org)",
+                        "2004 regulation": ""
+                    },
+                    "1120.3500": {
+                        "Role Name": "Working Proprietor, Other Services",
+                        "2004 regulation": "1219.10"
+                    },
+                    "1120.3600": {
+                        "Role Name": "Director, Other Services",
+                        "2004 regulation": "1219.20"
+                    },
+                    "1120.3700": {
+                        "Role Name": "Director, Museum/Zoo",
+                        "2004 regulation": "1219.30"
+                    },
+                    "1120.3800": {
+                        "Role Name": "Chief Librarian",
+                        "2004 regulation": "1219.40"
+                    },
+                    "1120.3900": {
+                        "Role Name": "Principal, College",
+                        "2004 regulation": "1219.50"
+                    },
+                    "1120.9900": {
+                        "Role Name": "Managing Directors and Chief Executives, Others",
+                        "2004 regulation": "1211.90"
+                    }
+                }
+            }
+        },
+        "12": {
+            "Sub-Division Name": "Administrative and Commercial Managers",
+            "121": {
+                "Group Name": "Business Services and Administration Managers",
+                "1211": {
+                    "Family Name": "Finance Managers",
+                    "1211.0100": {
+                        "Role Name": "General Manager, Bank",
+                        "2004 regulation": "1307.10"
+                    },
+                    "1211.0200": {
+                        "Role Name": "General Manager, Insurance",
+                        "2004 regulation": "1307.20"
+                    },
+                    "1211.0300": {
+                        "Role Name": "Purser, Ship",
+                        "2004 regulation": "1231.10"
+                    },
+                    "1211.9900": {
+                        "Role Name": "Finance Managers, Others",
+                        "2004 regulation": "1231.9"
+                    }
+                },
+                "1212": {
+                    "Family Name": "Human Resource Managers",
+                    "1212.0100": {
+                        "Role Name": "Personnel Manager",
+                        "2004 regulation": "1232.10"
+                    },
+                    "1212.9900": {
+                        "Role Name": "Personnel and Industrial Relations Managers,\nOther",
+                        "2004 regulation": "1232.90"
+                    }
+                },
+                "1213": {
+                    "Family Name": "Policy and Planning Managers",
+                    "1213.0100": {
+                        "Role Name": "Manager, Automotive Service",
+                        "2004 regulation": "1239.10"
+                    },
+                    "1213.0101": {
+                        "Role Name": "Quality Assurance Standards In-Charge",
+                        "2004 regulation": ""
+                    },
+                    "1213.0102": {
+                        "Role Name": "Manager – Customer Quality",
+                        "2004 regulation": ""
+                    },
+                    "1213.0200": {
+                        "Role Name": "Manager, Automotive Service Station",
+                        "2004 regulation": "1239.20"
+                    },
+                    "1213.0201": {
+                        "Role Name": "Area Service Manager",
+                        "2004 regulation": ""
+                    },
+                    "1213.0202": {
+                        "Role Name": "Territory Service Manager",
+                        "2004 regulation": ""
+                    },
+                    "1213.9900": {
+                        "Role Name": "Managers, Other Services",
+                        "2004 regulation": "1239.90"
+                    }
+                },
+                "1219": {
+                    "Family Name": "Business Services and Administration Managers\nNot Elsewhere Classified",
+                    "1219.0100": {
+                        "Role Name": "Manager, Import and Export",
+                        "2004 regulation": "1227.30"
+                    },
+                    "1219.0101": {
+                        "Role Name": "Export Manager",
+                        "2004 regulation": ""
+                    },
+                    "1219.0200": {
+                        "Role Name": "Manager, Health Club/Manager, Fitness\nClub/Centre/Gym",
+                        "2004 regulation": "1228.10"
+                    }
+                }
+            },
+            "122": {
+                "Group Name": "Sales, Marketing and Development Managers",
+                "1221": {
+                    "Family Name": "Sales and Marketing Managers",
+                    "1221.0100": {
+                        "Role Name": "Sales Manager (Wholesale Trade)",
+                        "2004 regulation": "1233.10"
+                    },
+                    "1221.0200": {
+                        "Role Name": "Sales Manager (Retail Trade)",
+                        "2004 regulation": "1233.20"
+                    },
+                    "1221.0301": {
+                        "Role Name": "Home Delivery Manager",
+                        "2004 regulation": ""
+                    },
+                    "1221.0401": {
+                        "Role Name": "Territory Sales Manager (Broadband)",
+                        "2004 regulation": ""
+                    },
+                    "1221.0501": {
+                        "Role Name": "Territory Sales Manager (Prepaid)",
+                        "2004 regulation": ""
+                    },
+                    "1221.0601": {
+                        "Role Name": "Sales Co-Ordinator (Media Org)",
+                        "2004 regulation": ""
+                    },
+                    "1221.0602": {
+                        "Role Name": "Sales Manager (Media Org)",
+                        "2004 regulation": ""
+                    },
+                    "1221.9900": {
+                        "Role Name": "Sales and Marketing Managers, Other",
+                        "2004 regulation": "1233.90"
+                    }
+                },
+                "1222": {
+                    "Family Name": "Advertising and Public Relation Managers",
+                    "1222.0100": {
+                        "Role Name": "Manager, Advertising and Promotion",
+                        "2004 regulation": "1234.10"
+                    },
+                    "1222.0102": {
+                        "Role Name": "Advertising Operations Co-Ordinator (Digital)",
+                        "2004 regulation": ""
+                    },
+                    "1222.0200": {
+                        "Role Name": "Manager, Fashion/Fashion Manager",
+                        "2004 regulation": "1234.20"
+                    },
+                    "1222.9900": {
+                        "Role Name": "Advertising and Public Relations Department\nManagers, Others",
+                        "2004 regulation": "1234.90"
+                    }
+                },
+                "1223": {
+                    "Family Name": "Research and Development Managers",
+                    "1223.0101": {
+                        "Role Name": "Manager Testing Facility",
+                        "2004 regulation": ""
+                    },
+                    "1223.0102": {
+                        "Role Name": "Manager Material Testing",
+                        "2004 regulation": ""
+                    },
+                    "1223.0201": {
+                        "Role Name": "Research Associate",
+                        "2004 regulation": ""
+                    }
+                }
+            }
+        },
+        "13": {
+            "Sub-Division Name": "Production and Specialized Services Managers",
+            "131": {
+                "Group Name": "Production Managers in Agriculture, Forestry\nand Fisheries",
+                "1311": {
+                    "Family Name": "Agricultural and Forestry Production Managers",
+                    "1311.0100": {
+                        "Role Name": "General Manager, Plantation",
+                        "2004 regulation": "1301.20"
+                    },
+                    "1311.0200": {
+                        "Role Name": "General Manager, Horticulture",
+                        "2004 regulation": "1301.30"
+                    },
+                    "1311.0300": {
+                        "Role Name": "General Manager, Agricultural Farm",
+                        "2004 regulation": "1301.10"
+                    },
+                    "1311.0400": {
+                        "Role Name": "General Manager, Livestock Farm",
+                        "2004 regulation": "1301.40"
+                    },
+                    "1311.0500": {
+                        "Role Name": "General Manager, Dairy Farm",
+                        "2004 regulation": "1301.50"
+                    },
+                    "1311.0600": {
+                        "Role Name": "General Manager, Poultry",
+                        "2004 regulation": "1301.60"
+                    },
+                    "1311.0700": {
+                        "Role Name": "Manager, Agricultural Farm",
+                        "2004 regulation": "1221.10"
+                    },
+                    "1311.0800": {
+                        "Role Name": "Manager, Plantation",
+                        "2004 regulation": "1221.20"
+                    },
+                    "1311.0900": {
+                        "Role Name": "Manager, Nursery",
+                        "2004 regulation": "1221.22"
+                    },
+                    "1311.0901": {
+                        "Role Name": "Rubber Nursery Manager",
+                        "2004 regulation": ""
+                    },
+                    "1311.1000": {
+                        "Role Name": "Manager, Aerial Planting and Cultivation",
+                        "2004 regulation": "1221.24"
+                    },
+                    "1311.1100": {
+                        "Role Name": "Manager, Orchard",
+                        "2004 regulation": "1221.26"
+                    },
+                    "1311.1200": {
+                        "Role Name": "Manager, Horticulture Farm",
+                        "2004 regulation": "1221.30"
+                    },
+                    "1311.1300": {
+                        "Role Name": "Manager, Livestock Farm",
+                        "2004 regulation": "1221.40"
+                    },
+                    "1311.1400": {
+                        "Role Name": "Manager, Dairy Farm",
+                        "2004 regulation": "1221.50"
+                    },
+                    "1311.1500": {
+                        "Role Name": "Manager, Poultry Farm",
+                        "2004 regulation": "1221.60"
+                    },
+                    "1311.9900": {
+                        "Role Name": "Agricultural and Forestry Production Managers,\nOthers",
+                        "2004 regulation": "1221.90"
+                    }
+                },
+                "1312": {
+                    "Family Name": "Aquaculture and Fisheries Production Managers"
+                }
+            },
+            "132": {
+                "Group Name": "Manufacturing, Mining, Construction and\nDistribution Managers",
+                "1321": {
+                    "Family Name": "Manufacturing Managers",
+                    "1321.0100": {
+                        "Role Name": "Manager, Electricity",
+                        "2004 regulation": "1222.40"
+                    },
+                    "1321.0200": {
+                        "Role Name": "Terminal Manager",
+                        "2004 regulation": "1222.45"
+                    },
+                    "1321.0300": {
+                        "Role Name": "Manager, Gas",
+                        "2004 regulation": "1222.50"
+                    },
+                    "1321.0400": {
+                        "Role Name": "Manager, Water Supply",
+                        "2004 regulation": "1222.60"
+                    },
+                    "1321.0500": {
+                        "Role Name": "Manager, Food Processing Plant",
+                        "2004 regulation": "1222.65"
+                    },
+                    "1321.0600": {
+                        "Role Name": "Manager, Manufacturing",
+                        "2004 regulation": "1222.70"
+                    },
+                    "1321.0700": {
+                        "Role Name": "General Manager, Electricity",
+                        "2004 regulation": "1302.40"
+                    },
+                    "1321.0800": {
+                        "Role Name": "General Manager, Gas",
+                        "2004 regulation": "1302.50"
+                    },
+                    "1321.0900": {
+                        "Role Name": "General Manager, Water Supply",
+                        "2004 regulation": "1302.60"
+                    },
+                    "1321.1000": {
+                        "Role Name": "General Manager, Manufacturing",
+                        "2004 regulation": "1302.70"
+                    },
+                    "1321.9900": {
+                        "Role Name": "Manufacturing Managers, Other",
+                        "2004 regulation": "1302.90"
+                    }
+                }
+            }
+        }
+    }
+}
