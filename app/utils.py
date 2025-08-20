@@ -306,11 +306,36 @@ def zscore_norm(scores: np.ndarray) -> np.ndarray:
         return np.zeros_like(scores)
     return (scores - np.mean(scores)) / np.std(scores)
 
+def format_json(input_file, output_file):
+    import json
+    import re
+
+    with open(input_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    pattern = re.compile(r'^\d{4}\.\d{4}$')
+    results = []
+
+    def extract_roles(obj):
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                if pattern.match(key):
+                    results.append({
+                        "role_number": key,
+                        "Role Name": value.get("Role Name", ""),
+                        "2004 Regulation": value.get("2004 regulation", ""),
+                        "Role Description": value.get("Role Description", "")
+                    })
+                extract_roles(value)
+        elif isinstance(obj, list):
+            for item in obj:
+                extract_roles(item)
+
+    extract_roles(data)
+
+    with open(output_file, 'w', encoding='utf-8') as out:
+        json.dump(results, out, ensure_ascii=False, indent=2)
+    return results
+
 
 if __name__ == '__main__':
-    #try:
-        #merge_jsons(roles_json='dump\\roles.json',hierarchy_json='dump\\kumarj.json')
-    #except Exception as e:
-    #    print(e)
-    extract_data()
-    #extract_role_descriptions('dump/jdss.pdf','dump/roles.json',max_nos=100)
+    format_json('data/json/Complete.json', 'roles_output.json')

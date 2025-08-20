@@ -60,6 +60,10 @@ def hybrid_search(req: SearchRequest):
         dict: The search results.
     """
 
+    # Initializing the Cursor
+    cursor = conn.cursor()
+
+
     # Extract parameters
     query = req.query
     top_k = req.top_k
@@ -101,12 +105,15 @@ def hybrid_search(req: SearchRequest):
         doc_id = bm25_ids[idx]
         doc_data = collection.get(ids=[doc_id])
         role_number = doc_data["metadatas"][0]["role_number"]
+        cursor.execute("SELECT title FROM roles WHERE role_number=?", (role_number,))
+        role_title = cursor.fetchone()
 
         # If role not seen OR this chunk is better, replace
         if role_number not in best_chunks or score > best_chunks[role_number]["combined_score"]:
             best_chunks[role_number] = {
                 "id": doc_id,
                 "role_number": role_number,
+                "role_title": role_title[0] if role_title else "Unknown",
                 "chunk_index": doc_data["metadatas"][0]["chunk_index"],
                 "chunk_text": doc_data["documents"][0],
                 "bm25_score": float(bm25_scores[idx]),
@@ -139,7 +146,7 @@ def get_role_description(req: RoleDescriptionRequest):
     cur.execute("SELECT description FROM roles WHERE role_number=?", (role_number,))
     description = cur.fetchone()
 
-    return {"description": description}
+    return {"description": description[0] if description else "Role not found"}
 
 if __name__ == "__main__":
     import uvicorn
