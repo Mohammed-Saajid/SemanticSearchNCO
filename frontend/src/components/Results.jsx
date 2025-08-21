@@ -1,8 +1,7 @@
 import React from 'react'
 
 function Results({ results }) {
-  console.log(results);
-  
+  console.log('Results received:', results);
 
   if (!results || results.length === 0) {
     return (
@@ -20,13 +19,16 @@ function Results({ results }) {
           {/* Header with role information */}
           <div className="result-header">
             <h3 className="role-title">
-              Role Number: {result.role_number || 'N/A'}
+              {result.role_title || result.title || 'Role Title Not Available'}
             </h3>
+            <span className="role-number">Role {result.role_number || 'N/A'}</span>
           </div>
 
           {/* Main content */}
           <div className="result-content">
-            <h1>{result.title}</h1>
+            <div className="chunk-text">
+              <p>{result.chunk_text || result.description || 'No description available'}</p>
+            </div>
           </div>
         </div>
       ))}
