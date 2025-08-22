@@ -4,11 +4,11 @@ A hybrid search system for Indian National Classification of Occupations (NCO) d
 
 ## Features
 
-- 🔍 **Hybrid Search**: Combines BM25 (keyword-based) and vector semantic search
-- 📊 **Role Discovery**: Search through 3,446+ occupation roles from NCO 2015
-- ⚡ **Fast API Backend**: Built with FastAPI and ChromaDB
-- 🎨 **Modern Frontend**: React-based web interface
-- 📈 **Relevance Scoring**: Weighted combination of search algorithms
+- **Hybrid Search**: Combines BM25 (keyword-based) and vector semantic search
+- **Role Discovery**: Search through 3,446+ occupation roles from NCO 2015
+- **Fast API Backend**: Built with FastAPI and ChromaDB
+- **Modern Frontend**: React-based web interface
+- **Relevance Scoring**: Weighted combination of search algorithms
 
 ## Tech Stack
 
@@ -75,3 +75,11 @@ Based on **National Classification of Occupations (NCO) 2015** published by the 
 │       └── components/ # React components
 └── README.md
 ```
+
+## Prototype screenshots
+
+<img width="1919" height="989" alt="image" src="https://github.com/user-attachments/assets/71118195-8726-409b-b1c2-1c7f17716203" /><br>
+
+<img width="1919" height="980" alt="image" src="https://github.com/user-attachments/assets/daa11d42-e6b0-4216-900f-2d2dcd5767d3" />
+
+---
