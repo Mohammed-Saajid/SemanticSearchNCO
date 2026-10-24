@@ -1,3 +1,7 @@
 app/__pycache__/
 app/file
 app/test.py
+__pycache__*
+.venv/
+.pytest_cache/
+.vscode/
