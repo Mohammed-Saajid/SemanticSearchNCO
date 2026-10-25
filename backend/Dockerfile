@@ -1,29 +1,23 @@
-# Base image
 FROM python:3.11-slim
 
-# Set working directory
 WORKDIR /app
 
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app \
+    PORT=8000
 
-# Copy project files
-COPY db/ ./db
-COPY data/ ./data
-COPY app/ ./app/
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install punkt and punkt_tab into a fixed location
-RUN python -m nltk.downloader punkt punkt_tab -d /usr/local/nltk_data
+COPY app/ ./app/
+COPY data/ ./data/
+COPY db/ ./db/
 
-# Specify Env Variable
-ENV NLTK_DATA=/usr/local/nltk_data
-
-
-
-# Expose port
 EXPOSE 8000
 
-# Run FastAPI with Uvicorn
-CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]

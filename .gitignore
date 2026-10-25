@@ -1,7 +1,7 @@
 # Cookiecutter specific
 data/*
 backend/data/
-backend/db/
+backend/db/qdrant_storage/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
