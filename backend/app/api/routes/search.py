@@ -22,6 +22,7 @@ def search(
     return service.search(
         query=request.query,
         top_k=request.top_k,
+        offset=request.offset,
         bm25_weight=request.bm25_weight,
         vector_weight=request.vector_weight,
     )
