@@ -1,7 +1,7 @@
 import React from 'react'
 
-function SearchBar({ onSearch, query, setQuery, isLoading }) {
-  const handleKeyPress = (e) => {
+function SearchBar({ onSearch, query, setQuery, isLoading, topK, setTopK, bm25Weight, setBm25Weight, vectorWeight, setVectorWeight }) {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       onSearch(query);
     }
@@ -14,7 +14,7 @@ function SearchBar({ onSearch, query, setQuery, isLoading }) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
           placeholder="Search for roles (e.g., 'software engineer', 'doctor', 'teacher')..."
           className="search-input"
           disabled={isLoading}
@@ -39,6 +39,46 @@ function SearchBar({ onSearch, query, setQuery, isLoading }) {
             </svg>
           )}
         </button>
+      </div>
+      <div className="weight-controls">
+        <label className="weight-label">
+          <span>Results per page</span>
+          <input type="number" min="1" max="100" step="1" value={topK}
+            onChange={(e) => setTopK(Math.min(100, Math.max(1, Number(e.target.value) || 1)))}
+            className="results-count-input" disabled={isLoading} />
+        </label>
+        <label className="weight-label">
+          <span>BM25 Weight: {bm25Weight.toFixed(1)}</span>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value={bm25Weight}
+            onChange={(e) => {
+              const val = parseFloat(e.target.value);
+              setBm25Weight(val);
+              setVectorWeight(parseFloat((1 - val).toFixed(1)));
+            }}
+            className="weight-slider"
+          />
+        </label>
+        <label className="weight-label">
+          <span>Vector Weight: {vectorWeight.toFixed(1)}</span>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value={vectorWeight}
+            onChange={(e) => {
+              const val = parseFloat(e.target.value);
+              setVectorWeight(val);
+              setBm25Weight(parseFloat((1 - val).toFixed(1)));
+            }}
+            className="weight-slider"
+          />
+        </label>
       </div>
     </div>
   );
