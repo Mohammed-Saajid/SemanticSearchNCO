@@ -1,8 +1,12 @@
+import os
+from unittest.mock import patch
+
 from app.core.config import Settings
 
 
 def test_default_settings():
-    settings = Settings()
+    with patch.dict(os.environ, {}, clear=True):
+        settings = Settings(_env_file=None)
     assert settings.app_name == "Semantic Search API"
     assert settings.app_version == "2.0.0"
     assert settings.embedding_dimension == 384
@@ -14,6 +18,7 @@ def test_default_settings():
 
 def test_custom_settings():
     settings = Settings(
+        _env_file=None,
         app_name="Custom Name",
         app_version="3.0.0",
         debug=True,
@@ -25,4 +30,3 @@ def test_custom_settings():
     assert settings.debug is True
     assert settings.sqlite_db_path == "custom.db"
     assert settings.embedding_dimension == 512
-

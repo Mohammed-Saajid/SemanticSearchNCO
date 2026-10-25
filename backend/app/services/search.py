@@ -1,4 +1,5 @@
 from typing import Dict, List, Optional
+
 from app.models.domain import RoleRecord, VectorHit
 from app.models.schemas import (
     RoleDescriptionResponse,
@@ -26,6 +27,7 @@ class SearchService:
         self,
         query: str,
         top_k: int = 10,
+        offset: int = 0,
         bm25_weight: float = 0.4,
         vector_weight: float = 0.6,
     ) -> SearchResponse:
@@ -36,7 +38,7 @@ class SearchService:
         dense_vector = self.embedding_service.embed_dense_query(cleaned_query)
         sparse_vector = self.embedding_service.embed_sparse_query(cleaned_query)
 
-        oversample_limit = max(top_k * 3, 30)
+        oversample_limit = max((top_k + offset) * 3, 30)
         hits = self.vector_repo.search_hybrid(
             dense_vector=dense_vector,
             sparse_vector=sparse_vector,
@@ -51,17 +53,19 @@ class SearchService:
             if role_no not in best_chunks_by_role or hit.score > best_chunks_by_role[role_no].score:
                 best_chunks_by_role[role_no] = hit
 
+        total_roles = len(best_chunks_by_role)
         sorted_hits = sorted(
             best_chunks_by_role.values(),
             key=lambda h: h.score,
             reverse=True,
-        )[:top_k]
+        )
+        paged_hits = sorted_hits[offset : offset + top_k]
 
-        role_numbers = [h.role_number for h in sorted_hits]
+        role_numbers = [h.role_number for h in paged_hits]
         roles_map = self.role_repo.get_roles_batch(role_numbers)
 
         results: List[SearchResultItem] = []
-        for hit in sorted_hits:
+        for hit in paged_hits:
             role_rec = roles_map.get(
                 hit.role_number,
                 RoleRecord(
@@ -98,7 +102,7 @@ class SearchService:
 
         return SearchResponse(
             query=cleaned_query,
-            total=len(results),
+            total=total_roles,
             results=results,
         )
 

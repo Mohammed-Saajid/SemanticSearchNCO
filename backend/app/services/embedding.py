@@ -77,23 +77,3 @@ class FastEmbedService(BaseEmbeddingService):
             values=[float(v) for v in item.values.tolist()],
         )
 
-    def embed_sparse_documents(self, texts: List[str], batch_size: int = 256) -> List[SparseEmbedding]:
-        if not texts:
-            return []
-        embeddings = list(self.sparse_model.embed(texts, batch_size=batch_size))
-        return [
-            SparseEmbedding(
-                indices=item.indices.tolist(),
-                values=[float(v) for v in item.values.tolist()],
-            )
-            for item in embeddings
-        ]
-
-    def embed_sparse_query(self, text: str) -> SparseEmbedding:
-        generator = self.sparse_model.embed([text])
-        item = next(iter(generator))
-        return SparseEmbedding(
-            indices=item.indices.tolist(),
-            values=[float(v) for v in item.values.tolist()],
-        )
-
