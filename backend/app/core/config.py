@@ -36,6 +36,7 @@ class Settings(BaseSettings):
     collection_name: str = "nco_roles"
 
     embedding_model_name: str = "BAAI/bge-small-en-v1.5"
+    sparse_model_name: str = "Qdrant/bm25"
     embedding_dimension: int = 384
 
     chunk_size: int = 250
