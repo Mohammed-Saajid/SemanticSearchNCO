@@ -65,3 +65,4 @@ class HealthResponse(BaseModel):
     version: str
     vector_count: int
     role_count: int
+    qdrant_status: bool

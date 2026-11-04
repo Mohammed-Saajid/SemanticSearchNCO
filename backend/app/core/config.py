@@ -52,6 +52,6 @@ class Settings(BaseSettings):
         return bool(value)
 
 
-@lru_cache
+@lru_cache(maxsize=1)
 def get_settings() -> Settings:
     return Settings()

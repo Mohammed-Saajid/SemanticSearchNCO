@@ -78,6 +78,7 @@ def test_search_response_serialization():
 def test_health_response_model():
     h = HealthResponse(
         status="healthy",
+        qdrant_status=True,
         version="2.0.0",
         vector_count=50,
         role_count=25,

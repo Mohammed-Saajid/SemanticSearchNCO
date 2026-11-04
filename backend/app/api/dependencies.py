@@ -1,4 +1,5 @@
 import os
+import logging
 from functools import lru_cache
 from typing import Optional
 from fastapi import Depends
@@ -12,7 +13,7 @@ from app.services.indexer import IndexingService
 from app.services.search import SearchService
 
 
-@lru_cache()
+@lru_cache(maxsize=1)
 def get_qdrant_client() -> QdrantClient:
     settings = get_settings()
     if settings.qdrant_url:
@@ -25,8 +26,16 @@ def get_qdrant_client() -> QdrantClient:
         return QdrantClient(path=settings.qdrant_path)
     return QdrantClient(location=":memory:")
 
+def check_qdrant_connection() -> bool:
+    try:
+        get_qdrant_client()
+        return True
+    except Exception as e:
+        logging.error(f"Qdrant Connection Check Failed {e}")
+        return False
 
-@lru_cache()
+
+@lru_cache(maxsize=1)
 def get_embedding_service() -> BaseEmbeddingService:
     settings = get_settings()
     return FastEmbedService(
@@ -35,7 +44,7 @@ def get_embedding_service() -> BaseEmbeddingService:
     )
 
 
-@lru_cache()
+@lru_cache(maxsize=1)
 def get_role_repository() -> RoleRepository:
     settings = get_settings()
     dir_path = os.path.dirname(settings.sqlite_db_path)
@@ -44,7 +53,7 @@ def get_role_repository() -> RoleRepository:
     return RoleRepository(db_path=settings.sqlite_db_path)
 
 
-@lru_cache()
+@lru_cache(maxsize=1)
 def get_vector_repository() -> VectorRepository:
     settings = get_settings()
     client = get_qdrant_client()
@@ -56,7 +65,7 @@ def get_vector_repository() -> VectorRepository:
     )
 
 
-@lru_cache()
+@lru_cache(maxsize=1)
 def get_text_chunker() -> TextChunker:
     settings = get_settings()
     return TextChunker(
