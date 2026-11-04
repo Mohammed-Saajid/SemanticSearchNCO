@@ -1,3 +1,4 @@
+import heapq
 from typing import Dict, List, Optional
 
 from app.models.domain import RoleRecord, VectorHit
@@ -54,12 +55,12 @@ class SearchService:
                 best_chunks_by_role[role_no] = hit
 
         total_roles = len(best_chunks_by_role)
-        sorted_hits = sorted(
+        selected_hits = heapq.nlargest(
+            offset + top_k,
             best_chunks_by_role.values(),
             key=lambda h: h.score,
-            reverse=True,
         )
-        paged_hits = sorted_hits[offset : offset + top_k]
+        paged_hits = selected_hits[offset:]
 
         role_numbers = [h.role_number for h in paged_hits]
         roles_map = self.role_repo.get_roles_batch(role_numbers)
