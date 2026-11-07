@@ -1,9 +1,0 @@
-pymupdf
-pdfplumber
-fastapi
-uvicorn[standard]
-chromadb
-numpy
-nltk
-sentence-transformers
-rank-bm25
