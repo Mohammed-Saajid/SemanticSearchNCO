@@ -91,7 +91,7 @@ def test_get_role_detail_rest(
     sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
-    response = test_client.get("/api/v1/roles/1001.0100")
+    response = test_client.get("/roles/1001.0100")
     assert response.status_code == 200
     data = response.json()
     assert data["role_number"] == "1001.0100"
@@ -101,5 +101,5 @@ def test_get_role_detail_rest(
     assert data["group"] == "Architecture"
     assert data["family"] == "Software Architecture"
 
-    missing_resp = test_client.get("/api/v1/roles/missing")
+    missing_resp = test_client.get("/roles/missing")
     assert missing_resp.status_code == 404
