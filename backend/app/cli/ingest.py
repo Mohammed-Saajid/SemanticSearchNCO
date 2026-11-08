@@ -1,5 +1,8 @@
 import argparse
 import sys
+import logging
+from qdrant_client import QdrantClient
+
 from app.core.config import get_settings
 from app.core.logging import setup_logging
 from app.repositories.role_repository import RoleRepository
@@ -7,7 +10,6 @@ from app.repositories.vector_repository import VectorRepository
 from app.services.chunking import TextChunker
 from app.services.embedding import FastEmbedService
 from app.services.indexer import IndexingService
-from qdrant_client import QdrantClient
 
 
 def run_ingest(json_path: str, batch_size: int = 64) -> None:
@@ -74,6 +76,7 @@ def main() -> None:
     try:
         run_ingest(json_path=args.json_path, batch_size=args.batch_size)
     except Exception as exc:
+        logging.getLogger(__name__).exception("Ingestion failed")
         print(f"Error during ingestion: {exc}", file=sys.stderr)
         sys.exit(1)
 

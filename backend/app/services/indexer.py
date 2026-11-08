@@ -1,11 +1,15 @@
 import json
+import logging
 import re
-from typing import Any, Dict, List, Tuple
+from typing import Any
+
 from app.models.domain import RoleChunk, RoleRecord, SparseEmbedding
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
 from app.services.chunking import TextChunker
 from app.services.embedding import BaseEmbeddingService
+
+logger = logging.getLogger(__name__)
 
 
 class IndexingService:
@@ -25,8 +29,8 @@ class IndexingService:
     def _traverse_hierarchy(
         self,
         node: Any,
-        roles: List[RoleRecord],
-        chunks: List[RoleChunk],
+        roles: list[RoleRecord],
+        chunks: list[RoleChunk],
         division: str = "",
         sub_division: str = "",
         group: str = "",
@@ -65,9 +69,9 @@ class IndexingService:
                 elif isinstance(val, dict):
                     self._traverse_hierarchy(val, roles, chunks, division, sub_division, group, family)
 
-    def parse_raw_data(self, raw_data: Any) -> Tuple[List[RoleRecord], List[RoleChunk]]:
-        roles: List[RoleRecord] = []
-        chunks: List[RoleChunk] = []
+    def parse_raw_data(self, raw_data: Any) -> tuple[list[RoleRecord], list[RoleChunk]]:
+        roles: list[RoleRecord] = []
+        chunks: list[RoleChunk] = []
 
         if isinstance(raw_data, list):
             for item in raw_data:
@@ -140,15 +144,17 @@ class IndexingService:
 
         return roles, chunks
 
-    def index_data(self, raw_data: Any, batch_size: int = 64) -> Dict[str, int]:
+    def index_data(self, raw_data: Any, batch_size: int = 64) -> dict[str, int]:
         roles, chunks = self.parse_raw_data(raw_data)
+        logger.info("Parsed input roles=%d chunks=%d", len(roles), len(chunks))
         if not roles:
+            logger.warning("No valid roles found in input; skipping indexing")
             return {"indexed_roles": 0, "indexed_chunks": 0}
 
         self.role_repo.upsert_roles(roles)
 
-        all_dense: List[List[float]] = []
-        all_sparse: List[SparseEmbedding] = []
+        all_dense: list[list[float]] = []
+        all_sparse: list[SparseEmbedding] = []
 
         for i in range(0, len(chunks), batch_size):
             batch_texts = [c.text for c in chunks[i : i + batch_size]]
@@ -156,6 +162,11 @@ class IndexingService:
             sparse_batch = self.embedding_service.embed_sparse_documents(batch_texts)
             all_dense.extend(dense_batch)
             all_sparse.extend(sparse_batch)
+            logger.debug(
+                "Embedded chunk batch start=%d size=%d",
+                i,
+                len(batch_texts),
+            )
 
         self.vector_repo.upsert_chunks(
             chunks=chunks,
@@ -164,12 +175,19 @@ class IndexingService:
             batch_size=batch_size,
         )
 
-        return {
+        stats = {
             "indexed_roles": len(roles),
             "indexed_chunks": len(chunks),
         }
+        logger.info(
+            "Indexing completed indexed_roles=%d indexed_chunks=%d",
+            stats["indexed_roles"],
+            stats["indexed_chunks"],
+        )
+        return stats
 
-    def index_from_file(self, file_path: str, batch_size: int = 64) -> Dict[str, int]:
+    def index_from_file(self, file_path: str, batch_size: int = 64) -> dict[str, int]:
+        logger.info("Loading indexing source path=%s", file_path)
         with open(file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         return self.index_data(data, batch_size=batch_size)
