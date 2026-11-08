@@ -29,25 +29,29 @@ Configuration is managed via environment variables or a `.env` file:
 
 1. Install dependencies:
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 2. Start the API:
 ```bash
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 3. Ingest data:
 ```bash
-python -m app.cli.ingest --json-path backend/data/json/formatted.json
+uv run python -m app.cli.ingest --json-path data/json/formatted.json
 ```
 
 ## Running Tests
 
 Run the test suite with coverage:
 ```bash
-pytest backend/tests -v
+uv run pytest tests -v
 ```
+
+Install `uv` from [astral.sh/uv](https://docs.astral.sh/uv/) and run commands
+from the `backend/` directory. Use `uv sync --group dev` to install test and
+benchmark tooling.
 
 
 ### Storage Options
