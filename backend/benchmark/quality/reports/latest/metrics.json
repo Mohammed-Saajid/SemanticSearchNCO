@@ -1,0 +1,65 @@
+{
+    "overall": {
+        "precision@5": 0.475,
+        "recall@5": 0.5168398268398269,
+        "mrr@10": 0.8604166666666666,
+        "ndcg@5": 0.6315668529333489
+    },
+    "by_category": {
+        "exact_title": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.2,
+                "recall@5": 1.0,
+                "mrr@10": 1.0,
+                "ndcg@5": 1.0
+            }
+        },
+        "partial_title": {
+            "query_count": 7,
+            "metrics": {
+                "precision@5": 0.7142857142857143,
+                "recall@5": 0.5380952380952381,
+                "mrr@10": 0.8571428571428571,
+                "ndcg@5": 0.6151268319202252
+            }
+        },
+        "semantic": {
+            "query_count": 9,
+            "metrics": {
+                "precision@5": 0.4444444444444444,
+                "recall@5": 0.48395061728395056,
+                "mrr@10": 0.7962962962962963,
+                "ndcg@5": 0.5506369768849498
+            }
+        },
+        "task_based": {
+            "query_count": 9,
+            "metrics": {
+                "precision@5": 0.4222222222222222,
+                "recall@5": 0.3245791245791246,
+                "mrr@10": 0.8611111111111112,
+                "ndcg@5": 0.4814410610549939
+            }
+        },
+        "skills_based": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.48,
+                "recall@5": 0.4255555555555556,
+                "mrr@10": 0.7,
+                "ndcg@5": 0.5804920568811789
+            }
+        },
+        "synonyms": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.56,
+                "recall@5": 0.5004761904761905,
+                "mrr@10": 1.0,
+                "ndcg@5": 0.7531247336053989
+            }
+        }
+    },
+    "query_count": 40
+}

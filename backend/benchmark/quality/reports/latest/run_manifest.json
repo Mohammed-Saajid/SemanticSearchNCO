@@ -1,0 +1,16 @@
+{
+    "artifacts": {
+        "metrics": "metrics.json",
+        "query_analysis": "query_analysis.csv",
+        "run": "run.json"
+    },
+    "dataset": "data/hybrid_search_eval.json",
+    "dataset_sha256": "fa9578ed08734e8dfc10b1d87eb186b289765b38ff2d340b558015086abe0ecb",
+    "git_revision": "ba3532ac15b0d6011ac733a07402d809f4d222db",
+    "search": {
+        "base_url": "http://127.0.0.1:8000",
+        "endpoint": "/search",
+        "timeout_seconds": 30.0,
+        "top_k": 10
+    }
+}

@@ -1,10 +1,11 @@
-import os
 import logging
+import os
 from functools import lru_cache
-from typing import Optional
+
 from fastapi import Depends
 from qdrant_client import QdrantClient
-from app.core.config import Settings, get_settings
+
+from app.core.config import get_settings
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
 from app.services.chunking import TextChunker
@@ -12,32 +13,42 @@ from app.services.embedding import BaseEmbeddingService, FastEmbedService
 from app.services.indexer import IndexingService
 from app.services.search import SearchService
 
+logger = logging.getLogger(__name__)
+
 
 @lru_cache(maxsize=1)
 def get_qdrant_client() -> QdrantClient:
     settings = get_settings()
     if settings.qdrant_url:
+        logger.info("Initializing remote Qdrant client")
         return QdrantClient(
             url=settings.qdrant_url,
             api_key=settings.qdrant_api_key,
         )
     if settings.qdrant_path:
         os.makedirs(settings.qdrant_path, exist_ok=True)
+        logger.info("Initializing local Qdrant client path=%s", settings.qdrant_path)
         return QdrantClient(path=settings.qdrant_path)
+    logger.warning("Initializing in-memory Qdrant client; indexed data will not persist")
     return QdrantClient(location=":memory:")
 
 def check_qdrant_connection() -> bool:
     try:
         get_qdrant_client()
         return True
-    except Exception as e:
-        logging.error(f"Qdrant Connection Check Failed {e}")
+    except Exception:
+        logger.exception("Qdrant connection check failed")
         return False
 
 
 @lru_cache(maxsize=1)
 def get_embedding_service() -> BaseEmbeddingService:
     settings = get_settings()
+    logger.info(
+        "Initializing embedding services dense_model=%s sparse_model=%s",
+        settings.embedding_model_name,
+        settings.sparse_model_name,
+    )
     return FastEmbedService(
         dense_model_name=settings.embedding_model_name,
         sparse_model_name=settings.sparse_model_name,
@@ -50,6 +61,7 @@ def get_role_repository() -> RoleRepository:
     dir_path = os.path.dirname(settings.sqlite_db_path)
     if dir_path:
         os.makedirs(dir_path, exist_ok=True)
+    logger.info("Initializing role repository path=%s", settings.sqlite_db_path)
     return RoleRepository(db_path=settings.sqlite_db_path)
 
 
@@ -58,6 +70,7 @@ def get_vector_repository() -> VectorRepository:
     settings = get_settings()
     client = get_qdrant_client()
     embedding_service = get_embedding_service()
+    logger.info("Initializing vector repository collection=%s", settings.collection_name)
     return VectorRepository(
         client=client,
         collection_name=settings.collection_name,

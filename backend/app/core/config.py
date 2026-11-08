@@ -29,8 +29,8 @@ class Settings(BaseSettings):
         ]
     )
 
-    sqlite_db_path: str = "backend/db/roles.db"
-    qdrant_path: Optional[str] = "backend/db/qdrant_storage"
+    sqlite_db_path: str = "db/roles.db"
+    qdrant_path: Optional[str] = "db/qdrant_storage"
     qdrant_url: Optional[str] = None
     qdrant_api_key: Optional[str] = None
     collection_name: str = "nco_roles"

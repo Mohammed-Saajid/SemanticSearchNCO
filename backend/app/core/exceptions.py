@@ -1,6 +1,10 @@
-from typing import Any, Dict, Optional
+import logging
+from typing import Any
+
 from fastapi import Request, status
 from fastapi.responses import JSONResponse
+
+logger = logging.getLogger(__name__)
 
 
 class AppException(Exception):
@@ -8,7 +12,7 @@ class AppException(Exception):
         self,
         message: str,
         status_code: int = status.HTTP_500_INTERNAL_SERVER_ERROR,
-        details: Optional[Dict[str, Any]] = None,
+        details: dict[str, Any] | None = None,
     ):
         super().__init__(message)
         self.message = message
@@ -26,7 +30,7 @@ class EntityNotFoundException(AppException):
 
 
 class IndexingException(AppException):
-    def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
+    def __init__(self, message: str, details: dict[str, Any] | None = None):
         super().__init__(
             message=message,
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -35,7 +39,7 @@ class IndexingException(AppException):
 
 
 class SearchException(AppException):
-    def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
+    def __init__(self, message: str, details: dict[str, Any] | None = None):
         super().__init__(
             message=message,
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -44,6 +48,13 @@ class SearchException(AppException):
 
 
 async def app_exception_handler(request: Request, exc: AppException) -> JSONResponse:
+    logger.warning(
+        "Application error method=%s path=%s status=%d error=%s",
+        request.method,
+        request.url.path,
+        exc.status_code,
+        exc.message,
+    )
     return JSONResponse(
         status_code=exc.status_code,
         content={
@@ -56,6 +67,11 @@ async def app_exception_handler(request: Request, exc: AppException) -> JSONResp
 
 
 async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    logger.exception(
+        "Unhandled application error method=%s path=%s",
+        request.method,
+        request.url.path,
+    )
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
@@ -65,4 +81,3 @@ async def global_exception_handler(request: Request, exc: Exception) -> JSONResp
             "path": request.url.path,
         },
     )
-

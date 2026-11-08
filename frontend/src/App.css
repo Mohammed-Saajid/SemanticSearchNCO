@@ -605,8 +605,8 @@ body.dark-mode {
   }
 }
 
-/* Weight Controls */
-.weight-controls {
+/* Search options */
+.search-options {
   display: flex;
   gap: 24px;
   justify-content: center;
@@ -640,37 +640,6 @@ body.dark-mode {
 
 .dark-mode .weight-label {
   color: #aaa;
-}
-
-.weight-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 140px;
-  height: 4px;
-  border-radius: 2px;
-  background: #ddd;
-  outline: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.weight-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #191815;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.dark-mode .weight-slider {
-  background: #444;
-}
-
-.dark-mode .weight-slider::-webkit-slider-thumb {
-  background: #FEFAFA;
 }
 
 /* Role Details Grid */
@@ -791,7 +760,7 @@ body { background: #f4f7fb; }
   .result-card { padding: 20px; }
   .result-header { flex-direction: column; }
   .role-number { align-self: flex-start; }
-  .weight-controls { gap: 14px; }
+  .search-options { gap: 14px; }
 }
 
 .debug-info summary {

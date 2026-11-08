@@ -1,5 +1,6 @@
+import logging
 import uuid
-from typing import List, Optional
+
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
     Distance,
@@ -11,7 +12,10 @@ from qdrant_client.models import (
     SparseVectorParams,
     VectorParams,
 )
+
 from app.models.domain import RoleChunk, SparseEmbedding, VectorHit
+
+logger = logging.getLogger(__name__)
 
 
 class VectorRepository:
@@ -36,10 +40,19 @@ class VectorRepository:
             vectors = info.config.params.vectors
             sparse = info.config.params.sparse_vectors
             if not isinstance(vectors, dict) or "dense" not in vectors or not sparse:
+                logger.warning(
+                    "Replacing incompatible Qdrant collection collection=%s",
+                    self.collection_name,
+                )
                 self.client.delete_collection(self.collection_name)
                 needs_creation = True
 
         if needs_creation:
+            logger.info(
+                "Creating Qdrant collection collection=%s vector_size=%d",
+                self.collection_name,
+                self.vector_size,
+            )
             self.client.create_collection(
                 collection_name=self.collection_name,
                 vectors_config={
@@ -58,14 +71,15 @@ class VectorRepository:
 
     def upsert_chunks(
         self,
-        chunks: List[RoleChunk],
-        dense_embeddings: List[List[float]],
-        sparse_embeddings: List[SparseEmbedding],
+        chunks: list[RoleChunk],
+        dense_embeddings: list[list[float]],
+        sparse_embeddings: list[SparseEmbedding],
         batch_size: int = 128,
     ) -> int:
         if not (len(chunks) == len(dense_embeddings) == len(sparse_embeddings)):
             raise ValueError("Chunks, dense embeddings, and sparse embeddings counts must match")
         if not chunks:
+            logger.debug("Skipping empty vector upsert collection=%s", self.collection_name)
             return 0
 
         total_upserted = 0
@@ -74,7 +88,7 @@ class VectorRepository:
             dense_batch = dense_embeddings[i : i + batch_size]
             sparse_batch = sparse_embeddings[i : i + batch_size]
 
-            points: List[PointStruct] = []
+            points: list[PointStruct] = []
             for chunk, dense_vec, sparse_vec in zip(chunk_batch, dense_batch, sparse_batch):
                 points.append(
                     PointStruct(
@@ -101,15 +115,26 @@ class VectorRepository:
                 wait=True,
             )
             total_upserted += len(points)
+            logger.debug(
+                "Upserted vector batch collection=%s batch_size=%d total_upserted=%d",
+                self.collection_name,
+                len(points),
+                total_upserted,
+            )
 
+        logger.info(
+            "Vector upsert completed collection=%s points=%d",
+            self.collection_name,
+            total_upserted,
+        )
         return total_upserted
 
     def search_hybrid(
         self,
-        dense_vector: List[float],
+        dense_vector: list[float],
         sparse_vector: SparseEmbedding,
         limit: int = 10,
-    ) -> List[VectorHit]:
+    ) -> list[VectorHit]:
         sparse_q = SparseVector(
             indices=sparse_vector.indices,
             values=sparse_vector.values,
@@ -133,8 +158,14 @@ class VectorRepository:
             limit=limit,
             with_payload=True,
         )
+        logger.debug(
+            "Qdrant hybrid query completed collection=%s limit=%d hits=%d",
+            self.collection_name,
+            limit,
+            len(response.points),
+        )
 
-        hits: List[VectorHit] = []
+        hits: list[VectorHit] = []
         for point in response.points:
             payload = point.payload or {}
             hits.append(
@@ -153,4 +184,8 @@ class VectorRepository:
             info = self.client.get_collection(self.collection_name)
             return info.points_count or 0
         except Exception:
+            logger.exception(
+                "Unable to count Qdrant collection collection=%s",
+                self.collection_name,
+            )
             return 0

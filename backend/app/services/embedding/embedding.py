@@ -1,7 +1,11 @@
-from typing import List
+import logging
+
 from fastembed import SparseTextEmbedding, TextEmbedding
+
 from app.models.domain import SparseEmbedding
 from app.services.embedding.base import BaseEmbeddingService
+
+logger = logging.getLogger(__name__)
 
 
 
@@ -19,23 +23,29 @@ class FastEmbedService(BaseEmbeddingService):
 
         probe_vector = next(iter(self.dense_model.embed(["probe"])))
         self._dimension = len(probe_vector)
+        logger.info(
+            "Embedding models initialized dense_model=%s sparse_model=%s dimension=%d",
+            dense_model_name,
+            sparse_model_name,
+            self._dimension,
+        )
 
     @property
     def dimension(self) -> int:
         return self._dimension
 
-    def embed_dense_documents(self, texts: List[str], batch_size: int = 256) -> List[List[float]]:
+    def embed_dense_documents(self, texts: list[str], batch_size: int = 256) -> list[list[float]]:
         if not texts:
             return []
         embeddings = list(self.dense_model.embed(texts, batch_size=batch_size))
         return [vec.tolist() for vec in embeddings]
 
-    def embed_dense_query(self, text: str) -> List[float]:
+    def embed_dense_query(self, text: str) -> list[float]:
         generator = self.dense_model.embed([text])
         vector = next(iter(generator))
         return vector.tolist()
 
-    def embed_sparse_documents(self, texts: List[str], batch_size: int = 256) -> List[SparseEmbedding]:
+    def embed_sparse_documents(self, texts: list[str], batch_size: int = 256) -> list[SparseEmbedding]:
         if not texts:
             return []
         embeddings = list(self.sparse_model.embed(texts, batch_size=batch_size))
@@ -54,4 +64,3 @@ class FastEmbedService(BaseEmbeddingService):
             indices=item.indices.tolist(),
             values=[float(v) for v in item.values.tolist()],
         )
-

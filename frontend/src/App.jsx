@@ -14,8 +14,6 @@ function App() {
   const [topK, setTopK] = useState(10);
   const [hasSearched, setHasSearched] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [bm25Weight, setBm25Weight] = useState(0.4);
-  const [vectorWeight, setVectorWeight] = useState(0.6);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('darkMode');
@@ -45,8 +43,6 @@ function App() {
         query: searchQuery,
         top_k: topK,
         offset: currentOffset,
-        bm25_weight: bm25Weight,
-        vector_weight: vectorWeight,
       });
       setSearchResults(response.data.results || []);
       setTotalCount(response.data.total ?? 0);
@@ -99,10 +95,6 @@ function App() {
           isLoading={isLoading}
           topK={topK}
           setTopK={setTopK}
-          bm25Weight={bm25Weight}
-          setBm25Weight={setBm25Weight}
-          vectorWeight={vectorWeight}
-          setVectorWeight={setVectorWeight}
         />
       </div>
 

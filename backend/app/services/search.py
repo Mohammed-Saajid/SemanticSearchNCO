@@ -1,5 +1,5 @@
 import heapq
-from typing import Dict, List, Optional
+import logging
 
 from app.models.domain import RoleRecord, VectorHit
 from app.models.schemas import (
@@ -11,6 +11,8 @@ from app.models.schemas import (
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
 from app.services.embedding import BaseEmbeddingService
+
+logger = logging.getLogger(__name__)
 
 
 class SearchService:
@@ -29,13 +31,13 @@ class SearchService:
         query: str,
         top_k: int = 10,
         offset: int = 0,
-        bm25_weight: float = 0.4,
-        vector_weight: float = 0.6,
     ) -> SearchResponse:
         cleaned_query = query.strip()
         if not cleaned_query:
+            logger.warning("Search skipped because query was empty")
             return SearchResponse(query=query, total=0, results=[])
 
+        logger.debug("Starting hybrid search top_k=%d offset=%d", top_k, offset)
         dense_vector = self.embedding_service.embed_dense_query(cleaned_query)
         sparse_vector = self.embedding_service.embed_sparse_query(cleaned_query)
 
@@ -45,8 +47,9 @@ class SearchService:
             sparse_vector=sparse_vector,
             limit=oversample_limit,
         )
+        logger.debug("Hybrid search returned chunk_hits=%d", len(hits))
 
-        best_chunks_by_role: Dict[str, VectorHit] = {}
+        best_chunks_by_role: dict[str, VectorHit] = {}
         for hit in hits:
             role_no = hit.role_number
             if not role_no:
@@ -61,12 +64,19 @@ class SearchService:
             key=lambda h: h.score,
         )
         paged_hits = selected_hits[offset:]
+        logger.info(
+            "Search completed candidate_roles=%d returned_roles=%d top_k=%d offset=%d",
+            total_roles,
+            len(paged_hits),
+            top_k,
+            offset,
+        )
 
         role_numbers = [h.role_number for h in paged_hits]
         roles_map = self.role_repo.get_roles_batch(role_numbers)
 
-        results: List[SearchResultItem] = []
-        for hit in paged_hits:
+        results: list[SearchResultItem] = []
+        for index, hit in enumerate(paged_hits):
             role_rec = roles_map.get(
                 hit.role_number,
                 RoleRecord(
@@ -82,6 +92,7 @@ class SearchService:
             )
             results.append(
                 SearchResultItem(
+                    rank=offset + index + 1,
                     id=hit.chunk_id,
                     role_number=hit.role_number,
                     role_title=role_rec.title,
@@ -110,6 +121,7 @@ class SearchService:
     def get_role_description(self, role_number: str) -> RoleDescriptionResponse:
         record = self.role_repo.get_by_role_number(role_number.strip())
         if record is None:
+            logger.info("Role description not found role_number=%s", role_number)
             return RoleDescriptionResponse(
                 description="Role not found",
                 role_number=role_number,
@@ -121,9 +133,10 @@ class SearchService:
             title=record.title,
         )
 
-    def get_role_detail(self, role_number: str) -> Optional[RoleDetailResponse]:
+    def get_role_detail(self, role_number: str) -> RoleDetailResponse | None:
         record = self.role_repo.get_by_role_number(role_number.strip())
         if record is None:
+            logger.info("Role detail not found role_number=%s", role_number)
             return None
         return RoleDetailResponse(
             role_number=record.role_number,

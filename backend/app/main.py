@@ -1,12 +1,21 @@
+import logging
 from contextlib import asynccontextmanager
-from typing import Optional
-from fastapi import FastAPI
+from time import perf_counter
+
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+
 from app.api.routes.health import router as health_router
 from app.api.routes.search import router as search_router
 from app.core.config import Settings, get_settings
-from app.core.exceptions import AppException, app_exception_handler, global_exception_handler
+from app.core.exceptions import (
+    AppException,
+    app_exception_handler,
+    global_exception_handler,
+)
 from app.core.logging import setup_logging
+
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
@@ -18,7 +27,7 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down %s", settings.app_name)
 
 
-def create_app(settings: Optional[Settings] = None) -> FastAPI:
+def create_app(settings: Settings | None = None) -> FastAPI:
     current_settings = settings or get_settings()
 
     app = FastAPI(
