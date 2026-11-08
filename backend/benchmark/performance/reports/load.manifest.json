@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-11-08T13:45:03.332051+00:00",
+  "completed_at": "2026-11-08T13:46:33.930454+00:00",
+  "git_revision": "0e0e4c86df65bfd54de6b05f0880f9227e20df55",
+  "python": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+  "platform": "Linux-6.18.59-1-lts-x86_64-with-glibc2.44",
+  "dataset": "/home/saajid/Projects/semantic_search/backend/benchmark/data/hybrid_search_eval.json",
+  "dataset_query_sha256": "e4297954ce452a7defcc31eed861e0857f3c5363455c0946b103898832e02994",
+  "base_url": "http://127.0.0.1:8000",
+  "users": 8,
+  "spawn_rate": 2.0,
+  "run_time": "90s",
+  "artifacts": {
+    "csv_prefix": "benchmark/performance/reports/load",
+    "html": "benchmark/performance/reports/load.html"
+  },
+  "command": [
+    "/home/saajid/Projects/semantic_search/backend/.venv/bin/python3",
+    "-m",
+    "locust",
+    "-f",
+    "/home/saajid/Projects/semantic_search/backend/benchmark/performance/locustfile.py",
+    "--headless",
+    "--host",
+    "http://127.0.0.1:8000",
+    "--users",
+    "8",
+    "--spawn-rate",
+    "2.0",
+    "--run-time",
+    "90s",
+    "--csv",
+    "benchmark/performance/reports/load",
+    "--html",
+    "benchmark/performance/reports/load.html",
+    "--only-summary"
+  ],
+  "exit_code": 0
+}
