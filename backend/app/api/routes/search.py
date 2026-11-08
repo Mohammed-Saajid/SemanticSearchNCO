@@ -14,7 +14,6 @@ router = APIRouter()
 
 
 @router.post("/search", response_model=SearchResponse, tags=["Search"])
-@router.post("/api/v1/search", response_model=SearchResponse, tags=["Search"])
 def search(
     request: SearchRequest,
     service: SearchService = Depends(get_search_service),
@@ -44,7 +43,7 @@ def get_role_description_post(
     return service.get_role_description(role_number=request.role_number)
 
 
-@router.get("/api/v1/roles/{role_number}", response_model=RoleDetailResponse, tags=["Roles"])
+@router.get("/roles/{role_number}", response_model=RoleDetailResponse, tags=["Roles"])
 def get_role_detail(
     role_number: str,
     service: SearchService = Depends(get_search_service),
