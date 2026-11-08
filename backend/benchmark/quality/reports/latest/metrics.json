@@ -1,0 +1,74 @@
+{
+    "overall": {
+        "precision@5": 0.47000000000000003,
+        "recall@5": 0.5027922077922078,
+        "mrr@10": 0.8256944444444445,
+        "ndcg@5": 0.6094182871421308
+    },
+    "by_category": {
+        "exact_title": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.2,
+                "recall@5": 1.0,
+                "mrr@10": 1.0,
+                "ndcg@5": 1.0
+            }
+        },
+        "partial_title": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.8400000000000001,
+                "recall@5": 0.5933333333333334,
+                "mrr@10": 1.0,
+                "ndcg@5": 0.665839736407099
+            }
+        },
+        "semantic": {
+            "query_count": 8,
+            "metrics": {
+                "precision@5": 0.5,
+                "recall@5": 0.5444444444444444,
+                "mrr@10": 0.875,
+                "ndcg@5": 0.6194665989955686
+            }
+        },
+        "task_based": {
+            "query_count": 8,
+            "metrics": {
+                "precision@5": 0.45,
+                "recall@5": 0.3234848484848485,
+                "mrr@10": 0.84375,
+                "ndcg@5": 0.4738784275018647
+            }
+        },
+        "skills_based": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.48,
+                "recall@5": 0.4255555555555556,
+                "mrr@10": 0.7,
+                "ndcg@5": 0.5804920568811789
+            }
+        },
+        "synonyms": {
+            "query_count": 5,
+            "metrics": {
+                "precision@5": 0.56,
+                "recall@5": 0.5004761904761905,
+                "mrr@10": 1.0,
+                "ndcg@5": 0.7531247336053989
+            }
+        },
+        "ambiguous": {
+            "query_count": 4,
+            "metrics": {
+                "precision@5": 0.2,
+                "recall@5": 0.14285714285714285,
+                "mrr@10": 0.19444444444444442,
+                "ndcg@5": 0.15817215980934501
+            }
+        }
+    },
+    "query_count": 40
+}
