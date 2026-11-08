@@ -34,7 +34,7 @@ uv sync
 
 2. Start the API:
 ```bash
-uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 3. Ingest data:
