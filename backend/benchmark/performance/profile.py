@@ -31,7 +31,7 @@ def main() -> None:
         "--rate",
         type=int,
         default=50,
-        help="Sampling frequency in Hz; 50 is suitable for laptop profiling.",
+        help="Sampling frequency in Hz.",
     )
     parser.add_argument("--output", type=Path, default=Path("reports/profile.svg"))
     parser.add_argument(
