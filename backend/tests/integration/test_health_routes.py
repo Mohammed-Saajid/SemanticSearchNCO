@@ -9,4 +9,3 @@ def test_health_endpoint(test_client: TestClient):
     assert "version" in data
     assert "vector_count" in data
     assert "role_count" in data
-

@@ -1,5 +1,5 @@
 from functools import lru_cache
-from typing import List, Optional
+
 from pydantic import AliasChoices, Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -16,10 +16,11 @@ class Settings(BaseSettings):
     debug: bool = False
     environment: str = "development"
 
-    host: str = "0.0.0.0"
+    # Required for container and LAN access; deployments may override HOST.
+    host: str = "0.0.0.0"  # nosec B104
     port: int = Field(default=8000, validation_alias=AliasChoices("PORT", "APP_PORT"))
 
-    cors_origins: List[str] = Field(
+    cors_origins: list[str] = Field(
         default_factory=lambda: [
             "http://localhost:5173",
             "http://127.0.0.1:5173",
@@ -30,9 +31,9 @@ class Settings(BaseSettings):
     )
 
     sqlite_db_path: str = "db/roles.db"
-    qdrant_path: Optional[str] = "db/qdrant_storage"
-    qdrant_url: Optional[str] = None
-    qdrant_api_key: Optional[str] = None
+    qdrant_path: str | None = "db/qdrant_storage"
+    qdrant_url: str | None = None
+    qdrant_api_key: str | None = None
     collection_name: str = "nco_roles"
 
     embedding_model_name: str = "BAAI/bge-small-en-v1.5"

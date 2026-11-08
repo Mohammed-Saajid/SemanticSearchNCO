@@ -5,8 +5,8 @@ from fastembed import SparseTextEmbedding, TextEmbedding
 from app.models.domain import SparseEmbedding
 from app.services.embedding.base import BaseEmbeddingService
 
-logger = logging.getLogger(__name__)
 
+logger = logging.getLogger(__name__)
 
 
 class FastEmbedService(BaseEmbeddingService):

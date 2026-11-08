@@ -15,6 +15,7 @@ from qdrant_client.models import (
 
 from app.models.domain import RoleChunk, SparseEmbedding, VectorHit
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -61,9 +62,7 @@ class VectorRepository:
                         distance=Distance.COSINE,
                     )
                 },
-                sparse_vectors_config={
-                    "sparse": SparseVectorParams()
-                },
+                sparse_vectors_config={"sparse": SparseVectorParams()},
             )
 
     def _to_uuid(self, identifier: str) -> str:
@@ -89,7 +88,7 @@ class VectorRepository:
             sparse_batch = sparse_embeddings[i : i + batch_size]
 
             points: list[PointStruct] = []
-            for chunk, dense_vec, sparse_vec in zip(chunk_batch, dense_batch, sparse_batch):
+            for chunk, dense_vec, sparse_vec in zip(chunk_batch, dense_batch, sparse_batch, strict=False):
                 points.append(
                     PointStruct(
                         id=self._to_uuid(chunk.chunk_id),

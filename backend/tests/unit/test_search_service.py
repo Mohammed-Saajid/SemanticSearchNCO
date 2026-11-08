@@ -1,4 +1,3 @@
-from typing import List
 from app.models.domain import RoleChunk, RoleRecord, SparseEmbedding
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
@@ -15,7 +14,7 @@ def test_search_deduplication_and_enrichment(
     search_service: SearchService,
     vector_repository: VectorRepository,
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
 
@@ -53,7 +52,7 @@ def test_search_deduplication_and_enrichment(
 def test_get_role_description_found(
     search_service: SearchService,
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
     resp = search_service.get_role_description("1001.0100")
@@ -71,7 +70,7 @@ def test_get_role_description_not_found(search_service: SearchService):
 def test_get_role_detail(
     search_service: SearchService,
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
     detail = search_service.get_role_detail("1001.0200")

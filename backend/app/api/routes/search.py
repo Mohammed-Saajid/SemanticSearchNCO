@@ -12,6 +12,7 @@ from app.models.schemas import (
 )
 from app.services.search import SearchService
 
+
 router = APIRouter()
 logger = logging.getLogger(__name__)
 

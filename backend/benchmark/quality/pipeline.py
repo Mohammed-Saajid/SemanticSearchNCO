@@ -8,6 +8,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -21,11 +22,13 @@ def _search(
     top_k: int,
     timeout: float,
 ) -> list[dict[str, Any]]:
-    payload = json.dumps({
-        "query": query,
-        "top_k": top_k,
-        "offset": 0,
-    }).encode("utf-8")
+    payload = json.dumps(
+        {
+            "query": query,
+            "top_k": top_k,
+            "offset": 0,
+        }
+    ).encode("utf-8")
     request = urllib.request.Request(
         f"{base_url.rstrip('/')}/search",
         data=payload,
@@ -46,19 +49,13 @@ def _search(
     run_results = []
     for result in results:
         if not isinstance(result, dict):
-            raise TypeError(
-                f"Search response for query {query!r} contains an invalid result."
-            )
+            raise TypeError(f"Search response for query {query!r} contains an invalid result.")
         role_number = result.get("role_number")
         score = result.get("combined_score", result.get("score"))
         if not isinstance(role_number, str) or not role_number:
-            raise ValueError(
-                f"Search response for query {query!r} has an invalid role number."
-            )
+            raise ValueError(f"Search response for query {query!r} has an invalid role number.")
         if isinstance(score, bool) or not isinstance(score, (int, float)):
-            raise TypeError(
-                f"Search response for query {query!r} has an invalid score."
-            )
+            raise TypeError(f"Search response for query {query!r} has an invalid score.")
         run_results.append({"role_number": role_number, "score": float(score)})
     return run_results
 
@@ -85,9 +82,7 @@ def _check_api_health(base_url: str, timeout: float) -> None:
             "then rerun the pipeline."
         )
     if health.get("qdrant_status") is not True:
-        raise RuntimeError(
-            "Search index is unavailable: /health reports qdrant_status=false."
-        )
+        raise RuntimeError("Search index is unavailable: /health reports qdrant_status=false.")
 
 
 def collect_run(
@@ -137,29 +132,29 @@ def run_pipeline(
     summary, per_query = evaluate(query_map, run_map)
     save_reports(output_dir, summary, per_query)
 
-    write_json(output_dir / "run_manifest.json", {
-        "dataset": str(dataset_path),
-        "dataset_sha256": dataset_digest(dataset_path),
-        "git_revision": git_revision(),
-        "search": {
-            "base_url": base_url.rstrip("/"),
-            "endpoint": "/search",
-            "top_k": top_k,
-            "timeout_seconds": timeout,
+    write_json(
+        output_dir / "run_manifest.json",
+        {
+            "dataset": str(dataset_path),
+            "dataset_sha256": dataset_digest(dataset_path),
+            "git_revision": git_revision(),
+            "search": {
+                "base_url": base_url.rstrip("/"),
+                "endpoint": "/search",
+                "top_k": top_k,
+                "timeout_seconds": timeout,
+            },
+            "artifacts": {
+                "run": "run.json",
+                "metrics": "metrics.json",
+                "query_analysis": "query_analysis.csv",
+            },
         },
-        "artifacts": {
-            "run": "run.json",
-            "metrics": "metrics.json",
-            "query_analysis": "query_analysis.csv",
-        },
-    })
-    print(f"Run saved to: {run_path}")
+    )
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Collect a search run and evaluate it reproducibly."
-    )
+    parser = argparse.ArgumentParser(description="Collect a search run and evaluate it reproducibly.")
     parser.add_argument("--dataset", type=Path, required=True)
     parser.add_argument("--base-url", required=True, help="Base URL of the running search API.")
     parser.add_argument("--output", type=Path, default=Path("reports/latest"))
@@ -180,7 +175,6 @@ def main() -> None:
             args.timeout,
         )
     except (OSError, TypeError, ValueError, RuntimeError, KeyError) as error:
-        print(f"Quality pipeline failed: {error}", file=sys.stderr)
         raise SystemExit(1) from error
 
 

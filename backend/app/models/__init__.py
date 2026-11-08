@@ -9,16 +9,17 @@ from app.models.schemas import (
     SearchResultItem,
 )
 
+
 __all__ = [
-    "RoleRecord",
+    "HealthResponse",
     "RoleChunk",
-    "SparseEmbedding",
-    "VectorHit",
-    "SearchRequest",
-    "SearchResultItem",
-    "SearchResponse",
-    "RoleQueryRequest",
     "RoleDescriptionResponse",
     "RoleDetailResponse",
-    "HealthResponse",
+    "RoleQueryRequest",
+    "RoleRecord",
+    "SearchRequest",
+    "SearchResponse",
+    "SearchResultItem",
+    "SparseEmbedding",
+    "VectorHit",
 ]

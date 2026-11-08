@@ -1,4 +1,5 @@
 import pytest
+
 from app.services.chunking import TextChunker
 
 
@@ -57,4 +58,3 @@ def test_chunk_role():
     assert chunks[1].chunk_id == "9999.0100_chunk1"
     assert chunks[1].chunk_index == 1
     assert chunks[1].text == "c d e"
-

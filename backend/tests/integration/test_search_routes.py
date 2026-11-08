@@ -1,16 +1,14 @@
-from typing import List
 from fastapi.testclient import TestClient
+
 from app.models.domain import RoleRecord
 from app.repositories.role_repository import RoleRepository
-from app.repositories.vector_repository import VectorRepository
-from app.services.chunking import TextChunker
 from app.services.indexer import IndexingService
 
 
 def test_search_endpoint_success(
     test_client: TestClient,
     indexing_service: IndexingService,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     indexing_service.role_repo.upsert_roles(sample_roles)
     raw_data = [
@@ -63,7 +61,7 @@ def test_search_endpoint_validation_error(test_client: TestClient):
 def test_get_role_description_query_param(
     test_client: TestClient,
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
     response = test_client.get("/getroledescription?role_number=1001.0100")
@@ -77,7 +75,7 @@ def test_get_role_description_query_param(
 def test_get_role_description_post_body(
     test_client: TestClient,
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
     response = test_client.post("/getroledescription", json={"role_number": "1001.0200"})
@@ -90,7 +88,7 @@ def test_get_role_description_post_body(
 def test_get_role_detail_rest(
     test_client: TestClient,
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
     response = test_client.get("/api/v1/roles/1001.0100")

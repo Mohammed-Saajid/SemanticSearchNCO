@@ -1,11 +1,10 @@
-from typing import List
 from app.models.domain import RoleRecord
 from app.repositories.role_repository import RoleRepository
 
 
 def test_upsert_and_get_by_role_number(
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     assert role_repository.count() == 0
 
@@ -40,7 +39,7 @@ def test_upsert_overwrite(role_repository: RoleRepository):
 
 def test_get_titles_batch(
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
 
@@ -53,7 +52,7 @@ def test_get_titles_batch(
 
 def test_get_roles_batch(
     role_repository: RoleRepository,
-    sample_roles: List[RoleRecord],
+    sample_roles: list[RoleRecord],
 ):
     role_repository.upsert_roles(sample_roles)
 

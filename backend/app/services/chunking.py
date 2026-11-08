@@ -1,5 +1,5 @@
 import re
-from typing import List
+
 from app.models.domain import RoleChunk
 
 
@@ -16,10 +16,10 @@ class TextChunker:
         self.chunk_overlap = chunk_overlap
         self._word_pattern = re.compile(r"\S+")
 
-    def split_into_words(self, text: str) -> List[str]:
+    def split_into_words(self, text: str) -> list[str]:
         return self._word_pattern.findall(text)
 
-    def chunk_text(self, text: str) -> List[str]:
+    def chunk_text(self, text: str) -> list[str]:
         words = self.split_into_words(text)
         if not words:
             return []
@@ -27,7 +27,7 @@ class TextChunker:
         if len(words) <= self.chunk_size:
             return [" ".join(words)]
 
-        chunks: List[str] = []
+        chunks: list[str] = []
         step = self.chunk_size - self.chunk_overlap
         start = 0
         total_words = len(words)
@@ -42,7 +42,7 @@ class TextChunker:
 
         return chunks
 
-    def chunk_role(self, role_number: str, description: str) -> List[RoleChunk]:
+    def chunk_role(self, role_number: str, description: str) -> list[RoleChunk]:
         raw_chunks = self.chunk_text(description)
         return [
             RoleChunk(
@@ -53,4 +53,3 @@ class TextChunker:
             )
             for idx, chunk_text in enumerate(raw_chunks)
         ]
-

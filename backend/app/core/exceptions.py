@@ -4,6 +4,7 @@ from typing import Any
 from fastapi import Request, status
 from fastapi.responses import JSONResponse
 
+
 logger = logging.getLogger(__name__)
 
 

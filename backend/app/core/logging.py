@@ -24,4 +24,3 @@ def setup_logging(debug: bool = False) -> logging.Logger:
     logging.getLogger("onnxruntime").setLevel(logging.WARNING)
 
     return logging.getLogger("semantic_search")
-

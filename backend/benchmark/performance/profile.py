@@ -24,15 +24,9 @@ def _git_revision() -> str | None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Capture a low-overhead py-spy profile from a running API process."
-    )
-    parser.add_argument(
-        "--pid", type=int, required=True, help="PID of the API process."
-    )
-    parser.add_argument(
-        "--duration", type=int, default=30, help="Capture duration in seconds."
-    )
+    parser = argparse.ArgumentParser(description="Capture a low-overhead py-spy profile from a running API process.")
+    parser.add_argument("--pid", type=int, required=True, help="PID of the API process.")
+    parser.add_argument("--duration", type=int, default=30, help="Capture duration in seconds.")
     parser.add_argument(
         "--rate",
         type=int,
@@ -57,10 +51,7 @@ def main() -> None:
 
     py_spy = shutil.which("py-spy")
     if py_spy is None:
-        raise SystemExit(
-            "py-spy is required. Install benchmark dependencies with: "
-            "uv sync --group dev"
-        )
+        raise SystemExit("py-spy is required. Install benchmark dependencies with: uv sync --group dev")
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     command = [
@@ -98,8 +89,6 @@ def main() -> None:
     }
     manifest_path = args.output.with_suffix(f"{args.output.suffix}.manifest.json")
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(f"Profile saved to: {args.output}")
-    print(f"Profile manifest saved to: {manifest_path}")
 
 
 if __name__ == "__main__":

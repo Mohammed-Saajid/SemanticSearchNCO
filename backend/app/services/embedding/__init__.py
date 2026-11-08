@@ -1,6 +1,8 @@
-from app.services.embedding.embedding import FastEmbedService
 from app.services.embedding.base import BaseEmbeddingService
+from app.services.embedding.embedding import FastEmbedService
+
+
 __all__ = [
-    "FastEmbedService",
     "BaseEmbeddingService",
-    ]
+    "FastEmbedService",
+]

@@ -1,4 +1,5 @@
 import pytest
+
 from app.models.domain import RoleChunk, SparseEmbedding
 from app.repositories.vector_repository import VectorRepository
 

@@ -57,4 +57,3 @@ def test_index_data_full_flow(
 
     assert role_repository.count() == 2
     assert vector_repository.count() >= 2
-

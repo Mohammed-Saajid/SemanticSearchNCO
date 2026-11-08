@@ -12,6 +12,7 @@ from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
 from app.services.embedding import BaseEmbeddingService
 
+
 logger = logging.getLogger(__name__)
 
 

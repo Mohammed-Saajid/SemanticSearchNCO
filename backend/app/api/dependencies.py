@@ -13,6 +13,7 @@ from app.services.embedding import BaseEmbeddingService, FastEmbedService
 from app.services.indexer import IndexingService
 from app.services.search import SearchService
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -31,6 +32,7 @@ def get_qdrant_client() -> QdrantClient:
         return QdrantClient(path=settings.qdrant_path)
     logger.warning("Initializing in-memory Qdrant client; indexed data will not persist")
     return QdrantClient(location=":memory:")
+
 
 def check_qdrant_connection() -> bool:
     try:

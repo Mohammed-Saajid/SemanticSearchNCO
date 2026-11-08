@@ -10,6 +10,7 @@ from pathlib import Path
 
 from benchmark.performance.locustfile import DATASET_PATH, QUERY_SET_SHA256
 
+
 ROOT = Path(__file__).resolve().parents[3]
 
 
@@ -26,9 +27,7 @@ def _git_revision() -> str | None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Run a reproducible Locust search benchmark and write its manifest."
-    )
+    parser = argparse.ArgumentParser(description="Run a reproducible Locust search benchmark and write its manifest.")
     parser.add_argument("--base-url", default="http://127.0.0.1:8000")
     parser.add_argument("--users", type=int, default=8)
     parser.add_argument("--spawn-rate", type=float, default=2)
@@ -86,7 +85,6 @@ def main() -> int:
     }
     manifest_path = args.output.with_suffix(f"{args.output.suffix}.manifest.json")
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(f"Load manifest saved to: {manifest_path}")
     return completed.returncode
 
 

@@ -5,13 +5,13 @@ from fastapi import APIRouter, Depends
 from app.api.dependencies import (
     check_qdrant_connection,
     get_role_repository,
-    get_settings,
     get_vector_repository,
 )
-from app.core.config import Settings
+from app.core.config import Settings, get_settings
 from app.models.schemas import HealthResponse
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
+
 
 router = APIRouter(tags=["Health"])
 logger = logging.getLogger(__name__)

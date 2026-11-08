@@ -1,11 +1,10 @@
 from dataclasses import dataclass
-from typing import List, Optional
 
 
 @dataclass(frozen=True)
 class SparseEmbedding:
-    indices: List[int]
-    values: List[float]
+    indices: list[int]
+    values: list[float]
 
 
 @dataclass(frozen=True)
@@ -35,6 +34,6 @@ class VectorHit:
     chunk_index: int
     text: str
     score: float
-    role_title: Optional[str] = None
-    dense_score: Optional[float] = None
-    sparse_score: Optional[float] = None
+    role_title: str | None = None
+    dense_score: float | None = None
+    sparse_score: float | None = None

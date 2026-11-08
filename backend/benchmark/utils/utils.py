@@ -1,14 +1,16 @@
-import json
-from typing import Any
-from pathlib import Path
-import subprocess
 import hashlib
+import json
+import subprocess
+from pathlib import Path
+from typing import Any
+
 
 def load_json(path: Path) -> Any:
     """Load JSON data from a file."""
     with path.open("r", encoding="utf-8") as file:
         return json.load(file)
-    
+
+
 def write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary_path = path.with_suffix(f"{path.suffix}.tmp")

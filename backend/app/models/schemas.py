@@ -1,4 +1,3 @@
-from typing import List, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -28,14 +27,14 @@ class SearchResultItem(BaseModel):
     group: str = Field(..., alias="Group")
     family: str = Field(..., alias="Family")
 
-    bm25_score: Optional[float] = None
-    vector_score: Optional[float] = None
+    bm25_score: float | None = None
+    vector_score: float | None = None
 
 
 class SearchResponse(BaseModel):
     query: str
     total: int
-    results: List[SearchResultItem]
+    results: list[SearchResultItem]
 
 
 class RoleQueryRequest(BaseModel):
@@ -44,8 +43,8 @@ class RoleQueryRequest(BaseModel):
 
 class RoleDescriptionResponse(BaseModel):
     description: str
-    role_number: Optional[str] = None
-    title: Optional[str] = None
+    role_number: str | None = None
+    title: str | None = None
 
 
 class RoleDetailResponse(BaseModel):

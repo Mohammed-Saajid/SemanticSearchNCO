@@ -9,6 +9,7 @@ from typing import Any
 
 from locust import HttpUser, LoadTestShape, between, task
 
+
 ROOT = Path(__file__).resolve().parents[2]
 DATASET_PATH = Path(
     os.environ.get(
@@ -24,17 +25,13 @@ def _queries() -> list[dict[str, Any]]:
     queries = dataset.get("queries")
     if not isinstance(queries, list) or not queries:
         raise ValueError(f"{DATASET_PATH} must contain a non-empty queries list")
-    if any(
-        not isinstance(item.get("query"), str) or not item["query"] for item in queries
-    ):
+    if any(not isinstance(item.get("query"), str) or not item["query"] for item in queries):
         raise ValueError(f"{DATASET_PATH} contains a query without search text")
     return queries
 
 
 QUERIES = _queries()
-QUERY_SET_SHA256 = hashlib.sha256(
-    json.dumps(QUERIES, sort_keys=True, separators=(",", ":")).encode()
-).hexdigest()
+QUERY_SET_SHA256 = hashlib.sha256(json.dumps(QUERIES, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
 class SearchUser(HttpUser):

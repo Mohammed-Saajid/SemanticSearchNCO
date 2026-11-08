@@ -1,8 +1,8 @@
 import logging
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from time import perf_counter
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes.health import router as health_router
@@ -15,11 +15,12 @@ from app.core.exceptions import (
 )
 from app.core.logging import setup_logging
 
+
 logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     logger = setup_logging(debug=settings.debug)
     logger.info("Starting up %s v%s", settings.app_name, settings.app_version)

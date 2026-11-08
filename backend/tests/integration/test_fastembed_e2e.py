@@ -1,4 +1,5 @@
 from qdrant_client import QdrantClient
+
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
 from app.services.chunking import TextChunker

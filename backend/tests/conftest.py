@@ -1,16 +1,16 @@
 import os
 import sys
 import tempfile
-from typing import Generator, List
+from collections.abc import Generator
+
 import pytest
 from fastapi.testclient import TestClient
 from qdrant_client import QdrantClient
 
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app.api.dependencies import (
-    get_embedding_service,
-    get_qdrant_client,
     get_role_repository,
     get_search_service,
     get_settings,
@@ -35,7 +35,7 @@ class DummyEmbeddingService(BaseEmbeddingService):
     def dimension(self) -> int:
         return self._dim
 
-    def _hash_vector(self, text: str) -> List[float]:
+    def _hash_vector(self, text: str) -> list[float]:
         val = sum(ord(c) for c in text)
         vec = [(val % (i + 3)) / (i + 3) for i in range(self._dim)]
         norm = sum(x * x for x in vec) ** 0.5 or 1.0
@@ -47,13 +47,13 @@ class DummyEmbeddingService(BaseEmbeddingService):
         idx2 = ((val * 3) % 50) + 1
         return SparseEmbedding(indices=[idx1, idx2], values=[1.2, 0.8])
 
-    def embed_dense_documents(self, texts: List[str], batch_size: int = 256) -> List[List[float]]:
+    def embed_dense_documents(self, texts: list[str]) -> list[list[float]]:
         return [self._hash_vector(t) for t in texts]
 
-    def embed_dense_query(self, text: str) -> List[float]:
+    def embed_dense_query(self, text: str) -> list[float]:
         return self._hash_vector(text)
 
-    def embed_sparse_documents(self, texts: List[str], batch_size: int = 256) -> List[SparseEmbedding]:
+    def embed_sparse_documents(self, texts: list[str]) -> list[SparseEmbedding]:
         return [self._hash_sparse(t) for t in texts]
 
     def embed_sparse_query(self, text: str) -> SparseEmbedding:
@@ -148,7 +148,7 @@ def indexing_service(
 
 
 @pytest.fixture
-def sample_roles() -> List[RoleRecord]:
+def sample_roles() -> list[RoleRecord]:
     return [
         RoleRecord(
             role_number="1001.0100",

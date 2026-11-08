@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 import argparse
@@ -8,6 +7,7 @@ import math
 import sys
 from collections import defaultdict
 from pathlib import Path
+
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -42,9 +42,7 @@ def validate_dataset(dataset: dict) -> dict:
             raise ValueError(f"Missing category for query {query_id}")
 
         if not isinstance(expected, list) or not expected:
-            raise ValueError(
-                f"Query {query_id} must have at least one judgment."
-            )
+            raise ValueError(f"Query {query_id} must have at least one judgment.")
 
         judgments = {}
 
@@ -53,31 +51,18 @@ def validate_dataset(dataset: dict) -> dict:
             relevance = item.get("relevance")
 
             if not isinstance(role_number, str) or not role_number:
-                raise ValueError(
-                    f"Invalid role_number in query {query_id}"
-                )
+                raise ValueError(f"Invalid role_number in query {query_id}")
 
             if role_number in judgments:
-                raise ValueError(
-                    f"Duplicate judgment: {query_id}, {role_number}"
-                )
+                raise ValueError(f"Duplicate judgment: {query_id}, {role_number}")
 
-            if (
-                isinstance(relevance, bool)
-                or not isinstance(relevance, int)
-                or relevance not in range(4)
-            ):
-                raise ValueError(
-                    f"Relevance must be an integer from 0 to 3: "
-                    f"{query_id}, {role_number}"
-                )
+            if isinstance(relevance, bool) or not isinstance(relevance, int) or relevance not in range(4):
+                raise ValueError(f"Relevance must be an integer from 0 to 3: {query_id}, {role_number}")
 
             judgments[role_number] = relevance
 
         if not any(score > 0 for score in judgments.values()):
-            raise ValueError(
-                f"Query {query_id} has no relevant documents."
-            )
+            raise ValueError(f"Query {query_id} has no relevant documents.")
 
         query_map[query_id] = {
             "query": query.get("query", ""),
@@ -107,9 +92,7 @@ def validate_run(run_data: list, query_map: dict) -> dict:
         results = entry.get("results")
 
         if not isinstance(results, list):
-            raise ValueError(
-                f"Results must be a list for query {query_id}"
-            )
+            raise ValueError(f"Results must be a list for query {query_id}")
 
         seen_roles = set()
         parsed_results = []
@@ -119,23 +102,13 @@ def validate_run(run_data: list, query_map: dict) -> dict:
             score = result.get("score")
 
             if not isinstance(role_number, str) or not role_number:
-                raise ValueError(
-                    f"Invalid role_number in run for {query_id}"
-                )
+                raise ValueError(f"Invalid role_number in run for {query_id}")
 
             if role_number in seen_roles:
-                raise ValueError(
-                    f"Duplicate retrieved role: {query_id}, {role_number}"
-                )
+                raise ValueError(f"Duplicate retrieved role: {query_id}, {role_number}")
 
-            if (
-                isinstance(score, bool)
-                or not isinstance(score, (int, float))
-                or not math.isfinite(score)
-            ):
-                raise ValueError(
-                    f"Invalid retrieval score: {query_id}, {role_number}"
-                )
+            if isinstance(score, bool) or not isinstance(score, (int, float)) or not math.isfinite(score):
+                raise ValueError(f"Invalid retrieval score: {query_id}, {role_number}")
 
             seen_roles.add(role_number)
             parsed_results.append((role_number, float(score)))
@@ -158,10 +131,7 @@ def precision_at_k(ranked_docs: list, judgments: dict, k: int) -> float:
 
     retrieved = ranked_docs[:k]
 
-    relevant_count = sum(
-        judgments.get(role_number, 0) >= 1
-        for role_number, _ in retrieved
-    )
+    relevant_count = sum(judgments.get(role_number, 0) >= 1 for role_number, _ in retrieved)
 
     return relevant_count / k
 
@@ -171,17 +141,12 @@ def recall_at_k(ranked_docs: list, judgments: dict, k: int) -> float:
     if k <= 0:
         raise ValueError("K must be positive.")
 
-    total_relevant = sum(
-        relevance >= 1 for relevance in judgments.values()
-    )
+    total_relevant = sum(relevance >= 1 for relevance in judgments.values())
 
     if total_relevant == 0:
         return 0.0
 
-    retrieved_relevant = sum(
-        judgments.get(role_number, 0) >= 1
-        for role_number, _ in ranked_docs[:k]
-    )
+    retrieved_relevant = sum(judgments.get(role_number, 0) >= 1 for role_number, _ in ranked_docs[:k])
 
     return retrieved_relevant / total_relevant
 
@@ -209,26 +174,13 @@ def ndcg_at_k(ranked_docs: list, judgments: dict, k: int) -> float:
         raise ValueError("K must be positive.")
 
     def gain(relevance: int) -> float:
-        return (2 ** relevance) - 1
+        return (2**relevance) - 1
 
-    dcg = sum(
-        gain(judgments.get(role_number, 0)) / math.log2(rank + 1)
-        for rank, (role_number, _) in enumerate(
-            ranked_docs[:k], start=1
-        )
-    )
+    dcg = sum(gain(judgments.get(role_number, 0)) / math.log2(rank + 1) for rank, (role_number, _) in enumerate(ranked_docs[:k], start=1))
 
-    ideal_relevances = sorted(
-        judgments.values(),
-        reverse=True
-    )[:k]
+    ideal_relevances = sorted(judgments.values(), reverse=True)[:k]
 
-    idcg = sum(
-        gain(relevance) / math.log2(rank + 1)
-        for rank, relevance in enumerate(
-            ideal_relevances, start=1
-        )
-    )
+    idcg = sum(gain(relevance) / math.log2(rank + 1) for rank, relevance in enumerate(ideal_relevances, start=1))
 
     return dcg / idcg if idcg > 0 else 0.0
 
@@ -241,7 +193,6 @@ def evaluate_query(ranked_docs: list, judgments: dict) -> dict:
         "mrr@10": reciprocal_rank(ranked_docs, judgments, 10),
         "ndcg@5": ndcg_at_k(ranked_docs, judgments, 5),
     }
-
 
 
 def aggregate_metrics(query_metrics: dict) -> dict:
@@ -258,13 +209,7 @@ def aggregate_metrics(query_metrics: dict) -> dict:
 
     query_count = len(query_metrics)
 
-    return {
-        metric: sum(
-            values[metric] for values in query_metrics.values()
-        ) / query_count
-        for metric in metric_names
-    }
-
+    return {metric: sum(values[metric] for values in query_metrics.values()) / query_count for metric in metric_names}
 
 
 def evaluate(
@@ -327,26 +272,21 @@ def save_reports(
         "ndcg@5",
     ]
 
-    with csv_path.open(
-        "w", encoding="utf-8", newline=""
-    ) as file:
+    with csv_path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
 
         for query_id, metrics in per_query.items():
-            writer.writerow({
-                "query_id": query_id,
-                **metrics,
-            })
-
-    print(f"Metrics saved to: {summary_path}")
-    print(f"Per-query results saved to: {csv_path}")
+            writer.writerow(
+                {
+                    "query_id": query_id,
+                    **metrics,
+                }
+            )
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Evaluate NCO information retrieval quality."
-    )
+    parser = argparse.ArgumentParser(description="Evaluate NCO information retrieval quality.")
 
     parser.add_argument(
         "--dataset",
@@ -381,9 +321,8 @@ def main() -> None:
 
     save_reports(args.output, summary, per_query)
 
-    print("\nOverall metrics:")
-    for metric, value in summary["overall"].items():
-        print(f"{metric:15s}: {value:.4f}")
+    for _metric, _value in summary["overall"].items():
+        pass
 
 
 if __name__ == "__main__":

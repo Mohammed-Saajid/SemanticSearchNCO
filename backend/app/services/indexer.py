@@ -9,6 +9,7 @@ from app.repositories.vector_repository import VectorRepository
 from app.services.chunking import TextChunker
 from app.services.embedding import BaseEmbeddingService
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -188,6 +189,6 @@ class IndexingService:
 
     def index_from_file(self, file_path: str, batch_size: int = 64) -> dict[str, int]:
         logger.info("Loading indexing source path=%s", file_path)
-        with open(file_path, "r", encoding="utf-8") as f:
+        with open(file_path, encoding="utf-8") as f:
             data = json.load(f)
         return self.index_data(data, batch_size=batch_size)

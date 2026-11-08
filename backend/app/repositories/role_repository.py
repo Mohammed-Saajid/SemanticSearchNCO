@@ -4,6 +4,7 @@ from collections.abc import Iterable
 
 from app.models.domain import RoleRecord
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -116,10 +117,12 @@ class RoleRepository:
             return {}
         unique_numbers = list(set(role_numbers))
         placeholders = ",".join("?" for _ in unique_numbers)
-        query = f"""
+        # Only generated SQLite placeholders are interpolated; values remain bound parameters.
+        query_template = """
             SELECT role_number, title, old_regulation, division, sub_division, group_name, family, description
-            FROM roles WHERE role_number IN ({placeholders})
+            FROM roles WHERE role_number IN ({})
         """
+        query = query_template.format(placeholders)
         with self._get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute(query, unique_numbers)

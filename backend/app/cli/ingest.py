@@ -1,6 +1,7 @@
 import argparse
-import sys
 import logging
+import sys
+
 from qdrant_client import QdrantClient
 
 from app.core.config import get_settings
@@ -75,9 +76,8 @@ def main() -> None:
 
     try:
         run_ingest(json_path=args.json_path, batch_size=args.batch_size)
-    except Exception as exc:
+    except Exception:
         logging.getLogger(__name__).exception("Ingestion failed")
-        print(f"Error during ingestion: {exc}", file=sys.stderr)
         sys.exit(1)
 
 
