@@ -20,8 +20,6 @@ def test_search_request_valid():
 def test_search_request_defaults():
     req = SearchRequest(query="data")
     assert req.top_k == 10
-    assert req.bm25_weight == 0.4
-    assert req.vector_weight == 0.6
 
 
 def test_search_request_invalid_empty():

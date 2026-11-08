@@ -19,16 +19,12 @@ def _search(
     base_url: str,
     query: str,
     top_k: int,
-    bm25_weight: float,
-    vector_weight: float,
     timeout: float,
 ) -> list[dict[str, Any]]:
     payload = json.dumps({
         "query": query,
         "top_k": top_k,
         "offset": 0,
-        "bm25_weight": bm25_weight,
-        "vector_weight": vector_weight,
     }).encode("utf-8")
     request = urllib.request.Request(
         f"{base_url.rstrip('/')}/search",
@@ -98,8 +94,6 @@ def collect_run(
     dataset: dict[str, Any],
     base_url: str,
     top_k: int,
-    bm25_weight: float,
-    vector_weight: float,
     timeout: float,
 ) -> list[dict[str, Any]]:
     """Collect one deterministic run contract from the configured search API."""
@@ -111,8 +105,6 @@ def collect_run(
                 base_url,
                 query.get("query", ""),
                 top_k,
-                bm25_weight,
-                vector_weight,
                 timeout,
             ),
         }
@@ -125,8 +117,6 @@ def run_pipeline(
     output_dir: Path,
     base_url: str,
     top_k: int,
-    bm25_weight: float,
-    vector_weight: float,
     timeout: float,
 ) -> None:
     dataset = load_json(dataset_path)
@@ -136,8 +126,6 @@ def run_pipeline(
         dataset,
         base_url,
         top_k,
-        bm25_weight,
-        vector_weight,
         timeout,
     )
     run_path = output_dir / "run.json"
@@ -157,8 +145,6 @@ def run_pipeline(
             "base_url": base_url.rstrip("/"),
             "endpoint": "/search",
             "top_k": top_k,
-            "bm25_weight": bm25_weight,
-            "vector_weight": vector_weight,
             "timeout_seconds": timeout,
         },
         "artifacts": {
@@ -178,8 +164,6 @@ def main() -> None:
     parser.add_argument("--base-url", required=True, help="Base URL of the running search API.")
     parser.add_argument("--output", type=Path, default=Path("reports/latest"))
     parser.add_argument("--top-k", type=int, default=100)
-    parser.add_argument("--bm25-weight", type=float, default=0.4)
-    parser.add_argument("--vector-weight", type=float, default=0.6)
     parser.add_argument("--timeout", type=float, default=30.0)
     args = parser.parse_args()
 
@@ -187,17 +171,12 @@ def main() -> None:
         parser.error("--top-k must be between 1 and 100")
     if args.timeout <= 0:
         parser.error("--timeout must be positive")
-    if not 0 <= args.bm25_weight <= 1 or not 0 <= args.vector_weight <= 1:
-        parser.error("search weights must be between 0 and 1")
-
     try:
         run_pipeline(
             args.dataset,
             args.output,
             args.base_url,
             args.top_k,
-            args.bm25_weight,
-            args.vector_weight,
             args.timeout,
         )
     except (OSError, TypeError, ValueError, RuntimeError, KeyError) as error:

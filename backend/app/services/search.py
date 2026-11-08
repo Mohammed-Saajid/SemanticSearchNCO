@@ -29,8 +29,6 @@ class SearchService:
         query: str,
         top_k: int = 10,
         offset: int = 0,
-        bm25_weight: float = 0.4,
-        vector_weight: float = 0.6,
     ) -> SearchResponse:
         cleaned_query = query.strip()
         if not cleaned_query:

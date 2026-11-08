@@ -6,8 +6,6 @@ class SearchRequest(BaseModel):
     query: str = Field(..., min_length=1, max_length=1000)
     top_k: int = Field(default=10, ge=1, le=100)
     offset: int = Field(default=0, ge=0)
-    bm25_weight: float = Field(default=0.4, ge=0.0, le=1.0)
-    vector_weight: float = Field(default=0.6, ge=0.0, le=1.0)
 
 
 class SearchResultItem(BaseModel):

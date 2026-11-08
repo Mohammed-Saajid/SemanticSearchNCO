@@ -20,9 +20,7 @@ python quality/pipeline.py \
   --dataset data/hybrid_search_eval.json \
   --base-url http://127.0.0.1:8000 \
   --output quality/reports/latest \
-  --top-k 100 \
-  --bm25-weight 0.4 \
-  --vector-weight 0.6
+  --top-k 100
 ```
 
 The command writes `run.json`, `metrics.json`, `query_analysis.csv`, and
@@ -61,8 +59,6 @@ python quality/eval.py \
 | `--base-url` | — | Running API base URL; requests are sent to `POST /search`. |
 | `--output` | `reports/latest` | Directory for all artifacts. |
 | `--top-k` | `100` | Number of API results requested per query. |
-| `--bm25-weight` | `0.4` | API keyword-search weight, from `0` to `1`. |
-| `--vector-weight` | `0.6` | API semantic-search weight, from `0` to `1`. |
 | `--timeout` | `30` | Per-query HTTP timeout in seconds. |
 
 The pipeline fails instead of producing a partial success-shaped report when a
