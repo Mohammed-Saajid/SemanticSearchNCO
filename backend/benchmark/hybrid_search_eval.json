@@ -1,0 +1,1211 @@
+{
+  "metadata": {
+    "name": "NCO Hybrid Search Dataset",
+    "version": "1.0",
+    "description": "Small evaluation dataset for NCO occupational role retrieval",
+    "relevance_scale": {
+      "0": "Not relevant",
+      "1": "Somewhat relevant",
+      "2": "Highly relevant",
+      "3": "Exact or ideal match"
+    }
+  },
+  "queries": [
+    {
+      "query_id": "Q001",
+      "query": "Web Developer",
+      "category": "exact_title",
+      "expected_results": [
+        {
+          "role_number": "2513.0101",
+          "relevance": 3
+        }
+      ]
+    },
+    {
+      "query_id": "Q002",
+      "query": "Database Administrator",
+      "category": "exact_title",
+      "expected_results": [
+        {
+          "role_number": "2522.0100",
+          "relevance": 3
+        }
+      ]
+    },
+    {
+      "query_id": "Q003",
+      "query": "Accountant",
+      "category": "exact_title",
+      "expected_results": [
+        {
+          "role_number": "2411.0100",
+          "relevance": 3
+        }
+      ]
+    },
+    {
+      "query_id": "Q004",
+      "query": "General Physician",
+      "category": "exact_title",
+      "expected_results": [
+        {
+          "role_number": "2211.0100",
+          "relevance": 3
+        }
+      ]
+    },
+    {
+      "query_id": "Q005",
+      "query": "Carpenter, General",
+      "category": "exact_title",
+      "expected_results": [
+        {
+          "role_number": "7115.0100",
+          "relevance": 3
+        }
+      ]
+    },
+    {
+      "query_id": "Q006",
+      "query": "Electrical engineer",
+      "category": "partial_title",
+      "expected_results": [
+        {
+          "role_number": "2151.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "2151.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "2151.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "2151.9900",
+          "relevance": 1
+        },
+        {
+          "role_number": "3113.0101",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q007",
+      "query": "Civil engineer",
+      "category": "partial_title",
+      "expected_results": [
+        {
+          "role_number": "2142.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "2142.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "2142.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "2142.0400",
+          "relevance": 2
+        },
+        {
+          "role_number": "2142.0600",
+          "relevance": 2
+        },
+        {
+          "role_number": "2142.0700",
+          "relevance": 2
+        },
+        {
+          "role_number": "2142.0900",
+          "relevance": 2
+        },
+        {
+          "role_number": "2142.9900",
+          "relevance": 1
+        },
+        {
+          "role_number": "3112.0100",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q008",
+      "query": "Welder",
+      "category": "partial_title",
+      "expected_results": [
+        {
+          "role_number": "7212.0301",
+          "relevance": 3
+        },
+        {
+          "role_number": "7212.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0105",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0111",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0303",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0700",
+          "relevance": 1
+        },
+        {
+          "role_number": "7212.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q009",
+      "query": "Nurse",
+      "category": "partial_title",
+      "expected_results": [
+        {
+          "role_number": "3221.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "2221.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "3221.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "2221.9900",
+          "relevance": 1
+        },
+        {
+          "role_number": "3221.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "3221.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q010",
+      "query": "Plumber",
+      "category": "partial_title",
+      "expected_results": [
+        {
+          "role_number": "7126.0101",
+          "relevance": 3
+        },
+        {
+          "role_number": "7126.0103",
+          "relevance": 3
+        },
+        {
+          "role_number": "7126.0102",
+          "relevance": 2
+        },
+        {
+          "role_number": "7126.0107",
+          "relevance": 2
+        },
+        {
+          "role_number": "7126.0104",
+          "relevance": 1
+        },
+        {
+          "role_number": "7126.0105",
+          "relevance": 1
+        },
+        {
+          "role_number": "7126.0106",
+          "relevance": 1
+        },
+        {
+          "role_number": "7126.0201",
+          "relevance": 1
+        },
+        {
+          "role_number": "7126.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q011",
+      "query": "Person who designs machines",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "2144.0200",
+          "relevance": 3
+        },
+        {
+          "role_number": "2144.0201",
+          "relevance": 3
+        },
+        {
+          "role_number": "2144.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2144.0803",
+          "relevance": 2
+        },
+        {
+          "role_number": "2144.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "2166.0401",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q012",
+      "query": "Someone who treats sick animals",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "2250.0200",
+          "relevance": 3
+        },
+        {
+          "role_number": "2250.0300",
+          "relevance": 3
+        },
+        {
+          "role_number": "2250.0600",
+          "relevance": 3
+        },
+        {
+          "role_number": "2250.0500",
+          "relevance": 3
+        },
+        {
+          "role_number": "2250.9900",
+          "relevance": 3
+        },
+        {
+          "role_number": "3240.9900",
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "Q013",
+      "query": "Person who teaches young children in primary school",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "2341.0400",
+          "relevance": 3
+        },
+        {
+          "role_number": "2341.9900",
+          "relevance": 3
+        },
+        {
+          "role_number": "2342.0100",
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "Q014",
+      "query": "Person who grows wheat and other crops",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "6111.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "6111.0200",
+          "relevance": 3
+        },
+        {
+          "role_number": "6111.0201",
+          "relevance": 3
+        },
+        {
+          "role_number": "6111.0301",
+          "relevance": 2
+        },
+        {
+          "role_number": "6111.0401",
+          "relevance": 2
+        },
+        {
+          "role_number": "6111.0501",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q015",
+      "query": "Someone who cuts and styles hair",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "5141.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "5141.0200",
+          "relevance": 3
+        },
+        {
+          "role_number": "5141.0300",
+          "relevance": 3
+        },
+        {
+          "role_number": "5141.0201",
+          "relevance": 2
+        },
+        {
+          "role_number": "5141.9900",
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "Q016",
+      "query": "Person who services and repairs cars",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "7231.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "7231.0107",
+          "relevance": 3
+        },
+        {
+          "role_number": "3115.0601",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0101",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0400",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0401",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.9900",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0105",
+          "relevance": 1
+        },
+        {
+          "role_number": "7231.0500",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q017",
+      "query": "Person who guards a building at night",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "5414.0400",
+          "relevance": 3
+        },
+        {
+          "role_number": "5414.0501",
+          "relevance": 3
+        },
+        {
+          "role_number": "5414.0151",
+          "relevance": 3
+        },
+        {
+          "role_number": "5414.0101",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q018",
+      "query": "Someone who prepares and dispenses medicines",
+      "category": "semantic",
+      "expected_results": [
+        {
+          "role_number": "3213.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "3213.0101",
+          "relevance": 2
+        },
+        {
+          "role_number": "3213.0200",
+          "relevance": 1
+        },
+        {
+          "role_number": "3213.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q019",
+      "query": "Person who repairs electrical motors",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "8212.0500",
+          "relevance": 3
+        },
+        {
+          "role_number": "3113.0101",
+          "relevance": 2
+        },
+        {
+          "role_number": "3113.0102",
+          "relevance": 2
+        },
+        {
+          "role_number": "7412.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "7233.1300",
+          "relevance": 1
+        },
+        {
+          "role_number": "7411.0100",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q020",
+      "query": "Repairs and maintains industrial equipment",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "3113.0401",
+          "relevance": 3
+        },
+        {
+          "role_number": "3113.0601",
+          "relevance": 3
+        },
+        {
+          "role_number": "3115.0102",
+          "relevance": 3
+        },
+        {
+          "role_number": "2144.0600",
+          "relevance": 2
+        },
+        {
+          "role_number": "3113.0102",
+          "relevance": 2
+        },
+        {
+          "role_number": "3114.0701",
+          "relevance": 2
+        },
+        {
+          "role_number": "3113.0501",
+          "relevance": 1
+        },
+        {
+          "role_number": "3115.0501",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q021",
+      "query": "Lays bricks and builds walls",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "7112.0200",
+          "relevance": 3
+        },
+        {
+          "role_number": "7112.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "7112.0601",
+          "relevance": 2
+        },
+        {
+          "role_number": "7112.9900",
+          "relevance": 2
+        },
+        {
+          "role_number": "7112.0300",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q022",
+      "query": "Operates a crane to lift heavy loads",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "8343.0500",
+          "relevance": 3
+        },
+        {
+          "role_number": "8343.0501",
+          "relevance": 3
+        },
+        {
+          "role_number": "8343.0700",
+          "relevance": 3
+        },
+        {
+          "role_number": "8343.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.0400",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.0600",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.0800",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.1000",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.1600",
+          "relevance": 2
+        },
+        {
+          "role_number": "8343.0100",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q023",
+      "query": "Maintains books of accounts and prepares financial statements",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "2411.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "4311.0101",
+          "relevance": 3
+        },
+        {
+          "role_number": "4311.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "2411.0200",
+          "relevance": 1
+        },
+        {
+          "role_number": "2411.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "2412.0200",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q024",
+      "query": "Tests software to find bugs and defects",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "2512.0202",
+          "relevance": 3
+        },
+        {
+          "role_number": "2519.0401",
+          "relevance": 3
+        },
+        {
+          "role_number": "2519.0402",
+          "relevance": 3
+        },
+        {
+          "role_number": "2512.0204",
+          "relevance": 1
+        },
+        {
+          "role_number": "2512.0205",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q025",
+      "query": "Sews garments using a sewing machine",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "8153.0101",
+          "relevance": 3
+        },
+        {
+          "role_number": "7531.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "8153.0102",
+          "relevance": 2
+        },
+        {
+          "role_number": "8153.0103",
+          "relevance": 2
+        },
+        {
+          "role_number": "7531.0101",
+          "relevance": 1
+        },
+        {
+          "role_number": "8153.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q026",
+      "query": "Installs and repairs water pipes and fittings",
+      "category": "task_based",
+      "expected_results": [
+        {
+          "role_number": "7126.0101",
+          "relevance": 3
+        },
+        {
+          "role_number": "7126.0103",
+          "relevance": 3
+        },
+        {
+          "role_number": "7126.0102",
+          "relevance": 2
+        },
+        {
+          "role_number": "7126.0107",
+          "relevance": 2
+        },
+        {
+          "role_number": "7126.0201",
+          "relevance": 2
+        },
+        {
+          "role_number": "7126.0301",
+          "relevance": 2
+        },
+        {
+          "role_number": "7126.0106",
+          "relevance": 1
+        },
+        {
+          "role_number": "7126.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q027",
+      "query": "Python, SQL and data analysis",
+      "category": "skills_based",
+      "expected_results": [
+        {
+          "role_number": "2120.0501",
+          "relevance": 3
+        },
+        {
+          "role_number": "2120.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "2512.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "2522.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2412.0200",
+          "relevance": 1
+        },
+        {
+          "role_number": "2521.0100",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q028",
+      "query": "CNC programming and machining",
+      "category": "skills_based",
+      "expected_results": [
+        {
+          "role_number": "7223.6003",
+          "relevance": 3
+        },
+        {
+          "role_number": "7223.5001",
+          "relevance": 2
+        },
+        {
+          "role_number": "7223.5002",
+          "relevance": 2
+        },
+        {
+          "role_number": "7223.5003",
+          "relevance": 2
+        },
+        {
+          "role_number": "7223.5004",
+          "relevance": 2
+        },
+        {
+          "role_number": "7223.5005",
+          "relevance": 2
+        },
+        {
+          "role_number": "7223.6001",
+          "relevance": 2
+        },
+        {
+          "role_number": "7223.6002",
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "Q029",
+      "query": "TIG and MIG welding",
+      "category": "skills_based",
+      "expected_results": [
+        {
+          "role_number": "7212.0105",
+          "relevance": 3
+        },
+        {
+          "role_number": "7212.0303",
+          "relevance": 3
+        },
+        {
+          "role_number": "7212.0301",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0111",
+          "relevance": 1
+        },
+        {
+          "role_number": "7212.0200",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q030",
+      "query": "AutoCAD drawing and CAD design",
+      "category": "skills_based",
+      "expected_results": [
+        {
+          "role_number": "2166.0401",
+          "relevance": 3
+        },
+        {
+          "role_number": "3118.0301",
+          "relevance": 2
+        },
+        {
+          "role_number": "3118.0401",
+          "relevance": 2
+        },
+        {
+          "role_number": "3118.0402",
+          "relevance": 2
+        },
+        {
+          "role_number": "3118.0100",
+          "relevance": 1
+        },
+        {
+          "role_number": "3118.0200",
+          "relevance": 1
+        },
+        {
+          "role_number": "3118.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "3118.0500",
+          "relevance": 1
+        },
+        {
+          "role_number": "3118.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q031",
+      "query": "Embedded software and FPGA programming",
+      "category": "skills_based",
+      "expected_results": [
+        {
+          "role_number": "2512.0501",
+          "relevance": 3
+        },
+        {
+          "role_number": "2512.0401",
+          "relevance": 2
+        },
+        {
+          "role_number": "2152.0801",
+          "relevance": 1
+        },
+        {
+          "role_number": "2512.0201",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q032",
+      "query": "Doctor",
+      "category": "synonyms",
+      "expected_results": [
+        {
+          "role_number": "2211.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "2211.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "2269.0400",
+          "relevance": 2
+        },
+        {
+          "role_number": "2230.0100",
+          "relevance": 1
+        },
+        {
+          "role_number": "2230.0200",
+          "relevance": 1
+        },
+        {
+          "role_number": "2230.0400",
+          "relevance": 1
+        },
+        {
+          "role_number": "2269.0300",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q033",
+      "query": "Lawyer",
+      "category": "synonyms",
+      "expected_results": [
+        {
+          "role_number": "2611.0800",
+          "relevance": 3
+        },
+        {
+          "role_number": "2611.0900",
+          "relevance": 3
+        },
+        {
+          "role_number": "2611.0500",
+          "relevance": 2
+        },
+        {
+          "role_number": "2611.9900",
+          "relevance": 2
+        },
+        {
+          "role_number": "2611.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "2611.1002",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q034",
+      "query": "Chauffeur",
+      "category": "synonyms",
+      "expected_results": [
+        {
+          "role_number": "8322.0101",
+          "relevance": 3
+        },
+        {
+          "role_number": "8322.0102",
+          "relevance": 3
+        },
+        {
+          "role_number": "8322.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "8322.0201",
+          "relevance": 2
+        },
+        {
+          "role_number": "8322.0501",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q035",
+      "query": "Cobbler",
+      "category": "synonyms",
+      "expected_results": [
+        {
+          "role_number": "7536.0300",
+          "relevance": 3
+        },
+        {
+          "role_number": "7536.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "7536.0200",
+          "relevance": 1
+        },
+        {
+          "role_number": "7536.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q036",
+      "query": "Chef",
+      "category": "synonyms",
+      "expected_results": [
+        {
+          "role_number": "3434.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "1120.3100",
+          "relevance": 2
+        },
+        {
+          "role_number": "5120.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "5120.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "5120.0400",
+          "relevance": 1
+        },
+        {
+          "role_number": "5120.9900",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q037",
+      "query": "Engineer",
+      "category": "ambiguous",
+      "expected_results": [
+        {
+          "role_number": "2142.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2144.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2145.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2151.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2512.0201",
+          "relevance": 2
+        },
+        {
+          "role_number": "2141.0100",
+          "relevance": 1
+        },
+        {
+          "role_number": "2141.0300",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q038",
+      "query": "Teacher",
+      "category": "ambiguous",
+      "expected_results": [
+        {
+          "role_number": "2330.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2330.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "2330.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "2341.0400",
+          "relevance": 2
+        },
+        {
+          "role_number": "2342.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2310.0100",
+          "relevance": 1
+        },
+        {
+          "role_number": "2310.0600",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q039",
+      "query": "Mechanic",
+      "category": "ambiguous",
+      "expected_results": [
+        {
+          "role_number": "7127.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0300",
+          "relevance": 2
+        },
+        {
+          "role_number": "7231.0500",
+          "relevance": 2
+        },
+        {
+          "role_number": "7233.1300",
+          "relevance": 1
+        },
+        {
+          "role_number": "7233.1800",
+          "relevance": 1
+        },
+        {
+          "role_number": "7412.0100",
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "Q040",
+      "query": "Driver",
+      "category": "ambiguous",
+      "expected_results": [
+        {
+          "role_number": "8311.0601",
+          "relevance": 2
+        },
+        {
+          "role_number": "8321.0101",
+          "relevance": 2
+        },
+        {
+          "role_number": "8322.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "8322.0201",
+          "relevance": 2
+        },
+        {
+          "role_number": "8322.0501",
+          "relevance": 2
+        },
+        {
+          "role_number": "8311.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "8341.0101",
+          "relevance": 1
+        }
+      ]
+    }
+  ]
+}
