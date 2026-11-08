@@ -5,8 +5,8 @@
         "run": "run.json"
     },
     "dataset": "data/hybrid_search_eval.json",
-    "dataset_sha256": "f2dc57df6e0a2b484a28dd20a94f77ebfab862ea48deada3980357d5a0f4c4ba",
-    "git_revision": "4eddd4ada956068573bbaaabe352d4a50e2ab376",
+    "dataset_sha256": "fa9578ed08734e8dfc10b1d87eb186b289765b38ff2d340b558015086abe0ecb",
+    "git_revision": "ba3532ac15b0d6011ac733a07402d809f4d222db",
     "search": {
         "base_url": "http://127.0.0.1:8000",
         "endpoint": "/search",
