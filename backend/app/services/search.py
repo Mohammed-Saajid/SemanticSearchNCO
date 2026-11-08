@@ -66,7 +66,7 @@ class SearchService:
         roles_map = self.role_repo.get_roles_batch(role_numbers)
 
         results: List[SearchResultItem] = []
-        for hit in paged_hits:
+        for index, hit in enumerate(paged_hits):
             role_rec = roles_map.get(
                 hit.role_number,
                 RoleRecord(
@@ -82,6 +82,7 @@ class SearchService:
             )
             results.append(
                 SearchResultItem(
+                    rank=offset + index + 1,
                     id=hit.chunk_id,
                     role_number=hit.role_number,
                     role_title=role_rec.title,

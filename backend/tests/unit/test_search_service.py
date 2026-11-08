@@ -42,7 +42,12 @@ def test_search_deduplication_and_enrichment(
     assert response.total <= 2
 
     first_item = response.results[0]
+    assert [item.rank for item in response.results] == list(range(1, len(response.results) + 1))
     assert first_item.role_title in ["Software Architect", "Data Scientist"]
+
+    paged_response = search_service.search("software architecture", top_k=1, offset=1)
+    assert len(paged_response.results) == 1
+    assert paged_response.results[0].rank == 2
 
 
 def test_get_role_description_found(

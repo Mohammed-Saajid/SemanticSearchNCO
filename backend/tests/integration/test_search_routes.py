@@ -36,6 +36,7 @@ def test_search_endpoint_success(
     assert len(data["results"]) >= 1
 
     first = data["results"][0]
+    assert first["rank"] == 1
     assert "id" in first
     assert "role_number" in first
     assert "role_title" in first

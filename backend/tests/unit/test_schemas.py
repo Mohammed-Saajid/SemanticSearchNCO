@@ -45,6 +45,7 @@ def test_role_query_request_validation():
 
 def test_search_response_serialization():
     item = SearchResultItem(
+        rank=1,
         id="1111.0100_chunk0",
         role_number="1111.0100",
         role_title="Elected Official",
@@ -66,6 +67,7 @@ def test_search_response_serialization():
     assert data["total"] == 1
     first_res = data["results"][0]
     assert first_res["combined_score"] == 0.88
+    assert first_res["rank"] == 1
     assert first_res["Occupational Title"] == "Elected Official"
     assert first_res["NCO 2015"] == "1111.0100"
     assert first_res["NCO 2004"] == "1111.10"

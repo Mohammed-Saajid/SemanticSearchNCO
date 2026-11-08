@@ -29,7 +29,9 @@ function ResultCard({ result }) {
         <h3 className="role-title">
           {result.role_title || 'Role Title Not Available'}
         </h3>
-        <span className="role-number">Role {result.role_number || 'N/A'}</span>
+        <span className="role-number">
+          #{result.rank} · Role {result.role_number || 'N/A'}
+        </span>
       </div>
 
       <div className="result-content">

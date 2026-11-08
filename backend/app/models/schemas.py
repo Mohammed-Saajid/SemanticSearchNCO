@@ -13,6 +13,7 @@ class SearchRequest(BaseModel):
 class SearchResultItem(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
+    rank: int = Field(..., ge=1)
     id: str
     role_number: str
     role_title: str
