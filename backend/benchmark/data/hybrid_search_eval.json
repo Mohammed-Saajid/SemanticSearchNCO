@@ -1069,43 +1069,35 @@
     },
     {
       "query_id": "Q037",
-      "query": "Engineer",
-      "category": "ambiguous",
+      "query": "Mechanical engineer",
+      "category": "partial_title",
       "expected_results": [
         {
-          "role_number": "2142.0100",
-          "relevance": 2
-        },
-        {
           "role_number": "2144.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "3115.9900",
+          "relevance": 3
+        },
+        {
+          "role_number": "2144.9900",
+          "relevance": 3
+        },
+        {
+          "role_number": "2144.0500",
           "relevance": 2
         },
         {
-          "role_number": "2145.0100",
-          "relevance": 2
-        },
-        {
-          "role_number": "2151.0100",
-          "relevance": 2
-        },
-        {
-          "role_number": "2512.0201",
-          "relevance": 2
-        },
-        {
-          "role_number": "2141.0100",
-          "relevance": 1
-        },
-        {
-          "role_number": "2141.0300",
+          "role_number": "2144.0900",
           "relevance": 1
         }
       ]
     },
     {
       "query_id": "Q038",
-      "query": "Teacher",
-      "category": "ambiguous",
+      "query": "Person who teaches students in schools",
+      "category": "semantic",
       "expected_results": [
         {
           "role_number": "2330.0100",
@@ -1139,67 +1131,31 @@
     },
     {
       "query_id": "Q039",
-      "query": "Mechanic",
-      "category": "ambiguous",
+      "query": "Repairs and services vehicle engines",
+      "category": "task_based",
       "expected_results": [
         {
-          "role_number": "7127.0100",
-          "relevance": 2
+          "role_number": "7231.0100",
+          "relevance": 3
         },
         {
-          "role_number": "7231.0100",
-          "relevance": 2
+          "role_number": "7231.0500",
+          "relevance": 3
         },
         {
           "role_number": "7231.0300",
           "relevance": 2
-        },
-        {
-          "role_number": "7231.0500",
-          "relevance": 2
-        },
-        {
-          "role_number": "7233.1300",
-          "relevance": 1
-        },
-        {
-          "role_number": "7233.1800",
-          "relevance": 1
-        },
-        {
-          "role_number": "7412.0100",
-          "relevance": 1
         }
       ]
     },
     {
       "query_id": "Q040",
-      "query": "Driver",
-      "category": "ambiguous",
+      "query": "Truck driver",
+      "category": "partial_title",
       "expected_results": [
         {
           "role_number": "8311.0601",
-          "relevance": 2
-        },
-        {
-          "role_number": "8321.0101",
-          "relevance": 2
-        },
-        {
-          "role_number": "8322.0100",
-          "relevance": 2
-        },
-        {
-          "role_number": "8322.0201",
-          "relevance": 2
-        },
-        {
-          "role_number": "8322.0501",
-          "relevance": 2
-        },
-        {
-          "role_number": "8311.0300",
-          "relevance": 1
+          "relevance": 3
         },
         {
           "role_number": "8341.0101",
