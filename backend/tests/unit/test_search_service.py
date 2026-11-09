@@ -37,7 +37,7 @@ async def test_search_deduplication_and_enrichment(
         SparseEmbedding(indices=[1, 3], values=[2.0, 1.0]),
         SparseEmbedding(indices=[5, 6], values=[1.5, 2.5]),
     ]
-    vector_repository.upsert_chunks(chunks, dense_embeddings, sparse_embeddings)
+    await vector_repository.upsert_chunks(chunks, dense_embeddings, sparse_embeddings)
 
     response = await search_service.search("software architecture", top_k=5)
     role_numbers = [item.role_number for item in response.results]

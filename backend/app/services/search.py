@@ -43,7 +43,7 @@ class SearchService:
         sparse_vector = self.embedding_service.embed_sparse_query(cleaned_query)
 
         oversample_limit = max((top_k + offset) * 3, 30)
-        hits = self.vector_repo.search_hybrid(
+        hits = await self.vector_repo.search_hybrid(
             dense_vector=dense_vector,
             sparse_vector=sparse_vector,
             limit=oversample_limit,

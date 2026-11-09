@@ -3,7 +3,7 @@ import asyncio
 import logging
 import sys
 
-from qdrant_client import QdrantClient
+from qdrant_client import AsyncQdrantClient
 
 from app.core.config import get_settings
 from app.core.logging import setup_logging
@@ -29,11 +29,11 @@ async def run_ingest(json_path: str, batch_size: int = 64) -> None:
     )
 
     if settings.qdrant_url:
-        qdrant_client = QdrantClient(url=settings.qdrant_url, api_key=settings.qdrant_api_key)
+        qdrant_client = AsyncQdrantClient(url=settings.qdrant_url, api_key=settings.qdrant_api_key)
     elif settings.qdrant_path:
-        qdrant_client = QdrantClient(path=settings.qdrant_path)
+        qdrant_client = AsyncQdrantClient(path=settings.qdrant_path)
     else:
-        qdrant_client = QdrantClient(location=":memory:")
+        qdrant_client = AsyncQdrantClient(location=":memory:")
 
     vector_repo = VectorRepository(
         client=qdrant_client,

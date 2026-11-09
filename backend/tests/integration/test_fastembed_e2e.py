@@ -1,5 +1,5 @@
 import pytest
-from qdrant_client import QdrantClient
+from qdrant_client import AsyncQdrantClient
 
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
@@ -12,7 +12,7 @@ from app.services.search import SearchService
 @pytest.mark.asyncio
 async def test_fastembed_hybrid_indexing_and_search(temp_db_path: str):
     role_repo = RoleRepository(db_path=temp_db_path)
-    client = QdrantClient(location=":memory:")
+    client = AsyncQdrantClient(location=":memory:")
     embedding_service = FastEmbedService(
         dense_model_name="BAAI/bge-small-en-v1.5",
         sparse_model_name="Qdrant/bm25",

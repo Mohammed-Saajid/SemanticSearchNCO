@@ -169,7 +169,7 @@ class IndexingService:
                 len(batch_texts),
             )
 
-        self.vector_repo.upsert_chunks(
+        await self.vector_repo.upsert_chunks(
             chunks=chunks,
             dense_embeddings=all_dense,
             sparse_embeddings=all_sparse,

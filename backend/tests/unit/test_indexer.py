@@ -59,4 +59,4 @@ async def test_index_data_full_flow(
     assert stats["indexed_chunks"] >= 2
 
     assert await role_repository.count() == 2
-    assert vector_repository.count() >= 2
+    assert await vector_repository.count() >= 2

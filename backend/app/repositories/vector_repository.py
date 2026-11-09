@@ -1,7 +1,8 @@
+import asyncio
 import logging
 import uuid
 
-from qdrant_client import QdrantClient
+from qdrant_client import AsyncQdrantClient
 from qdrant_client.models import (
     Distance,
     Fusion,
@@ -22,53 +23,58 @@ logger = logging.getLogger(__name__)
 class VectorRepository:
     def __init__(
         self,
-        client: QdrantClient,
+        client: AsyncQdrantClient,
         collection_name: str,
         vector_size: int,
     ):
         self.client = client
         self.collection_name = collection_name
         self.vector_size = vector_size
-        self.ensure_collection()
+        self._collection_ready = False
+        self._collection_lock = asyncio.Lock()
 
-    def ensure_collection(self) -> None:
-        collections_response = self.client.get_collections()
-        existing = [c.name for c in collections_response.collections]
-        needs_creation = self.collection_name not in existing
+    async def _ensure_collection(self) -> None:
+        async with self._collection_lock:
+            if self._collection_ready:
+                return
+            collections_response = await self.client.get_collections()
+            existing = [c.name for c in collections_response.collections]
+            needs_creation = self.collection_name not in existing
 
-        if not needs_creation:
-            info = self.client.get_collection(self.collection_name)
-            vectors = info.config.params.vectors
-            sparse = info.config.params.sparse_vectors
-            if not isinstance(vectors, dict) or "dense" not in vectors or not sparse:
-                logger.warning(
-                    "Replacing incompatible Qdrant collection collection=%s",
-                    self.collection_name,
-                )
-                self.client.delete_collection(self.collection_name)
-                needs_creation = True
-
-        if needs_creation:
-            logger.info(
-                "Creating Qdrant collection collection=%s vector_size=%d",
-                self.collection_name,
-                self.vector_size,
-            )
-            self.client.create_collection(
-                collection_name=self.collection_name,
-                vectors_config={
-                    "dense": VectorParams(
-                        size=self.vector_size,
-                        distance=Distance.COSINE,
+            if not needs_creation:
+                info = await self.client.get_collection(self.collection_name)
+                vectors = info.config.params.vectors
+                sparse = info.config.params.sparse_vectors
+                if not isinstance(vectors, dict) or "dense" not in vectors or not sparse:
+                    logger.warning(
+                        "Replacing incompatible Qdrant collection collection=%s",
+                        self.collection_name,
                     )
-                },
-                sparse_vectors_config={"sparse": SparseVectorParams()},
-            )
+                    await self.client.delete_collection(self.collection_name)
+                    needs_creation = True
+
+            if needs_creation:
+                logger.info(
+                    "Creating Qdrant collection collection=%s vector_size=%d",
+                    self.collection_name,
+                    self.vector_size,
+                )
+                await self.client.create_collection(
+                    collection_name=self.collection_name,
+                    vectors_config={
+                        "dense": VectorParams(
+                            size=self.vector_size,
+                            distance=Distance.COSINE,
+                        )
+                    },
+                    sparse_vectors_config={"sparse": SparseVectorParams()},
+                )
+            self._collection_ready = True
 
     def _to_uuid(self, identifier: str) -> str:
         return str(uuid.uuid5(uuid.NAMESPACE_DNS, identifier))
 
-    def upsert_chunks(
+    async def upsert_chunks(
         self,
         chunks: list[RoleChunk],
         dense_embeddings: list[list[float]],
@@ -81,6 +87,7 @@ class VectorRepository:
             logger.debug("Skipping empty vector upsert collection=%s", self.collection_name)
             return 0
 
+        await self._ensure_collection()
         total_upserted = 0
         for i in range(0, len(chunks), batch_size):
             chunk_batch = chunks[i : i + batch_size]
@@ -108,7 +115,7 @@ class VectorRepository:
                     )
                 )
 
-            self.client.upsert(
+            await self.client.upsert(
                 collection_name=self.collection_name,
                 points=points,
                 wait=True,
@@ -128,18 +135,19 @@ class VectorRepository:
         )
         return total_upserted
 
-    def search_hybrid(
+    async def search_hybrid(
         self,
         dense_vector: list[float],
         sparse_vector: SparseEmbedding,
         limit: int = 10,
     ) -> list[VectorHit]:
+        await self._ensure_collection()
         sparse_q = SparseVector(
             indices=sparse_vector.indices,
             values=sparse_vector.values,
         )
 
-        response = self.client.query_points(
+        response = await self.client.query_points(
             collection_name=self.collection_name,
             prefetch=[
                 Prefetch(
@@ -178,9 +186,10 @@ class VectorRepository:
             )
         return hits
 
-    def count(self) -> int:
+    async def count(self) -> int:
         try:
-            info = self.client.get_collection(self.collection_name)
+            await self._ensure_collection()
+            info = await self.client.get_collection(self.collection_name)
             return info.points_count or 0
         except Exception:
             logger.exception(

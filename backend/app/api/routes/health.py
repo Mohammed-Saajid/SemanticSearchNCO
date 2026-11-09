@@ -23,8 +23,8 @@ async def health_check(
     vector_repo: VectorRepository = Depends(get_vector_repository),
     role_repo: RoleRepository = Depends(get_role_repository),
 ) -> HealthResponse:
-    qdrant_status = check_qdrant_connection()
-    vector_count = vector_repo.count()
+    qdrant_status = await check_qdrant_connection()
+    vector_count = await vector_repo.count()
     role_count = await role_repo.count()
     logger.info(
         "Health check status=%s qdrant_status=%s vector_count=%d role_count=%d",
