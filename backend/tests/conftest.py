@@ -5,7 +5,7 @@ from collections.abc import Generator
 
 import pytest
 from fastapi.testclient import TestClient
-from qdrant_client import QdrantClient
+from qdrant_client import AsyncQdrantClient
 
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -94,13 +94,13 @@ def role_repository(temp_db_path: str) -> RoleRepository:
 
 
 @pytest.fixture
-def in_memory_qdrant() -> QdrantClient:
-    return QdrantClient(location=":memory:")
+def in_memory_qdrant() -> AsyncQdrantClient:
+    return AsyncQdrantClient(location=":memory:")
 
 
 @pytest.fixture
 def vector_repository(
-    in_memory_qdrant: QdrantClient,
+    in_memory_qdrant: AsyncQdrantClient,
     test_settings: Settings,
     dummy_embedding_service: BaseEmbeddingService,
 ) -> VectorRepository:

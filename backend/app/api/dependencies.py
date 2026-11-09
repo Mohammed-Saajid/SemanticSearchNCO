@@ -3,7 +3,7 @@ import os
 from functools import lru_cache
 
 from fastapi import Depends
-from qdrant_client import QdrantClient
+from qdrant_client import AsyncQdrantClient
 
 from app.core.config import get_settings
 from app.repositories.role_repository import RoleRepository
@@ -18,25 +18,25 @@ logger = logging.getLogger(__name__)
 
 
 @lru_cache(maxsize=1)
-def get_qdrant_client() -> QdrantClient:
+def get_qdrant_client() -> AsyncQdrantClient:
     settings = get_settings()
     if settings.qdrant_url:
         logger.info("Initializing remote Qdrant client")
-        return QdrantClient(
+        return AsyncQdrantClient(
             url=settings.qdrant_url,
             api_key=settings.qdrant_api_key,
         )
     if settings.qdrant_path:
         os.makedirs(settings.qdrant_path, exist_ok=True)
         logger.info("Initializing local Qdrant client path=%s", settings.qdrant_path)
-        return QdrantClient(path=settings.qdrant_path)
+        return AsyncQdrantClient(path=settings.qdrant_path)
     logger.warning("Initializing in-memory Qdrant client; indexed data will not persist")
-    return QdrantClient(location=":memory:")
+    return AsyncQdrantClient(location=":memory:")
 
 
-def check_qdrant_connection() -> bool:
+async def check_qdrant_connection() -> bool:
     try:
-        get_qdrant_client()
+        await get_qdrant_client().get_collections()
         return True
     except Exception:
         logger.exception("Qdrant connection check failed")

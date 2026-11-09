@@ -1,4 +1,5 @@
-from qdrant_client import QdrantClient
+import pytest
+from qdrant_client import AsyncQdrantClient
 
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
@@ -8,9 +9,10 @@ from app.services.indexer import IndexingService
 from app.services.search import SearchService
 
 
-def test_fastembed_hybrid_indexing_and_search(temp_db_path: str):
+@pytest.mark.asyncio
+async def test_fastembed_hybrid_indexing_and_search(temp_db_path: str):
     role_repo = RoleRepository(db_path=temp_db_path)
-    client = QdrantClient(location=":memory:")
+    client = AsyncQdrantClient(location=":memory:")
     embedding_service = FastEmbedService(
         dense_model_name="BAAI/bge-small-en-v1.5",
         sparse_model_name="Qdrant/bm25",
@@ -41,7 +43,7 @@ def test_fastembed_hybrid_indexing_and_search(temp_db_path: str):
         },
     ]
 
-    indexer.index_data(data)
+    await indexer.index_data(data)
 
     searcher = SearchService(
         embedding_service=embedding_service,
@@ -49,7 +51,7 @@ def test_fastembed_hybrid_indexing_and_search(temp_db_path: str):
         role_repo=role_repo,
     )
 
-    result = searcher.search("software programming developer", top_k=2)
+    result = await searcher.search("software programming developer", top_k=2)
     assert result.total >= 1
     assert result.results[0].role_number == "2141.0100"
     assert "Software Engineer" in result.results[0].role_title

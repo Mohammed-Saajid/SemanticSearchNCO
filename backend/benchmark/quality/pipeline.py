@@ -60,9 +60,7 @@ def _search(
             raise ValueError(f"Search response for query {query!r} has an invalid role title.")
         if isinstance(score, bool) or not isinstance(score, (int, float)):
             raise TypeError(f"Search response for query {query!r} has an invalid score.")
-        run_results.append(
-            {"role_number": role_number, "role_title": role_title, "score": float(score)}
-        )
+        run_results.append({"role_number": role_number, "role_title": role_title, "score": float(score)})
     return run_results
 
 
@@ -130,21 +128,11 @@ def collect_run(
         for query in queries
     ]
 
-def write_difference_json(
-    query_map:dict,
-    run_map:dict,
-    output_dir: Path,
-    base_url: str,
-    timeout: float,
-    run_titles: dict
-    ) -> None:
+
+def write_difference_json(query_map: dict, run_map: dict, output_dir: Path, base_url: str, timeout: float, run_titles: dict) -> None:
     difference_json = {}
     for query_id, query_info in query_map.items():
-        expected_roles = {
-            role_number
-            for role_number, relevance in query_info["judgments"].items()
-            if relevance > 0
-        }
+        expected_roles = {role_number for role_number, relevance in query_info["judgments"].items() if relevance > 0}
         retrieved_results = run_map.get(query_id, [])
         retrieved_roles = {role_number for role_number, _ in retrieved_results}
         missing_roles = [
@@ -197,13 +185,8 @@ def run_pipeline(
     from quality.eval import validate_run
 
     run_map = validate_run(run_data, query_map)
-    run_titles = {
-        entry["query_id"]: {
-            result["role_number"]: result["role_title"] for result in entry["results"]
-        }
-        for entry in run_data
-    }
-    write_difference_json(query_map,run_map,output_dir,base_url,timeout,run_titles)
+    run_titles = {entry["query_id"]: {result["role_number"]: result["role_title"] for result in entry["results"]} for entry in run_data}
+    write_difference_json(query_map, run_map, output_dir, base_url, timeout, run_titles)
     summary, per_query = evaluate(query_map, run_map)
     save_reports(output_dir, summary, per_query)
 
@@ -251,7 +234,6 @@ def main() -> None:
             args.timeout,
         )
     except (OSError, TypeError, ValueError, RuntimeError, KeyError) as error:
-        print("Exception",error)
         raise SystemExit(1) from error
 
 

@@ -1,8 +1,9 @@
 import argparse
+import asyncio
 import logging
 import sys
 
-from qdrant_client import QdrantClient
+from qdrant_client import AsyncQdrantClient
 
 from app.core.config import get_settings
 from app.core.logging import setup_logging
@@ -13,7 +14,7 @@ from app.services.embedding import FastEmbedService
 from app.services.indexer import IndexingService
 
 
-def run_ingest(json_path: str, batch_size: int = 64) -> None:
+async def run_ingest(json_path: str, batch_size: int = 64) -> None:
     settings = get_settings()
     logger = setup_logging(debug=settings.debug)
 
@@ -28,11 +29,11 @@ def run_ingest(json_path: str, batch_size: int = 64) -> None:
     )
 
     if settings.qdrant_url:
-        qdrant_client = QdrantClient(url=settings.qdrant_url, api_key=settings.qdrant_api_key)
+        qdrant_client = AsyncQdrantClient(url=settings.qdrant_url, api_key=settings.qdrant_api_key)
     elif settings.qdrant_path:
-        qdrant_client = QdrantClient(path=settings.qdrant_path)
+        qdrant_client = AsyncQdrantClient(path=settings.qdrant_path)
     else:
-        qdrant_client = QdrantClient(location=":memory:")
+        qdrant_client = AsyncQdrantClient(location=":memory:")
 
     vector_repo = VectorRepository(
         client=qdrant_client,
@@ -50,7 +51,7 @@ def run_ingest(json_path: str, batch_size: int = 64) -> None:
     )
 
     logger.info("Ingesting data from %s", json_path)
-    stats = indexer.index_from_file(json_path, batch_size=batch_size)
+    stats = await indexer.index_from_file(json_path, batch_size=batch_size)
     logger.info(
         "Ingestion completed. Indexed %d roles and %d chunks.",
         stats["indexed_roles"],
@@ -75,7 +76,7 @@ def main() -> None:
     args = parser.parse_args()
 
     try:
-        run_ingest(json_path=args.json_path, batch_size=args.batch_size)
+        asyncio.run(run_ingest(json_path=args.json_path, batch_size=args.batch_size))
     except Exception:
         logging.getLogger(__name__).exception("Ingestion failed")
         sys.exit(1)
