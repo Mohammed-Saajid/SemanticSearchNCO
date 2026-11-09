@@ -27,8 +27,9 @@ The command writes `run.json`, `differences.json`, `metrics.json`,
 `query_analysis.csv`, and `run_manifest.json` under the output directory.
 `differences.json` lists mismatches in both directions, grouped by query:
 `query_map` contains positively judged roles missing from the run, while `run`
-contains retrieved roles that are not positively judged. Existing files with
-the same names are replaced atomically.
+contains retrieved roles that are not positively judged. Each mismatch includes
+the role number and title. Existing files with the same names are replaced
+atomically.
 
 Use a unique output directory for historical comparisons, for example
 `quality/reports/2026-11-08-baseline`. Do not commit generated reports unless
