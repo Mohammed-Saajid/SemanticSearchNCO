@@ -106,6 +106,39 @@ def collect_run(
         for query in queries
     ]
 
+def write_difference_json(
+    query_map:dict,
+    run_map:dict,
+    output_dir: Path
+    ) -> None:
+    difference_json = {}
+    for query_id, query_info in query_map.items():
+        expected_roles = {
+            role_number
+            for role_number, relevance in query_info["judgments"].items()
+            if relevance > 0
+        }
+        retrieved_results = run_map.get(query_id, [])
+        retrieved_roles = {role_number for role_number, _ in retrieved_results}
+        missing_roles = [
+            {"role_number": role_number, "relevance": query_info["judgments"][role_number]}
+            for role_number, relevance in query_info["judgments"].items()
+            if relevance > 0 and role_number not in retrieved_roles
+        ]
+        unexpected_results = [
+            {"role_number": role_number, "score": score}
+            for role_number, score in retrieved_results
+            if role_number not in expected_roles
+        ]
+        if missing_roles or unexpected_results:
+            difference_json[query_id] = {
+                "query": query_info["query"],
+                "query_map": missing_roles,
+                "run": unexpected_results,
+            }
+
+    write_json(output_dir / "differences.json", difference_json)
+
 
 def run_pipeline(
     dataset_path: Path,
@@ -129,6 +162,7 @@ def run_pipeline(
     from quality.eval import validate_run
 
     run_map = validate_run(run_data, query_map)
+    write_difference_json(query_map,run_map,output_dir)
     summary, per_query = evaluate(query_map, run_map)
     save_reports(output_dir, summary, per_query)
 
@@ -146,6 +180,7 @@ def run_pipeline(
             },
             "artifacts": {
                 "run": "run.json",
+                "differences": "differences.json",
                 "metrics": "metrics.json",
                 "query_analysis": "query_analysis.csv",
             },
@@ -175,6 +210,7 @@ def main() -> None:
             args.timeout,
         )
     except (OSError, TypeError, ValueError, RuntimeError, KeyError) as error:
+        print("Exception",error)
         raise SystemExit(1) from error
 
 
