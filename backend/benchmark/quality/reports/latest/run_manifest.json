@@ -1,12 +1,13 @@
 {
     "artifacts": {
+        "differences": "differences.json",
         "metrics": "metrics.json",
         "query_analysis": "query_analysis.csv",
         "run": "run.json"
     },
     "dataset": "data/hybrid_search_eval.json",
     "dataset_sha256": "fa9578ed08734e8dfc10b1d87eb186b289765b38ff2d340b558015086abe0ecb",
-    "git_revision": "ba3532ac15b0d6011ac733a07402d809f4d222db",
+    "git_revision": "77919367b72116fb166bf461bc842c4f67dd7b14",
     "search": {
         "base_url": "http://127.0.0.1:8000",
         "endpoint": "/search",
