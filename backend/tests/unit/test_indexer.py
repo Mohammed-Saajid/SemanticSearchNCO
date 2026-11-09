@@ -1,3 +1,5 @@
+import pytest
+
 from app.repositories.role_repository import RoleRepository
 from app.repositories.vector_repository import VectorRepository
 from app.services.indexer import IndexingService
@@ -33,7 +35,8 @@ def test_parse_raw_data_dict(indexing_service: IndexingService):
     assert len(chunks) >= 1
 
 
-def test_index_data_full_flow(
+@pytest.mark.asyncio
+async def test_index_data_full_flow(
     indexing_service: IndexingService,
     role_repository: RoleRepository,
     vector_repository: VectorRepository,
@@ -51,9 +54,9 @@ def test_index_data_full_flow(
         },
     ]
 
-    stats = indexing_service.index_data(data)
+    stats = await indexing_service.index_data(data)
     assert stats["indexed_roles"] == 2
     assert stats["indexed_chunks"] >= 2
 
-    assert role_repository.count() == 2
+    assert await role_repository.count() == 2
     assert vector_repository.count() >= 2

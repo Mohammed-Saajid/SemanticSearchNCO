@@ -145,14 +145,14 @@ class IndexingService:
 
         return roles, chunks
 
-    def index_data(self, raw_data: Any, batch_size: int = 64) -> dict[str, int]:
+    async def index_data(self, raw_data: Any, batch_size: int = 64) -> dict[str, int]:
         roles, chunks = self.parse_raw_data(raw_data)
         logger.info("Parsed input roles=%d chunks=%d", len(roles), len(chunks))
         if not roles:
             logger.warning("No valid roles found in input; skipping indexing")
             return {"indexed_roles": 0, "indexed_chunks": 0}
 
-        self.role_repo.upsert_roles(roles)
+        await self.role_repo.upsert_roles(roles)
 
         all_dense: list[list[float]] = []
         all_sparse: list[SparseEmbedding] = []
@@ -187,8 +187,8 @@ class IndexingService:
         )
         return stats
 
-    def index_from_file(self, file_path: str, batch_size: int = 64) -> dict[str, int]:
+    async def index_from_file(self, file_path: str, batch_size: int = 64) -> dict[str, int]:
         logger.info("Loading indexing source path=%s", file_path)
         with open(file_path, encoding="utf-8") as f:
             data = json.load(f)
-        return self.index_data(data, batch_size=batch_size)
+        return await self.index_data(data, batch_size=batch_size)

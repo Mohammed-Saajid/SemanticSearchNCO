@@ -27,7 +27,7 @@ class SearchService:
         self.vector_repo = vector_repo
         self.role_repo = role_repo
 
-    def search(
+    async def search(
         self,
         query: str,
         top_k: int = 10,
@@ -74,7 +74,7 @@ class SearchService:
         )
 
         role_numbers = [h.role_number for h in paged_hits]
-        roles_map = self.role_repo.get_roles_batch(role_numbers)
+        roles_map = await self.role_repo.get_roles_batch(role_numbers)
 
         results: list[SearchResultItem] = []
         for index, hit in enumerate(paged_hits):
@@ -119,8 +119,8 @@ class SearchService:
             results=results,
         )
 
-    def get_role_description(self, role_number: str) -> RoleDescriptionResponse:
-        record = self.role_repo.get_by_role_number(role_number.strip())
+    async def get_role_description(self, role_number: str) -> RoleDescriptionResponse:
+        record = await self.role_repo.get_by_role_number(role_number.strip())
         if record is None:
             logger.info("Role description not found role_number=%s", role_number)
             return RoleDescriptionResponse(
@@ -134,8 +134,8 @@ class SearchService:
             title=record.title,
         )
 
-    def get_role_detail(self, role_number: str) -> RoleDetailResponse | None:
-        record = self.role_repo.get_by_role_number(role_number.strip())
+    async def get_role_detail(self, role_number: str) -> RoleDetailResponse | None:
+        record = await self.role_repo.get_by_role_number(role_number.strip())
         if record is None:
             logger.info("Role detail not found role_number=%s", role_number)
             return None

@@ -1,3 +1,4 @@
+import pytest
 from fastapi.testclient import TestClient
 
 from app.models.domain import RoleRecord
@@ -5,12 +6,13 @@ from app.repositories.role_repository import RoleRepository
 from app.services.indexer import IndexingService
 
 
-def test_search_endpoint_success(
+@pytest.mark.asyncio
+async def test_search_endpoint_success(
     test_client: TestClient,
     indexing_service: IndexingService,
     sample_roles: list[RoleRecord],
 ):
-    indexing_service.role_repo.upsert_roles(sample_roles)
+    await indexing_service.role_repo.upsert_roles(sample_roles)
     raw_data = [
         {
             "role_number": r.role_number,
@@ -24,7 +26,7 @@ def test_search_endpoint_success(
         }
         for r in sample_roles
     ]
-    indexing_service.index_data(raw_data)
+    await indexing_service.index_data(raw_data)
 
     response = test_client.post("/search", json={"query": "software systems", "top_k": 3})
     assert response.status_code == 200
@@ -58,12 +60,13 @@ def test_search_endpoint_validation_error(test_client: TestClient):
     assert response.status_code == 422
 
 
-def test_get_role_description_query_param(
+@pytest.mark.asyncio
+async def test_get_role_description_query_param(
     test_client: TestClient,
     role_repository: RoleRepository,
     sample_roles: list[RoleRecord],
 ):
-    role_repository.upsert_roles(sample_roles)
+    await role_repository.upsert_roles(sample_roles)
     response = test_client.get("/getroledescription?role_number=1001.0100")
     assert response.status_code == 200
     data = response.json()
@@ -72,12 +75,13 @@ def test_get_role_description_query_param(
     assert "software systems architecture" in data["description"]
 
 
-def test_get_role_description_post_body(
+@pytest.mark.asyncio
+async def test_get_role_description_post_body(
     test_client: TestClient,
     role_repository: RoleRepository,
     sample_roles: list[RoleRecord],
 ):
-    role_repository.upsert_roles(sample_roles)
+    await role_repository.upsert_roles(sample_roles)
     response = test_client.post("/getroledescription", json={"role_number": "1001.0200"})
     assert response.status_code == 200
     data = response.json()
@@ -85,12 +89,13 @@ def test_get_role_description_post_body(
     assert data["title"] == "Data Scientist"
 
 
-def test_get_role_detail_rest(
+@pytest.mark.asyncio
+async def test_get_role_detail_rest(
     test_client: TestClient,
     role_repository: RoleRepository,
     sample_roles: list[RoleRecord],
 ):
-    role_repository.upsert_roles(sample_roles)
+    await role_repository.upsert_roles(sample_roles)
     response = test_client.get("/roles/1001.0100")
     assert response.status_code == 200
     data = response.json()

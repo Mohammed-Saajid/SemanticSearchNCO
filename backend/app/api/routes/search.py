@@ -18,12 +18,12 @@ logger = logging.getLogger(__name__)
 
 
 @router.post("/search", response_model=SearchResponse, tags=["Search"])
-def search(
+async def search(
     request: SearchRequest,
     service: SearchService = Depends(get_search_service),
 ) -> SearchResponse:
     logger.debug("Search request received top_k=%d offset=%d", request.top_k, request.offset)
-    return service.search(
+    return await service.search(
         query=request.query,
         top_k=request.top_k,
         offset=request.offset,
@@ -31,29 +31,29 @@ def search(
 
 
 @router.get("/getroledescription", response_model=RoleDescriptionResponse, tags=["Roles"])
-def get_role_description_get(
+async def get_role_description_get(
     role_number: str = Query(..., min_length=1),
     service: SearchService = Depends(get_search_service),
 ) -> RoleDescriptionResponse:
     logger.debug("Role description requested role_number=%s", role_number)
-    return service.get_role_description(role_number=role_number)
+    return await service.get_role_description(role_number=role_number)
 
 
 @router.post("/getroledescription", response_model=RoleDescriptionResponse, tags=["Roles"])
-def get_role_description_post(
+async def get_role_description_post(
     request: RoleQueryRequest,
     service: SearchService = Depends(get_search_service),
 ) -> RoleDescriptionResponse:
     logger.debug("Role description requested role_number=%s", request.role_number)
-    return service.get_role_description(role_number=request.role_number)
+    return await service.get_role_description(role_number=request.role_number)
 
 
 @router.get("/roles/{role_number}", response_model=RoleDetailResponse, tags=["Roles"])
-def get_role_detail(
+async def get_role_detail(
     role_number: str,
     service: SearchService = Depends(get_search_service),
 ) -> RoleDetailResponse:
-    detail = service.get_role_detail(role_number=role_number)
+    detail = await service.get_role_detail(role_number=role_number)
     if detail is None:
         logger.info("Role detail not found role_number=%s", role_number)
         raise HTTPException(
