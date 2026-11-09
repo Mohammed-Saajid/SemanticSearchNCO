@@ -709,6 +709,14 @@
           "relevance": 2
         },
         {
+          "role_number": "7531.1200",
+          "relevance": 2
+        },
+        {
+          "role_number": "8153.0500",
+          "relevance": 2
+        },
+        {
           "role_number": "7531.0101",
           "relevance": 1
         },
@@ -771,15 +779,23 @@
           "relevance": 2
         },
         {
-          "role_number": "2512.0300",
+          "role_number": "3314.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2120.0400",
+          "relevance": 2
+        },
+        {
+          "role_number": "2521.0202",
+          "relevance": 2
+        },
+        {
+          "role_number": "3314.0200",
           "relevance": 2
         },
         {
           "role_number": "2522.0100",
-          "relevance": 2
-        },
-        {
-          "role_number": "2412.0200",
           "relevance": 1
         },
         {
@@ -824,6 +840,14 @@
         {
           "role_number": "7223.6002",
           "relevance": 2
+        },
+        {
+          "role_number": "7223.0501",
+          "relevance": 2
+        },
+        {
+          "role_number": "3115.1301",
+          "relevance": 1
         }
       ]
     },
@@ -843,6 +867,30 @@
         {
           "role_number": "7212.0301",
           "relevance": 2
+        },
+        {
+          "role_number": "7212.0302",
+          "relevance": 2
+        },
+        {
+          "role_number": "3122.4701",
+          "relevance": 2
+        },
+        {
+          "role_number": "7212.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "3122.4702",
+          "relevance": 2
+        },
+        {
+          "role_number": "8212.1901",
+          "relevance": 2
+        },
+        {
+          "role_number": "3122.4200",
+          "relevance": 1
         },
         {
           "role_number": "7212.0111",
@@ -893,6 +941,14 @@
         },
         {
           "role_number": "3118.9900",
+          "relevance": 1
+        },
+        {
+          "role_number": "2144.0800",
+          "relevance": 1
+        },
+        {
+          "role_number": "3115.1301",
           "relevance": 1
         }
       ]
@@ -1120,11 +1176,35 @@
           "relevance": 2
         },
         {
+          "role_number": "2341.9900",
+          "relevance": 2
+        },
+        {
+          "role_number": "3423.0200",
+          "relevance": 2
+        },
+        {
+          "role_number": "2341.0100",
+          "relevance": 2
+        },
+        {
+          "role_number": "2352.0300",
+          "relevance": 1
+        },
+        {
+          "role_number": "1345.0100",
+          "relevance": 1
+        },
+        {
           "role_number": "2310.0100",
           "relevance": 1
         },
         {
           "role_number": "2310.0600",
+          "relevance": 1
+        },
+        {
+          "role_number": "2352.0100",
           "relevance": 1
         }
       ]
@@ -1135,6 +1215,10 @@
       "category": "task_based",
       "expected_results": [
         {
+          "role_number": "7213.0201",
+          "relevance": 3
+        },
+        {
           "role_number": "7231.0100",
           "relevance": 3
         },
@@ -1143,8 +1227,36 @@
           "relevance": 3
         },
         {
+          "role_number": "7233.0400",
+          "relevance": 3
+        },
+        {
+          "role_number": "7232.0600",
+          "relevance": 3
+        },
+        {
+          "role_number": "2144.0700",
+          "relevance": 3
+        },
+        {
+          "role_number": "3122.5300",
+          "relevance": 2
+        },
+        {
           "role_number": "7231.0300",
           "relevance": 2
+        },
+        {
+          "role_number": "7233.0700",
+          "relevance": 1
+        },
+        {
+          "role_number": "7233.1000",
+          "relevance": 1
+        },
+        {
+          "role_number": "7231.0400",
+          "relevance": 1
         }
       ]
     },
@@ -1154,8 +1266,32 @@
       "category": "partial_title",
       "expected_results": [
         {
+          "role_number": "8332.0100",
+          "relevance": 3
+        },
+        {
+          "role_number": "8332.9900",
+          "relevance": 3
+        },
+        {
           "role_number": "8311.0601",
           "relevance": 3
+        },
+        {
+          "role_number": "8111.2601",
+          "relevance": 2
+        },
+        {
+          "role_number": "8344.0201",
+          "relevance": 1
+        },
+        {
+          "role_number": "8342.1201",
+          "relevance": 2
+        },
+        {
+          "role_number": "8344.0100",
+          "relevance": 2
         },
         {
           "role_number": "8341.0101",
