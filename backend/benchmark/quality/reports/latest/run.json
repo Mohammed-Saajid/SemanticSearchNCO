@@ -4,42 +4,52 @@
         "results": [
             {
                 "role_number": "2513.0101",
+                "role_title": "Web Developer",
                 "score": 1.0
             },
             {
                 "role_number": "2513.0302",
+                "role_title": "Media Developer \u2013 Application Development",
                 "score": 0.4
             },
             {
                 "role_number": "2166.0300",
+                "role_title": "Web Designer",
                 "score": 0.3627450980392157
             },
             {
                 "role_number": "2513.0301",
+                "role_title": "Media Developer \u2013 Product Development and\nDelivery",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2635.0600",
+                "role_title": "Health Educator",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2513.0201",
+                "role_title": "User Interface Developer",
                 "score": 0.3055555555555556
             },
             {
                 "role_number": "2166.0201",
+                "role_title": "Multimedia Artist and Animator/Animator",
                 "score": 0.2777777777777778
             },
             {
                 "role_number": "2512.0204",
+                "role_title": "Software Developer \u2013 Application Development",
                 "score": 0.25396825396825395
             },
             {
                 "role_number": "8132.0200",
+                "role_title": "Developer, Photographic",
                 "score": 0.225
             },
             {
                 "role_number": "2512.0301",
+                "role_title": "Software Developer \u2013 Product Development and\nDelivery",
                 "score": 0.1875
             }
         ]
@@ -49,42 +59,52 @@
         "results": [
             {
                 "role_number": "2522.0100",
+                "role_title": "Database Administrator",
                 "score": 1.0
             },
             {
                 "role_number": "3513.0100",
+                "role_title": "System Administration Assistant/Junior\nSystem Administrator",
                 "score": 0.41025641025641024
             },
             {
                 "role_number": "2263.0200",
+                "role_title": "Administrator, Hospital",
                 "score": 0.35
             },
             {
                 "role_number": "3513.0301",
+                "role_title": "Infrastructure Engineer",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2521.0100",
+                "role_title": "Database Design Analyst",
                 "score": 0.325
             },
             {
                 "role_number": "4120.0200",
+                "role_title": "Personal Secretary",
                 "score": 0.27040816326530615
             },
             {
                 "role_number": "2612.0800",
+                "role_title": "Chairman, Administrative Tribunal",
                 "score": 0.1845238095238095
             },
             {
                 "role_number": "3513.0200",
+                "role_title": "Computer Security Specialist",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "3512.0100",
+                "role_title": "Data Recovery Planner/System\nAdministrator",
                 "score": 0.16208791208791207
             },
             {
                 "role_number": "2622.0500",
+                "role_title": "News Librarian",
                 "score": 0.14285714285714285
             }
         ]
@@ -94,42 +114,52 @@
         "results": [
             {
                 "role_number": "2411.0100",
+                "role_title": "Accountant",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "4311.0401",
+                "role_title": "Accounts Executive (Accounts Payable &\nReceivable)",
                 "score": 0.5666666666666667
             },
             {
                 "role_number": "4313.0101",
+                "role_title": "Accounts Clerk/Accounts Executive (Payroll)",
                 "score": 0.3611111111111111
             },
             {
                 "role_number": "4311.0700",
+                "role_title": "Bill and Accounts Collector",
                 "score": 0.2688679245283019
             },
             {
                 "role_number": "2411.0200",
+                "role_title": "Auditor",
                 "score": 0.26666666666666666
             },
             {
                 "role_number": "4311.0600",
+                "role_title": "Clerk, Cost Accounting",
                 "score": 0.24545454545454548
             },
             {
                 "role_number": "2412.9900",
+                "role_title": "Financial and Investment Advisors, Other",
                 "score": 0.23809523809523808
             },
             {
                 "role_number": "4311.0200",
+                "role_title": "Bank Clerk",
                 "score": 0.22439024390243903
             },
             {
                 "role_number": "4311.9900",
+                "role_title": "Accounting and Bookkeeping Clerks, Others",
                 "score": 0.21978021978021978
             },
             {
                 "role_number": "2411.0300",
+                "role_title": "Cost Accountant",
                 "score": 0.18285714285714286
             }
         ]
@@ -139,42 +169,52 @@
         "results": [
             {
                 "role_number": "2211.0100",
+                "role_title": "Physician, General",
                 "score": 1.0
             },
             {
                 "role_number": "3221.0100",
+                "role_title": "Nurse, General",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "2230.0100",
+                "role_title": "Physician, Ayurvedic",
                 "score": 0.35
             },
             {
                 "role_number": "2211.9900",
+                "role_title": "Generalist Medical Practitioners, Allopathic,\nOther",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2211.0200",
+                "role_title": "Surgeon, General",
                 "score": 0.2696078431372549
             },
             {
                 "role_number": "2230.0200",
+                "role_title": "Physician, Homeopathic",
                 "score": 0.25263157894736843
             },
             {
                 "role_number": "2265.0100",
+                "role_title": "Nutritionist, General",
                 "score": 0.22564102564102564
             },
             {
                 "role_number": "2269.0300",
+                "role_title": "Physician, Sidha",
                 "score": 0.19607843137254902
             },
             {
                 "role_number": "2269.0200",
+                "role_title": "Physician, Osteopathic",
                 "score": 0.19166666666666665
             },
             {
                 "role_number": "7126.0104",
+                "role_title": "Plumber, General Helper",
                 "score": 0.14772727272727273
             }
         ]
@@ -184,42 +224,52 @@
         "results": [
             {
                 "role_number": "7115.0100",
+                "role_title": "Carpenter, General",
                 "score": 1.0
             },
             {
                 "role_number": "1322.0500",
+                "role_title": "General Manager, Quarry",
                 "score": 0.3655913978494624
             },
             {
                 "role_number": "1112.0100",
+                "role_title": "Administrative Official, Union Government",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "7115.0201",
+                "role_title": "Assistant Shuttering Carpenter",
                 "score": 0.3
             },
             {
                 "role_number": "7115.0200",
+                "role_title": "Carpenter, Construction",
                 "score": 0.2803030303030303
             },
             {
                 "role_number": "7115.9900",
+                "role_title": "Carpenters and Joiners Operatives, Other",
                 "score": 0.2777777777777778
             },
             {
                 "role_number": "1324.2200",
+                "role_title": "General Manager, Storage and Warehousing",
                 "score": 0.22702702702702704
             },
             {
                 "role_number": "1322.0600",
+                "role_title": "General Manager, Well Drilling",
                 "score": 0.21978021978021978
             },
             {
                 "role_number": "9313.0401",
+                "role_title": "Helper Carpenter \u2013 Shuttering & Scaffolding",
                 "score": 0.21929824561403508
             },
             {
                 "role_number": "1323.0300",
+                "role_title": "General Manager, Construction/General\nManager Construction Projects",
                 "score": 0.20192307692307693
             }
         ]
@@ -229,42 +279,52 @@
         "results": [
             {
                 "role_number": "2151.0100",
+                "role_title": "Electrical Engineer, General",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "2151.9900",
+                "role_title": "Electrical Engineers, Other",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "3113.0101",
+                "role_title": "Electrical Engineering,\nTechnician/Maintenance Technician\nElectrical",
                 "score": 0.5333333333333333
             },
             {
                 "role_number": "2151.0200",
+                "role_title": "Designer, Electrical Engineering",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "2151.0202",
+                "role_title": "Electrical Design Developer",
                 "score": 0.3088235294117647
             },
             {
                 "role_number": "2151.0300",
+                "role_title": "Electrical Engineer, Generation and Supply",
                 "score": 0.25
             },
             {
                 "role_number": "8311.0400",
+                "role_title": "Driver, Railway Engine (Electrical)",
                 "score": 0.25
             },
             {
                 "role_number": "3151.0300",
+                "role_title": "Third Engineer, Ship",
                 "score": 0.2
             },
             {
                 "role_number": "2151.0701",
+                "role_title": "Design-For-Manufacture Engineer",
                 "score": 0.17777777777777776
             },
             {
                 "role_number": "2152.0200",
+                "role_title": "Electronic Engineer",
                 "score": 0.14285714285714285
             }
         ]
@@ -274,42 +334,52 @@
         "results": [
             {
                 "role_number": "2142.0300",
+                "role_title": "Civil Engineer, Structural",
                 "score": 0.75
             },
             {
                 "role_number": "3112.9900",
+                "role_title": "Civil Engineering Technicians, Other",
                 "score": 0.5714285714285714
             },
             {
                 "role_number": "2142.0100",
+                "role_title": "Civil Engineer, General",
                 "score": 0.5333333333333333
             },
             {
                 "role_number": "2142.9900",
+                "role_title": "Civil Engineers, Other",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "2142.0200",
+                "role_title": "Civil Engineer, Building",
                 "score": 0.34090909090909094
             },
             {
                 "role_number": "2142.0600",
+                "role_title": "Civil Engineer, Highways and Roads",
                 "score": 0.29166666666666663
             },
             {
                 "role_number": "2142.0400",
+                "role_title": "Civil Engineer, Irrigation",
                 "score": 0.29166666666666663
             },
             {
                 "role_number": "2142.0900",
+                "role_title": "Civil Engineer, Public Health",
                 "score": 0.27692307692307694
             },
             {
                 "role_number": "2142.0700",
+                "role_title": "Civil Engineer, Railways",
                 "score": 0.25396825396825395
             },
             {
                 "role_number": "3112.0100",
+                "role_title": "Overseer, Civil Engineering",
                 "score": 0.17777777777777776
             }
         ]
@@ -319,42 +389,52 @@
         "results": [
             {
                 "role_number": "7212.0111",
+                "role_title": "Repair Welder",
                 "score": 0.625
             },
             {
                 "role_number": "7212.9900",
+                "role_title": "Welders and Flame Cutters, Other",
                 "score": 0.5909090909090909
             },
             {
                 "role_number": "7212.0301",
+                "role_title": "Welder",
                 "score": 0.4444444444444444
             },
             {
                 "role_number": "7212.0300",
+                "role_title": "Welder, Machine",
                 "score": 0.41666666666666663
             },
             {
                 "role_number": "7212.0303",
+                "role_title": "Gas Metal Arc Welder/Metal Inert\nGas/Metal Active Gas/Gas Metal Arc\nWelder (MIG/MAG/GMAW)",
                 "score": 0.3958333333333333
             },
             {
                 "role_number": "7212.0101",
+                "role_title": "Plumber (Welder)/Plumbing (Sanitary\nFixtures) Fitter Assistant",
                 "score": 0.34285714285714286
             },
             {
                 "role_number": "3122.4701",
+                "role_title": "Welding Machine Setter",
                 "score": 0.3214285714285714
             },
             {
                 "role_number": "7212.0102",
+                "role_title": "Plumber (Welder) Assistant",
                 "score": 0.2777777777777778
             },
             {
                 "role_number": "7212.0105",
+                "role_title": "Tungsten Inert Gas Welder",
                 "score": 0.27692307692307694
             },
             {
                 "role_number": "7212.0200",
+                "role_title": "Welder, Electric",
                 "score": 0.24285714285714285
             }
         ]
@@ -364,42 +444,52 @@
         "results": [
             {
                 "role_number": "3221.0200",
+                "role_title": "Nurse, Industrial",
                 "score": 0.75
             },
             {
                 "role_number": "3221.0300",
+                "role_title": "Nursing Attendant",
                 "score": 0.7
             },
             {
                 "role_number": "2221.0100",
+                "role_title": "Nurse, Specialist",
                 "score": 0.5833333333333333
             },
             {
                 "role_number": "3221.0100",
+                "role_title": "Nurse, General",
                 "score": 0.5
             },
             {
                 "role_number": "3221.9900",
+                "role_title": "Nursing Associate Professionals, Other",
                 "score": 0.30000000000000004
             },
             {
                 "role_number": "3222.0100",
+                "role_title": "Midwife",
                 "score": 0.29166666666666663
             },
             {
                 "role_number": "2221.9900",
+                "role_title": "Professional Nurses, Other",
                 "score": 0.2857142857142857
             },
             {
                 "role_number": "3222.0200",
+                "role_title": "Midwifery Attendant",
                 "score": 0.225
             },
             {
                 "role_number": "5329.0101",
+                "role_title": "General Duty Assistant",
                 "score": 0.2222222222222222
             },
             {
                 "role_number": "5311.0400",
+                "role_title": "Ayah, Domestic",
                 "score": 0.18181818181818182
             }
         ]
@@ -409,42 +499,52 @@
         "results": [
             {
                 "role_number": "7126.0102",
+                "role_title": "Plumber, Operations",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "7126.0104",
+                "role_title": "Plumber, General Helper",
                 "score": 0.7
             },
             {
                 "role_number": "7126.0107",
+                "role_title": "Plumber, Maintenance and Servicing",
                 "score": 0.5333333333333333
             },
             {
                 "role_number": "7233.1301",
+                "role_title": "Plumber (Pumps & E/M Mechanic)",
                 "score": 0.34090909090909094
             },
             {
                 "role_number": "7212.0102",
+                "role_title": "Plumber (Welder) Assistant",
                 "score": 0.3269230769230769
             },
             {
                 "role_number": "7212.0101",
+                "role_title": "Plumber (Welder)/Plumbing (Sanitary\nFixtures) Fitter Assistant",
                 "score": 0.2777777777777778
             },
             {
                 "role_number": "7126.0105",
+                "role_title": "Plumber, General Assistant",
                 "score": 0.26785714285714285
             },
             {
                 "role_number": "7126.0103",
+                "role_title": "Plumber, General \u2013 Installation and Repair",
                 "score": 0.25
             },
             {
                 "role_number": "7126.0106",
+                "role_title": "Plumber, Maintenance and Servicing\nAssistant",
                 "score": 0.2361111111111111
             },
             {
                 "role_number": "3322.5002",
+                "role_title": "Plumber Aftersales Service",
                 "score": 0.22619047619047616
             }
         ]
@@ -454,42 +554,52 @@
         "results": [
             {
                 "role_number": "2144.0200",
+                "role_title": "Designer, Machine",
                 "score": 0.7
             },
             {
                 "role_number": "7536.2600",
+                "role_title": "Belt Maker",
                 "score": 0.5
             },
             {
                 "role_number": "7523.1600",
+                "role_title": "Wood Carver, Machine",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "8153.0500",
+                "role_title": "Embroider, Machine",
                 "score": 0.45
             },
             {
                 "role_number": "8189.0701",
+                "role_title": "Pantograph Machine Operator",
                 "score": 0.3611111111111111
             },
             {
                 "role_number": "8153.0600",
+                "role_title": "Embroidery Machine Operator (Semi-\nAutomatic)",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "4411.0100",
+                "role_title": "Library Clerk",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "4132.0600",
+                "role_title": "Coding Machine Operator",
                 "score": 0.14285714285714285
             },
             {
                 "role_number": "7322.1600",
+                "role_title": "Frontman",
                 "score": 0.13942307692307693
             },
             {
                 "role_number": "7523.0500",
+                "role_title": "Router, Wood",
                 "score": 0.12702702702702703
             }
         ]
@@ -499,42 +609,52 @@
         "results": [
             {
                 "role_number": "2250.0300",
+                "role_title": "Veterinarian, Surgeon",
                 "score": 0.75
             },
             {
                 "role_number": "3240.0300",
+                "role_title": "Animal Keeper",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "2250.0200",
+                "role_title": "Veterinarian, General",
                 "score": 0.5833333333333333
             },
             {
                 "role_number": "6121.1000",
+                "role_title": "Stableman",
                 "score": 0.5
             },
             {
                 "role_number": "6129.0100",
+                "role_title": "Farmer, Fur-Bearing Animals",
                 "score": 0.25
             },
             {
                 "role_number": "2250.0500",
+                "role_title": "Zoo Veterinarian",
                 "score": 0.24347826086956523
             },
             {
                 "role_number": "2265.0300",
+                "role_title": "Animal Nutritionist",
                 "score": 0.24000000000000002
             },
             {
                 "role_number": "6121.1100",
+                "role_title": "Elephant Keeper",
                 "score": 0.23376623376623376
             },
             {
                 "role_number": "6121.0100",
+                "role_title": "Farmer, Livestock",
                 "score": 0.19444444444444442
             },
             {
                 "role_number": "2250.0100",
+                "role_title": "Animal Pathologist",
                 "score": 0.17424242424242425
             }
         ]
@@ -544,42 +664,52 @@
         "results": [
             {
                 "role_number": "2342.0100",
+                "role_title": "Teacher, Infant School/Teacher Pre-Primary",
                 "score": 0.75
             },
             {
                 "role_number": "2341.0400",
+                "role_title": "Primary School Teacher",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "2342.9900",
+                "role_title": "Pre-Primary Education Teaching Associate\nProfessionals, Other",
                 "score": 0.5333333333333333
             },
             {
                 "role_number": "2341.9900",
+                "role_title": "Primary School Teachers, Other",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "5311.0300",
+                "role_title": "Governess",
                 "score": 0.3055555555555556
             },
             {
                 "role_number": "2356.9900",
+                "role_title": "Information Technology Trainers, Other",
                 "score": 0.2777777777777778
             },
             {
                 "role_number": "5311.0200",
+                "role_title": "Child Care Worker",
                 "score": 0.2625
             },
             {
                 "role_number": "2352.0300",
+                "role_title": "Teacher for Differently-Abled (Mental)",
                 "score": 0.22619047619047616
             },
             {
                 "role_number": "2352.0100",
+                "role_title": "Teacher for Visually Impaired",
                 "score": 0.225
             },
             {
                 "role_number": "1345.0100",
+                "role_title": "Headmaster",
                 "score": 0.15948275862068967
             }
         ]
@@ -589,42 +719,52 @@
         "results": [
             {
                 "role_number": "6111.9900",
+                "role_title": "Field Crop and Vegetable Growers, Other",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "6111.0100",
+                "role_title": "Cultivator, General",
                 "score": 0.6428571428571428
             },
             {
                 "role_number": "6111.0200",
+                "role_title": "Cultivator, Crop",
                 "score": 0.5833333333333333
             },
             {
                 "role_number": "6114.9900",
+                "role_title": "Mixed Crop Growers, Other",
                 "score": 0.3111111111111111
             },
             {
                 "role_number": "6113.0100",
+                "role_title": "Planter",
                 "score": 0.27439024390243905
             },
             {
                 "role_number": "2132.1000",
+                "role_title": "Farm Overseer, Crop Production",
                 "score": 0.21428571428571427
             },
             {
                 "role_number": "8160.1000",
+                "role_title": "Flour Mill Operator",
                 "score": 0.2
             },
             {
                 "role_number": "6112.9900",
+                "role_title": "Tree and Shrub Crop Growers, Other",
                 "score": 0.18055555555555555
             },
             {
                 "role_number": "6111.1300",
+                "role_title": "Cultivator, Vegetables",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "1311.0700",
+                "role_title": "Manager, Agricultural Farm",
                 "score": 0.1611111111111111
             }
         ]
@@ -634,42 +774,52 @@
         "results": [
             {
                 "role_number": "5141.0300",
+                "role_title": "Barber",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "5141.0100",
+                "role_title": "Hairdresser (Ladies)",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "5141.9900",
+                "role_title": "Hairdressers, Other",
                 "score": 0.5
             },
             {
                 "role_number": "5141.0200",
+                "role_title": "Hair Stylist",
                 "score": 0.3666666666666667
             },
             {
                 "role_number": "5142.0100",
+                "role_title": "Beautician",
                 "score": 0.23225806451612904
             },
             {
                 "role_number": "5141.0201",
+                "role_title": "Assistant Hair Stylist",
                 "score": 0.20238095238095238
             },
             {
                 "role_number": "6121.1300",
+                "role_title": "Shearer, Animal, Other/Shearer, Other\nAnimals",
                 "score": 0.19548872180451127
             },
             {
                 "role_number": "7535.0400",
+                "role_title": "Dehairer, Hand",
                 "score": 0.15925058548009366
             },
             {
                 "role_number": "7535.1700",
+                "role_title": "Pelt Dresser, General",
                 "score": 0.14540816326530612
             },
             {
                 "role_number": "7536.0500",
+                "role_title": "Cutter, Hand",
                 "score": 0.1414141414141414
             }
         ]
@@ -679,42 +829,52 @@
         "results": [
             {
                 "role_number": "3122.5300",
+                "role_title": "Supervisor and Foreman, Motor Vehicle\nRepairing",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "7231.9900",
+                "role_title": "Motor Vehicle Mechanics, Other",
                 "score": 0.5
             },
             {
                 "role_number": "1213.0200",
+                "role_title": "Manager, Automotive Service Station",
                 "score": 0.4583333333333333
             },
             {
                 "role_number": "2144.0700",
+                "role_title": "Mechanical Engineer, Automobile",
                 "score": 0.3833333333333333
             },
             {
                 "role_number": "7412.0701",
+                "role_title": "Electrician, Automobile",
                 "score": 0.25
             },
             {
                 "role_number": "3115.0601",
+                "role_title": "Master Auto Service Technician/Auto\nService Technician",
                 "score": 0.25
             },
             {
                 "role_number": "5411.0100",
+                "role_title": "Fire Fighter",
                 "score": 0.25
             },
             {
                 "role_number": "7231.0400",
+                "role_title": "Fitter Automobile",
                 "score": 0.23125
             },
             {
                 "role_number": "1324.0700",
+                "role_title": "Traffic Inspector, Tram",
                 "score": 0.2
             },
             {
                 "role_number": "1213.0100",
+                "role_title": "Manager, Automotive Service",
                 "score": 0.18831168831168832
             }
         ]
@@ -724,42 +884,52 @@
         "results": [
             {
                 "role_number": "5414.0501",
+                "role_title": "Gateman/Unarmed Security Guard",
                 "score": 0.5909090909090909
             },
             {
                 "role_number": "5414.0400",
+                "role_title": "Watchman",
                 "score": 0.5833333333333333
             },
             {
                 "role_number": "9629.9900",
+                "role_title": "Doorkeepers, Watchpersons and Related\nWorkers, Other",
                 "score": 0.5
             },
             {
                 "role_number": "5414.0101",
+                "role_title": "Security Officer",
                 "score": 0.41666666666666663
             },
             {
                 "role_number": "3521.2100",
+                "role_title": "Light Keeper, Light House",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "5112.0400",
+                "role_title": "Conductor Guard, Railway",
                 "score": 0.30000000000000004
             },
             {
                 "role_number": "5414.0200",
+                "role_title": "Home Guard",
                 "score": 0.29166666666666663
             },
             {
                 "role_number": "5151.0800",
+                "role_title": "Room Bearer/Bell Boys/Bell Hop/Hotel\nPorters",
                 "score": 0.21851851851851853
             },
             {
                 "role_number": "9112.0100",
+                "role_title": "Dusting Man, Office; Farash,\nOffice/Housekeeping Attendant",
                 "score": 0.2111111111111111
             },
             {
                 "role_number": "3341.0700",
+                "role_title": "Headlight Keeper",
                 "score": 0.14285714285714285
             }
         ]
@@ -769,42 +939,52 @@
         "results": [
             {
                 "role_number": "3213.0100",
+                "role_title": "Pharmacist",
                 "score": 1.0
             },
             {
                 "role_number": "3213.9900",
+                "role_title": "Pharmaceutical Assistants, Other",
                 "score": 0.5
             },
             {
                 "role_number": "6210.0600",
+                "role_title": "Gatherer, Medicinal Herbs",
                 "score": 0.3733333333333333
             },
             {
                 "role_number": "2230.0100",
+                "role_title": "Physician, Ayurvedic",
                 "score": 0.34090909090909094
             },
             {
                 "role_number": "3213.0200",
+                "role_title": "Laboratory Assistant, Pharmaceutical",
                 "score": 0.325
             },
             {
                 "role_number": "2262.0100",
+                "role_title": "Chemist, Pharmaceuticals",
                 "score": 0.25
             },
             {
                 "role_number": "2230.0400",
+                "role_title": "Physician, Unani",
                 "score": 0.22040816326530613
             },
             {
                 "role_number": "8131.1400",
+                "role_title": "Drying Chamber Attendant\n(Drugs)/Chamber Operators",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "2230.0200",
+                "role_title": "Physician, Homeopathic",
                 "score": 0.16208791208791207
             },
             {
                 "role_number": "2262.0101",
+                "role_title": "Chemist, Pharmaceuticals",
                 "score": 0.14285714285714285
             }
         ]
@@ -814,42 +994,52 @@
         "results": [
             {
                 "role_number": "7411.0100",
+                "role_title": "Electrician, General",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "7412.0701",
+                "role_title": "Electrician, Automobile",
                 "score": 0.6
             },
             {
                 "role_number": "7411.0200",
+                "role_title": "Electrician (Mines)",
                 "score": 0.41666666666666663
             },
             {
                 "role_number": "7127.0100",
+                "role_title": "Mechanic, Refrigeration and Air-\nConditioning",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "7231.9900",
+                "role_title": "Motor Vehicle Mechanics, Other",
                 "score": 0.2708333333333333
             },
             {
                 "role_number": "7412.0200",
+                "role_title": "Electrical Fitter",
                 "score": 0.22
             },
             {
                 "role_number": "3122.5600",
+                "role_title": "Supervisor and Foreman, Electrical and\nElectronic Equipment",
                 "score": 0.21428571428571427
             },
             {
                 "role_number": "8212.0402",
+                "role_title": "Electrical Assembly Operator",
                 "score": 0.2
             },
             {
                 "role_number": "7233.1300",
+                "role_title": "Mechanic, Pump",
                 "score": 0.1893939393939394
             },
             {
                 "role_number": "3122.5300",
+                "role_title": "Supervisor and Foreman, Motor Vehicle\nRepairing",
                 "score": 0.16666666666666666
             }
         ]
@@ -859,42 +1049,52 @@
         "results": [
             {
                 "role_number": "7233.1200",
+                "role_title": "Millwright",
                 "score": 0.75
             },
             {
                 "role_number": "2144.0600",
+                "role_title": "Mechanical Engineer, Maintenance",
                 "score": 0.5454545454545454
             },
             {
                 "role_number": "7421.0300",
+                "role_title": "Electronic Mechanic",
                 "score": 0.4444444444444444
             },
             {
                 "role_number": "7233.1500",
+                "role_title": "Mechanic, Mining Machinery",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "7233.1100",
+                "role_title": "Mechanic, Maintenance, Chemical\nPlant/Technician, Maintenance, Chemical\nPlant",
                 "score": 0.26666666666666666
             },
             {
                 "role_number": "3211.0501",
+                "role_title": "Medical Equipment Technician",
                 "score": 0.25
             },
             {
                 "role_number": "1213.0100",
+                "role_title": "Manager, Automotive Service",
                 "score": 0.23703703703703705
             },
             {
                 "role_number": "7233.1600",
+                "role_title": "Mechanic, Textile Machinery",
                 "score": 0.23225806451612904
             },
             {
                 "role_number": "7411.0100",
+                "role_title": "Electrician, General",
                 "score": 0.20192307692307693
             },
             {
                 "role_number": "7233.2000",
+                "role_title": "Mechanic, Repairman (Domestic\nAppliances)",
                 "score": 0.19047619047619047
             }
         ]
@@ -904,42 +1104,52 @@
         "results": [
             {
                 "role_number": "7112.0200",
+                "role_title": "Bricklayerer, Construction",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "7112.0400",
+                "role_title": "Paviour",
                 "score": 0.6111111111111112
             },
             {
                 "role_number": "8181.1900",
+                "role_title": "Bricklayer (Brick & Tile)",
                 "score": 0.5833333333333333
             },
             {
                 "role_number": "7112.0300",
+                "role_title": "Bricklayer, Refractory",
                 "score": 0.45
             },
             {
                 "role_number": "7124.0100",
+                "role_title": "Building Insulator, Hand",
                 "score": 0.25757575757575757
             },
             {
                 "role_number": "7122.0100",
+                "role_title": "Tile Setter",
                 "score": 0.24761904761904763
             },
             {
                 "role_number": "7112.0100",
+                "role_title": "Stone Mason",
                 "score": 0.24285714285714285
             },
             {
                 "role_number": "7112.9900",
+                "role_title": "Bricklayerers, Other",
                 "score": 0.18803418803418803
             },
             {
                 "role_number": "9313.0100",
+                "role_title": "Well Digger Helper",
                 "score": 0.18518518518518517
             },
             {
                 "role_number": "8111.1200",
+                "role_title": "Stone Cutter, Mines",
                 "score": 0.17763157894736842
             }
         ]
@@ -949,42 +1159,52 @@
         "results": [
             {
                 "role_number": "8343.0100",
+                "role_title": "Driver, Steam Crane",
                 "score": 0.7
             },
             {
                 "role_number": "8343.1000",
+                "role_title": "Crane Driver, Hammer Head",
                 "score": 0.5714285714285714
             },
             {
                 "role_number": "8343.0300",
+                "role_title": "Crane Operator, Pneumatic",
                 "score": 0.5
             },
             {
                 "role_number": "8343.0400",
+                "role_title": "Crane Operator, Hydraulic",
                 "score": 0.5
             },
             {
                 "role_number": "8343.0500",
+                "role_title": "Mobile Crane Operator",
                 "score": 0.4444444444444444
             },
             {
                 "role_number": "8343.0200",
+                "role_title": "Crane Operator, Diesel Electric",
                 "score": 0.30952380952380953
             },
             {
                 "role_number": "8343.1600",
+                "role_title": "Crane and Hoist Operators, Other",
                 "score": 0.25263157894736843
             },
             {
                 "role_number": "8343.0800",
+                "role_title": "Derrick Crane Operator",
                 "score": 0.24285714285714285
             },
             {
                 "role_number": "8343.0700",
+                "role_title": "Overhead Crane Operator",
                 "score": 0.2159090909090909
             },
             {
                 "role_number": "8343.0600",
+                "role_title": "Crane Operator, Gantry",
                 "score": 0.20833333333333331
             }
         ]
@@ -994,42 +1214,52 @@
         "results": [
             {
                 "role_number": "4311.0101",
+                "role_title": "Bookkeeper General/Accounts Executive\n(Recording and Reporting)",
                 "score": 0.75
             },
             {
                 "role_number": "4313.0101",
+                "role_title": "Accounts Clerk/Accounts Executive (Payroll)",
                 "score": 0.75
             },
             {
                 "role_number": "2411.0100",
+                "role_title": "Accountant",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "4311.0200",
+                "role_title": "Bank Clerk",
                 "score": 0.3666666666666667
             },
             {
                 "role_number": "2411.0200",
+                "role_title": "Auditor",
                 "score": 0.3666666666666667
             },
             {
                 "role_number": "4211.0100",
+                "role_title": "Cashier, General",
                 "score": 0.24285714285714285
             },
             {
                 "role_number": "4311.0300",
+                "role_title": "Ledger Clerk",
                 "score": 0.2361111111111111
             },
             {
                 "role_number": "4211.0400",
+                "role_title": "Teller, Bank",
                 "score": 0.15263157894736842
             },
             {
                 "role_number": "4311.0500",
+                "role_title": "Audit, Clerk",
                 "score": 0.14090909090909093
             },
             {
                 "role_number": "3341.1000",
+                "role_title": "Office Assistant",
                 "score": 0.1361111111111111
             }
         ]
@@ -1039,42 +1269,52 @@
         "results": [
             {
                 "role_number": "2519.0402",
+                "role_title": "Test Engineer \u2013 Software Products",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "2512.0202",
+                "role_title": "Test Engineer \u2013 Software",
                 "score": 0.5833333333333333
             },
             {
                 "role_number": "2512.0300",
+                "role_title": "Programmer Analyst",
                 "score": 0.5303030303030303
             },
             {
                 "role_number": "2519.0302",
+                "role_title": "Test Engineer \u2013 IT Services",
                 "score": 0.41666666666666663
             },
             {
                 "role_number": "2519.0300",
+                "role_title": "Quality Assurance Analyst (Computers)",
                 "score": 0.4
             },
             {
                 "role_number": "2152.0902",
+                "role_title": "Testing and Validation Engineer",
                 "score": 0.20535714285714285
             },
             {
                 "role_number": "9329.0500",
+                "role_title": "Tester",
                 "score": 0.20512820512820512
             },
             {
                 "role_number": "2512.0201",
+                "role_title": "Software Engineer",
                 "score": 0.1527777777777778
             },
             {
                 "role_number": "7311.0100",
+                "role_title": "Mechanic Precision Instrument, General",
                 "score": 0.1527777777777778
             },
             {
                 "role_number": "2519.0100",
+                "role_title": "System Programmer",
                 "score": 0.14347826086956522
             }
         ]
@@ -1084,42 +1324,52 @@
         "results": [
             {
                 "role_number": "7531.1200",
+                "role_title": "Tailor, Fur",
                 "score": 0.54
             },
             {
                 "role_number": "7533.1100",
+                "role_title": "Tailor, Tent (Machine)",
                 "score": 0.53125
             },
             {
                 "role_number": "8153.0500",
+                "role_title": "Embroider, Machine",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "8153.0101",
+                "role_title": "Sewing Machine Operator, General",
                 "score": 0.4444444444444444
             },
             {
                 "role_number": "8219.0200",
+                "role_title": "Assembler, Sewing Machine",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "8153.0600",
+                "role_title": "Embroidery Machine Operator (Semi-\nAutomatic)",
                 "score": 0.31666666666666665
             },
             {
                 "role_number": "7233.1800",
+                "role_title": "Mechanic, Sewing Machine",
                 "score": 0.28448275862068967
             },
             {
                 "role_number": "8153.0103",
+                "role_title": "Specialized Sewing Machine Operator",
                 "score": 0.27142857142857146
             },
             {
                 "role_number": "8156.0900",
+                "role_title": "Welt Sewer, Machine/Machine Operator,\nWelt Sewing",
                 "score": 0.22619047619047616
             },
             {
                 "role_number": "7531.0200",
+                "role_title": "Dressmaker/Ladies Dressmaker",
                 "score": 0.2
             }
         ]
@@ -1129,42 +1379,52 @@
         "results": [
             {
                 "role_number": "7126.0101",
+                "role_title": "Plumber, General",
                 "score": 0.75
             },
             {
                 "role_number": "3123.0300",
+                "role_title": "Supervisor and Foreman, Plumbing and\nPipe Fitting",
                 "score": 0.6428571428571428
             },
             {
                 "role_number": "7126.0301",
+                "role_title": "Pipe Fitter",
                 "score": 0.5333333333333333
             },
             {
                 "role_number": "7233.1400",
+                "role_title": "Mechanic, Dairy Maintenance",
                 "score": 0.4583333333333333
             },
             {
                 "role_number": "7126.0103",
+                "role_title": "Plumber, General \u2013 Installation and Repair",
                 "score": 0.25
             },
             {
                 "role_number": "7126.9900",
+                "role_title": "Plumbers and Pipe Fitters, Other",
                 "score": 0.24761904761904763
             },
             {
                 "role_number": "7212.0600",
+                "role_title": "Lead Burner",
                 "score": 0.20512820512820512
             },
             {
                 "role_number": "7126.0107",
+                "role_title": "Plumber, Maintenance and Servicing",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "7233.2000",
+                "role_title": "Mechanic, Repairman (Domestic\nAppliances)",
                 "score": 0.15277777777777776
             },
             {
                 "role_number": "7233.2200",
+                "role_title": "Fitter, Marine",
                 "score": 0.14583333333333331
             }
         ]
@@ -1174,42 +1434,52 @@
         "results": [
             {
                 "role_number": "3314.0100",
+                "role_title": "Economic Investigator",
                 "score": 0.55
             },
             {
                 "role_number": "2521.0100",
+                "role_title": "Database Design Analyst",
                 "score": 0.5294117647058824
             },
             {
                 "role_number": "2120.0400",
+                "role_title": "Statistician, Applied",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "2521.0202",
+                "role_title": "Junior Data Associate",
                 "score": 0.3619047619047619
             },
             {
                 "role_number": "3314.0200",
+                "role_title": "Statistical Assistant",
                 "score": 0.3125
             },
             {
                 "role_number": "2120.0300",
+                "role_title": "Statistician",
                 "score": 0.30952380952380953
             },
             {
                 "role_number": "2511.0100",
+                "role_title": "System Analysts",
                 "score": 0.25
             },
             {
                 "role_number": "2421.0101",
+                "role_title": "Analyst \u2013 Research",
                 "score": 0.22549019607843135
             },
             {
                 "role_number": "4312.0100",
+                "role_title": "Statistical Clerks",
                 "score": 0.21724137931034485
             },
             {
                 "role_number": "2114.0800",
+                "role_title": "Oceanographer",
                 "score": 0.2
             }
         ]
@@ -1219,42 +1489,52 @@
         "results": [
             {
                 "role_number": "7223.6003",
+                "role_title": "CNC Programmer",
                 "score": 1.0
             },
             {
                 "role_number": "7223.5004",
+                "role_title": "CNC Operator - Vertical Machining Centre",
                 "score": 0.4583333333333333
             },
             {
                 "role_number": "7223.6001",
+                "role_title": "CNC Setter-cum-Operator \u2013 Turning",
                 "score": 0.41025641025641024
             },
             {
                 "role_number": "7223.5005",
+                "role_title": "CNC Setter-cum-Operator \u2013 Vertical\nMachining Centre",
                 "score": 0.3611111111111111
             },
             {
                 "role_number": "7223.0501",
+                "role_title": "Machine Shop Master Technician/Setter",
                 "score": 0.35
             },
             {
                 "role_number": "7223.5001",
+                "role_title": "Machining Technician/CNC Operator",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "7223.5003",
+                "role_title": "CNC Operator \u2013 Machinist",
                 "score": 0.2909090909090909
             },
             {
                 "role_number": "7223.5002",
+                "role_title": "CNC Operator \u2013 Machining Technician",
                 "score": 0.2857142857142857
             },
             {
                 "role_number": "3115.1301",
+                "role_title": "Tool Designer",
                 "score": 0.2
             },
             {
                 "role_number": "7223.6002",
+                "role_title": "CNC Operator \u2013 Turning",
                 "score": 0.19642857142857142
             }
         ]
@@ -1264,42 +1544,52 @@
         "results": [
             {
                 "role_number": "7212.0302",
+                "role_title": "Welding Technician",
                 "score": 0.7
             },
             {
                 "role_number": "7212.0303",
+                "role_title": "Gas Metal Arc Welder/Metal Inert\nGas/Metal Active Gas/Gas Metal Arc\nWelder (MIG/MAG/GMAW)",
                 "score": 0.6666666666666666
             },
             {
                 "role_number": "3122.4701",
+                "role_title": "Welding Machine Setter",
                 "score": 0.5
             },
             {
                 "role_number": "7212.0105",
+                "role_title": "Tungsten Inert Gas Welder",
                 "score": 0.47619047619047616
             },
             {
                 "role_number": "7212.0301",
+                "role_title": "Welder",
                 "score": 0.375
             },
             {
                 "role_number": "7212.0100",
+                "role_title": "Welder, Gas",
                 "score": 0.34090909090909094
             },
             {
                 "role_number": "3122.4702",
+                "role_title": "Welding Supervisor",
                 "score": 0.30000000000000004
             },
             {
                 "role_number": "8212.1901",
+                "role_title": "Welding Operator",
                 "score": 0.26785714285714285
             },
             {
                 "role_number": "7212.0200",
+                "role_title": "Welder, Electric",
                 "score": 0.2222222222222222
             },
             {
                 "role_number": "3122.4200",
+                "role_title": "Supervisor and Foreman, Welding and\nFlame Cutting",
                 "score": 0.17692307692307693
             }
         ]
@@ -1309,42 +1599,52 @@
         "results": [
             {
                 "role_number": "2144.0800",
+                "role_title": "Automobile Designer",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "2166.0401",
+                "role_title": "Designer (CAD)",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "3115.1301",
+                "role_title": "Tool Designer",
                 "score": 0.2934782608695652
             },
             {
                 "role_number": "2151.0202",
+                "role_title": "Electrical Design Developer",
                 "score": 0.2803030303030303
             },
             {
                 "role_number": "2163.0400",
+                "role_title": "Furniture Designer",
                 "score": 0.27692307692307694
             },
             {
                 "role_number": "7522.1200",
+                "role_title": "Wood Carver, Hand",
                 "score": 0.25555555555555554
             },
             {
                 "role_number": "2151.0701",
+                "role_title": "Design-For-Manufacture Engineer",
                 "score": 0.21014492753623187
             },
             {
                 "role_number": "3118.0100",
+                "role_title": "Draughtperson, Architectural",
                 "score": 0.17063492063492064
             },
             {
                 "role_number": "3118.0301",
+                "role_title": "Draftsman",
                 "score": 0.17045454545454547
             },
             {
                 "role_number": "3118.0401",
+                "role_title": "Draughtperson, Mechanical",
                 "score": 0.16666666666666669
             }
         ]
@@ -1354,42 +1654,52 @@
         "results": [
             {
                 "role_number": "2512.0501",
+                "role_title": "Embedded Software Engineer",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "2512.0401",
+                "role_title": "FPGA Design Engineer",
                 "score": 0.75
             },
             {
                 "role_number": "2519.0300",
+                "role_title": "Quality Assurance Analyst (Computers)",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2512.0201",
+                "role_title": "Software Engineer",
                 "score": 0.26666666666666666
             },
             {
                 "role_number": "2512.0300",
+                "role_title": "Programmer Analyst",
                 "score": 0.25555555555555554
             },
             {
                 "role_number": "2152.0801",
+                "role_title": "Electronic Hardware Design Engineer",
                 "score": 0.25
             },
             {
                 "role_number": "2519.0100",
+                "role_title": "System Programmer",
                 "score": 0.20833333333333331
             },
             {
                 "role_number": "2523.0301",
+                "role_title": "Tester/Test Engineer \u2013 Hardware",
                 "score": 0.2
             },
             {
                 "role_number": "2519.0402",
+                "role_title": "Test Engineer \u2013 Software Products",
                 "score": 0.18803418803418803
             },
             {
                 "role_number": "2152.0901",
+                "role_title": "Verification Engineer",
                 "score": 0.1625
             }
         ]
@@ -1399,42 +1709,52 @@
         "results": [
             {
                 "role_number": "2211.0100",
+                "role_title": "Physician, General",
                 "score": 0.5
             },
             {
                 "role_number": "7322.1300",
+                "role_title": "Printing Jobber",
                 "score": 0.5
             },
             {
                 "role_number": "2269.0200",
+                "role_title": "Physician, Osteopathic",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "3256.9900",
+                "role_title": "Medical Assistants, Other",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2230.0100",
+                "role_title": "Physician, Ayurvedic",
                 "score": 0.25
             },
             {
                 "role_number": "3222.9900",
+                "role_title": "Midwifery Associate Professionals, Other",
                 "score": 0.25
             },
             {
                 "role_number": "2264.0200",
+                "role_title": "Occupational Therapist",
                 "score": 0.21923076923076923
             },
             {
                 "role_number": "2230.0400",
+                "role_title": "Physician, Unani",
                 "score": 0.2
             },
             {
                 "role_number": "2212.0200",
+                "role_title": "Dermatologist",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "2264.0401",
+                "role_title": "Sports Masseur",
                 "score": 0.16666666666666666
             }
         ]
@@ -1444,42 +1764,52 @@
         "results": [
             {
                 "role_number": "2611.9900",
+                "role_title": "Lawyers, Other",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "2611.0800",
+                "role_title": "Attorney at Law",
                 "score": 0.5
             },
             {
                 "role_number": "4110.0100",
+                "role_title": "Clerk, General",
                 "score": 0.41025641025641024
             },
             {
                 "role_number": "2611.0200",
+                "role_title": "Solicitor General of India",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "2611.0900",
+                "role_title": "Advocate",
                 "score": 0.25
             },
             {
                 "role_number": "3411.0100",
+                "role_title": "Legal Assistant",
                 "score": 0.2
             },
             {
                 "role_number": "2310.0500",
+                "role_title": "University and College Teacher,\nLaw/Professors/Assistant Professors, Law",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "2619.9900",
+                "role_title": "Legal Professionals, Other",
                 "score": 0.14285714285714285
             },
             {
                 "role_number": "2611.1002",
+                "role_title": "Legal Associate",
                 "score": 0.125
             },
             {
                 "role_number": "2612.0200",
+                "role_title": "Judge, High Court",
                 "score": 0.1111111111111111
             }
         ]
@@ -1489,42 +1819,52 @@
         "results": [
             {
                 "role_number": "8322.0101",
+                "role_title": "Chauffer, Driver Personal",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "8322.0100",
+                "role_title": "Driver, Car",
                 "score": 0.75
             },
             {
                 "role_number": "8322.0102",
+                "role_title": "Chauffer, Cab Driver",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "8322.0201",
+                "role_title": "Driver, Taxi",
                 "score": 0.2
             },
             {
                 "role_number": "8156.1001",
+                "role_title": "Skiver, Machine/Skiving Operator",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "8322.9900",
+                "role_title": "Car, Taxi and Van Drivers, Other",
                 "score": 0.14285714285714285
             },
             {
                 "role_number": "8321.0200",
+                "role_title": "Despatch Rider",
                 "score": 0.125
             },
             {
                 "role_number": "8321.9900",
+                "role_title": "Motorcycle Drivers, Other",
                 "score": 0.1111111111111111
             },
             {
                 "role_number": "9331.9900",
+                "role_title": "Hand Pedal Vehicle Drivers, Other",
                 "score": 0.1
             },
             {
                 "role_number": "8331.0301",
+                "role_title": "Commercial Vehicle Driver",
                 "score": 0.09090909090909091
             }
         ]
@@ -1534,42 +1874,52 @@
         "results": [
             {
                 "role_number": "7536.0300",
+                "role_title": "Shoe Repairer, Cobbler/Shoemaker Cobbler",
                 "score": 1.0
             },
             {
                 "role_number": "7542.0300",
+                "role_title": "Cobber, Mica",
                 "score": 0.3333333333333333
             },
             {
                 "role_number": "7536.0600",
+                "role_title": "Skiver, Hand (Footwear)",
                 "score": 0.25
             },
             {
                 "role_number": "8151.0600",
+                "role_title": "Spinner, Frame (Textile)/Ring Frame Tenter",
                 "score": 0.2
             },
             {
                 "role_number": "8156.1001",
+                "role_title": "Skiver, Machine/Skiving Operator",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "6210.1500",
+                "role_title": "Sorter, Timber",
                 "score": 0.14285714285714285
             },
             {
                 "role_number": "7536.1700",
+                "role_title": "Trimmer, Hand",
                 "score": 0.125
             },
             {
                 "role_number": "8160.2800",
+                "role_title": "Panman (Food Canning and Preserving)",
                 "score": 0.1111111111111111
             },
             {
                 "role_number": "8151.0500",
+                "role_title": "Combing Tenter",
                 "score": 0.1
             },
             {
                 "role_number": "7122.0400",
+                "role_title": "Planer (Mosaic Tile)",
                 "score": 0.09090909090909091
             }
         ]
@@ -1579,42 +1929,52 @@
         "results": [
             {
                 "role_number": "3434.0100",
+                "role_title": "Head Cook/Head Chef",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "1120.3100",
+                "role_title": "Executive Chef",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "5120.0400",
+                "role_title": "Cook, Ship",
                 "score": 0.25
             },
             {
                 "role_number": "5120.0300",
+                "role_title": "Cook, Domestic",
                 "score": 0.2
             },
             {
                 "role_number": "8160.1600",
+                "role_title": "Cooker Operator",
                 "score": 0.16666666666666666
             },
             {
                 "role_number": "5131.0401",
+                "role_title": "Waiter, Institutional/Food & Beverage\nService \u2013Steward",
                 "score": 0.14285714285714285
             },
             {
                 "role_number": "5120.0500",
+                "role_title": "Kitchen Porter/Steward",
                 "score": 0.125
             },
             {
                 "role_number": "5151.0600",
+                "role_title": "Hotel and Restaurant Keeper/Hotel and\nRestaurant Owner",
                 "score": 0.1111111111111111
             },
             {
                 "role_number": "7512.9900",
+                "role_title": "Bakers, Pastry Cooks and Confectionery\nMakers, Other",
                 "score": 0.1
             },
             {
                 "role_number": "8160.2600",
+                "role_title": "Retort Operator (Food Canning and\nPreserving)",
                 "score": 0.09090909090909091
             }
         ]
@@ -1624,42 +1984,52 @@
         "results": [
             {
                 "role_number": "2144.0100",
+                "role_title": "Mechanical Engineer, General",
                 "score": 0.5454545454545454
             },
             {
                 "role_number": "3115.9900",
+                "role_title": "Mechanical Engineering Technicians,\nOther",
                 "score": 0.5434782608695652
             },
             {
                 "role_number": "2144.9900",
+                "role_title": "Mechanical Engineers, Other",
                 "score": 0.43333333333333335
             },
             {
                 "role_number": "2144.0500",
+                "role_title": "Mechanical Engineer, Structural",
                 "score": 0.3645833333333333
             },
             {
                 "role_number": "2144.1000",
+                "role_title": "Mechanical Engineer, Marine",
                 "score": 0.325
             },
             {
                 "role_number": "2144.0700",
+                "role_title": "Mechanical Engineer, Automobile",
                 "score": 0.3026315789473684
             },
             {
                 "role_number": "2144.0900",
+                "role_title": "Mechanical Engineer, Aeronautical",
                 "score": 0.26785714285714285
             },
             {
                 "role_number": "7231.0300",
+                "role_title": "Tractor Mechanic",
                 "score": 0.25
             },
             {
                 "role_number": "2144.1200",
+                "role_title": "Mechanical Engineer, Air-Conditioning",
                 "score": 0.23333333333333334
             },
             {
                 "role_number": "7233.1000",
+                "role_title": "Mechanic, Stationery Steam Engine",
                 "score": 0.2
             }
         ]
@@ -1669,42 +2039,52 @@
         "results": [
             {
                 "role_number": "2352.0100",
+                "role_title": "Teacher for Visually Impaired",
                 "score": 0.75
             },
             {
                 "role_number": "2341.9900",
+                "role_title": "Primary School Teachers, Other",
                 "score": 0.6111111111111112
             },
             {
                 "role_number": "2634.0400",
+                "role_title": "Psychologist, Educational",
                 "score": 0.41666666666666663
             },
             {
                 "role_number": "3423.0200",
+                "role_title": "Physical Training Instructor/Physical\nEducation Teacher",
                 "score": 0.39215686274509803
             },
             {
                 "role_number": "2341.0100",
+                "role_title": "Middle School Teacher",
                 "score": 0.31666666666666665
             },
             {
                 "role_number": "2341.0400",
+                "role_title": "Primary School Teacher",
                 "score": 0.24285714285714285
             },
             {
                 "role_number": "2330.0100",
+                "role_title": "Senior Secondary and Secondary School Teacher,\nArts",
                 "score": 0.23030303030303031
             },
             {
                 "role_number": "2352.0300",
+                "role_title": "Teacher for Differently-Abled (Mental)",
                 "score": 0.22
             },
             {
                 "role_number": "1345.0100",
+                "role_title": "Headmaster",
                 "score": 0.20833333333333331
             },
             {
                 "role_number": "2330.0200",
+                "role_title": "Senior Secondary and Secondary School Teacher,\nScience",
                 "score": 0.20512820512820512
             }
         ]
@@ -1714,42 +2094,52 @@
         "results": [
             {
                 "role_number": "7231.0100",
+                "role_title": "Mechanic, Automobile",
                 "score": 0.7
             },
             {
                 "role_number": "2144.0700",
+                "role_title": "Mechanical Engineer, Automobile",
                 "score": 0.5666666666666667
             },
             {
                 "role_number": "7213.0201",
+                "role_title": "Auto Engine Repair Technician",
                 "score": 0.4242424242424242
             },
             {
                 "role_number": "3122.5300",
+                "role_title": "Supervisor and Foreman, Motor Vehicle\nRepairing",
                 "score": 0.37037037037037035
             },
             {
                 "role_number": "7233.1000",
+                "role_title": "Mechanic, Stationery Steam Engine",
                 "score": 0.31666666666666665
             },
             {
                 "role_number": "7233.0400",
+                "role_title": "Mechanic, Diesel Engine",
                 "score": 0.27142857142857146
             },
             {
                 "role_number": "8331.0500",
+                "role_title": "Driver Road Test",
                 "score": 0.25
             },
             {
                 "role_number": "7232.0600",
+                "role_title": "Mechanic Aircraft, Engine Overhauling",
                 "score": 0.21978021978021978
             },
             {
                 "role_number": "7233.0700",
+                "role_title": "Mechanic, Earth Moving Machinery",
                 "score": 0.21978021978021978
             },
             {
                 "role_number": "7231.0400",
+                "role_title": "Fitter Automobile",
                 "score": 0.21428571428571427
             }
         ]
@@ -1759,42 +2149,52 @@
         "results": [
             {
                 "role_number": "8332.0100",
+                "role_title": "Driver Truck",
                 "score": 0.8333333333333333
             },
             {
                 "role_number": "8332.9900",
+                "role_title": "Heavy Truck and Lorry Drivers, Other",
                 "score": 0.7
             },
             {
                 "role_number": "8111.2601",
+                "role_title": "Sprinkler and Other Vehicle Driver",
                 "score": 0.5
             },
             {
                 "role_number": "8341.0300",
+                "role_title": "Tractor Driver, Construction",
                 "score": 0.3502824858757062
             },
             {
                 "role_number": "8344.0201",
+                "role_title": "Fork Lift Truck Operator/Fork Lift\nOperator/Driver",
                 "score": 0.30000000000000004
             },
             {
                 "role_number": "8342.1201",
+                "role_title": "Dumper Operator/Dumper/Tipper Operator",
                 "score": 0.2857142857142857
             },
             {
                 "role_number": "8344.0100",
+                "role_title": "Lift Truck Operator",
                 "score": 0.25757575757575757
             },
             {
                 "role_number": "8331.0500",
+                "role_title": "Driver Road Test",
                 "score": 0.2361111111111111
             },
             {
                 "role_number": "8331.0302",
+                "role_title": "Commercial Vehicle Driver \u2013 Assistant",
                 "score": 0.19523809523809524
             },
             {
                 "role_number": "8331.0301",
+                "role_title": "Commercial Vehicle Driver",
                 "score": 0.18382352941176472
             }
         ]

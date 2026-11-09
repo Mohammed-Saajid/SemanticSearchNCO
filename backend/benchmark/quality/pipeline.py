@@ -7,6 +7,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 
 if __package__ in (None, ""):
@@ -51,13 +52,36 @@ def _search(
         if not isinstance(result, dict):
             raise TypeError(f"Search response for query {query!r} contains an invalid result.")
         role_number = result.get("role_number")
+        role_title = result.get("role_title")
         score = result.get("combined_score", result.get("score"))
         if not isinstance(role_number, str) or not role_number:
             raise ValueError(f"Search response for query {query!r} has an invalid role number.")
+        if not isinstance(role_title, str) or not role_title:
+            raise ValueError(f"Search response for query {query!r} has an invalid role title.")
         if isinstance(score, bool) or not isinstance(score, (int, float)):
             raise TypeError(f"Search response for query {query!r} has an invalid score.")
-        run_results.append({"role_number": role_number, "score": float(score)})
+        run_results.append(
+            {"role_number": role_number, "role_title": role_title, "score": float(score)}
+        )
     return run_results
+
+
+def _get_role_title(base_url: str, role_number: str, timeout: float) -> str:
+    request = urllib.request.Request(
+        f"{base_url.rstrip('/')}/roles/{quote(role_number, safe='')}",
+        headers={"Accept": "application/json"},
+        method="GET",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            role = json.load(response)
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
+        raise RuntimeError(f"Role lookup failed for {role_number!r}: {error}") from error
+
+    title = role.get("title") if isinstance(role, dict) else None
+    if not isinstance(title, str) or not title:
+        raise TypeError(f"Role lookup for {role_number!r} has an invalid title.")
+    return title
 
 
 def _check_api_health(base_url: str, timeout: float) -> None:
@@ -106,6 +130,50 @@ def collect_run(
         for query in queries
     ]
 
+def write_difference_json(
+    query_map:dict,
+    run_map:dict,
+    output_dir: Path,
+    base_url: str,
+    timeout: float,
+    run_titles: dict
+    ) -> None:
+    difference_json = {}
+    for query_id, query_info in query_map.items():
+        expected_roles = {
+            role_number
+            for role_number, relevance in query_info["judgments"].items()
+            if relevance > 0
+        }
+        retrieved_results = run_map.get(query_id, [])
+        retrieved_roles = {role_number for role_number, _ in retrieved_results}
+        missing_roles = [
+            {
+                "role_number": role_number,
+                "role_title": _get_role_title(base_url, role_number, timeout),
+                "relevance": relevance,
+            }
+            for role_number, relevance in query_info["judgments"].items()
+            if relevance > 0 and role_number not in retrieved_roles
+        ]
+        unexpected_results = [
+            {
+                "role_number": role_number,
+                "role_title": run_titles[query_id][role_number],
+                "score": score,
+            }
+            for role_number, score in retrieved_results
+            if role_number not in expected_roles
+        ]
+        if missing_roles or unexpected_results:
+            difference_json[query_id] = {
+                "query": query_info["query"],
+                "query_map": missing_roles,
+                "run": unexpected_results,
+            }
+
+    write_json(output_dir / "differences.json", difference_json)
+
 
 def run_pipeline(
     dataset_path: Path,
@@ -129,6 +197,13 @@ def run_pipeline(
     from quality.eval import validate_run
 
     run_map = validate_run(run_data, query_map)
+    run_titles = {
+        entry["query_id"]: {
+            result["role_number"]: result["role_title"] for result in entry["results"]
+        }
+        for entry in run_data
+    }
+    write_difference_json(query_map,run_map,output_dir,base_url,timeout,run_titles)
     summary, per_query = evaluate(query_map, run_map)
     save_reports(output_dir, summary, per_query)
 
@@ -146,6 +221,7 @@ def run_pipeline(
             },
             "artifacts": {
                 "run": "run.json",
+                "differences": "differences.json",
                 "metrics": "metrics.json",
                 "query_analysis": "query_analysis.csv",
             },
@@ -175,6 +251,7 @@ def main() -> None:
             args.timeout,
         )
     except (OSError, TypeError, ValueError, RuntimeError, KeyError) as error:
+        print("Exception",error)
         raise SystemExit(1) from error
 
 
